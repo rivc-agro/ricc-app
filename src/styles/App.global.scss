@@ -1,0 +1,35 @@
+:root {
+    // colors
+    --color-primary: #33549F;
+    --color-white: #fff;
+    --color-dark: #191919;
+    --color-purple-text: #A1B3E3;
+    --color-accent1: #2966FF;
+    --color-accent2: #A82F93;
+    --color-page-bg: #06112E;
+    --color-gradient: linear-gradient(90deg, #C824AB -14.84%, #2966FF 115.23%);
+
+
+    // Typography
+    --main-ff: "Montserrat", sans-serif;
+
+    --font-heading-h1: 300 7rem/100% var(--main-ff);
+    --font-heading-h2: 700 4rem/100% var(--main-ff);
+    --font-heading-h3: 300 3rem/111% var(--main-ff);
+
+    --font-btn-s: 400 1.2rem/1.5rem var(--main-ff);
+    --font-btn-m: 400 1.6rem/2rem var(--main-ff);
+
+    --font-body: 400 1.6rem/2rem var(--main-ff);
+    --font-body-M: 400 2.4rem/3.1rem var(--main-ff);
+
+    --content-padding: 60px;
+    --grid-offset: 20px;
+    --header-height: 14rem;
+
+    --transition: 200ms;
+}
+
+@import './vendor/vendor';
+@import './helpers/media';
+@import './settings/settings.global';

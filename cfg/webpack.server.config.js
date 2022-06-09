@@ -1,6 +1,14 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const NODE_ENV = process.env.NODE_ENV;
+const copyWebpack = require('copy-webpack-plugin');
+
+const GLOBAL_SCSS_REGEX = /\.global\.scss/
+
+const PATHS = {
+    src: path.resolve(__dirname, '../src'),
+    dist: path.resolve(__dirname, '../dist'),
+}
 
 module.exports = {
     target: "node",
@@ -34,11 +42,35 @@ module.exports = {
                         }
                     },
                     'sass-loader',
-                ]
+                ],
+                exclude: GLOBAL_SCSS_REGEX,
+            },
+            {
+                test: GLOBAL_SCSS_REGEX,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                // Fonts
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]'
+                }
             }
         ]
     },
     optimization: {
         minimize: false
-    }
+    },
+    plugins: [
+        new copyWebpack({
+            patterns: [
+                // Fonts:
+                {
+                    from: `${PATHS.src}/assets/fonts`,
+                    to: `${PATHS.dist}/assets/fonts`
+                }
+            ]
+        })
+    ],
 };

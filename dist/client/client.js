@@ -9,23 +9,131 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/header.scss":
-/*!***************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/header.scss ***!
-  \***************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/App.global.scss":
+/*!*****************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/App.global.scss ***!
+  \*****************************************************************************************************************/
 /***/ ((module, exports, __webpack_require__) => {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.id, \".header-test--bhB3f {\\n  color: red;\\n}\\n.header-test__test--1-BXA {\\n  color: blue;\\n}\", \"\"]);\n// Exports\nexports.locals = {\n\t\"test\": \"header-test--bhB3f\",\n\t\"test__test\": \"header-test__test--1-BXA\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/header.scss?./node_modules/css-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B1%5D.use%5B1%5D!./node_modules/sass-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nvar ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(/*! ../assets/fonts/Montserrat-Light.woff2 */ \"./src/assets/fonts/Montserrat-Light.woff2\");\nvar ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(/*! ../assets/fonts/Montserrat-Light.woff */ \"./src/assets/fonts/Montserrat-Light.woff\");\nvar ___CSS_LOADER_URL_IMPORT_2___ = __webpack_require__(/*! ../assets/fonts/Montserrat-Regular.woff2 */ \"./src/assets/fonts/Montserrat-Regular.woff2\");\nvar ___CSS_LOADER_URL_IMPORT_3___ = __webpack_require__(/*! ../assets/fonts/Montserrat-Regular.woff */ \"./src/assets/fonts/Montserrat-Regular.woff\");\nvar ___CSS_LOADER_URL_IMPORT_4___ = __webpack_require__(/*! ../assets/fonts/Montserrat-Medium.woff2 */ \"./src/assets/fonts/Montserrat-Medium.woff2\");\nvar ___CSS_LOADER_URL_IMPORT_5___ = __webpack_require__(/*! ../assets/fonts/Montserrat-Medium.woff */ \"./src/assets/fonts/Montserrat-Medium.woff\");\nvar ___CSS_LOADER_URL_IMPORT_6___ = __webpack_require__(/*! ../assets/fonts/Montserrat-Bold.woff2 */ \"./src/assets/fonts/Montserrat-Bold.woff2\");\nvar ___CSS_LOADER_URL_IMPORT_7___ = __webpack_require__(/*! ../assets/fonts/Montserrat-Bold.woff */ \"./src/assets/fonts/Montserrat-Bold.woff\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\nvar ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);\nvar ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);\nvar ___CSS_LOADER_URL_REPLACEMENT_2___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_2___);\nvar ___CSS_LOADER_URL_REPLACEMENT_3___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_3___);\nvar ___CSS_LOADER_URL_REPLACEMENT_4___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_4___);\nvar ___CSS_LOADER_URL_REPLACEMENT_5___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_5___);\nvar ___CSS_LOADER_URL_REPLACEMENT_6___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_6___);\nvar ___CSS_LOADER_URL_REPLACEMENT_7___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_7___);\n// Module\nexports.push([module.id, \":root {\\n  --color-primary: #33549F;\\n  --color-white: #fff;\\n  --color-dark: #191919;\\n  --color-purple-text: #A1B3E3;\\n  --color-accent1: #2966FF;\\n  --color-accent2: #A82F93;\\n  --color-page-bg: #06112E;\\n  --color-gradient: linear-gradient(90deg, #C824AB -14.84%, #2966FF 115.23%);\\n  --main-ff: \\\"Montserrat\\\", sans-serif;\\n  --font-heading-h1: 300 7rem/100% var(--main-ff);\\n  --font-heading-h2: 700 4rem/100% var(--main-ff);\\n  --font-heading-h3: 300 3rem/111% var(--main-ff);\\n  --font-btn-s: 400 1.2rem/1.5rem var(--main-ff);\\n  --font-btn-m: 400 1.6rem/2rem var(--main-ff);\\n  --font-body: 400 1.6rem/2rem var(--main-ff);\\n  --font-body-M: 400 2.4rem/3.1rem var(--main-ff);\\n  --content-padding: 60px;\\n  --grid-offset: 20px;\\n  --header-height: 14rem;\\n  --transition: 200ms;\\n}\\n\\n/* http://meyerweb.com/eric/tools/css/reset/\\n   v5.0.1 | 20191019\\n   License: none (public domain)\\n*/\\nhtml, body, div, span, applet, object, iframe,\\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\\na, abbr, acronym, address, big, cite, code,\\ndel, dfn, em, img, ins, kbd, q, s, samp,\\nsmall, strike, strong, sub, sup, tt, var,\\nb, u, i, center,\\ndl, dt, dd, menu, ol, ul, li,\\nfieldset, form, label, legend,\\ntable, caption, tbody, tfoot, thead, tr, th, td,\\narticle, aside, canvas, details, embed,\\nfigure, figcaption, footer, header, hgroup,\\nmain, menu, nav, output, ruby, section, summary,\\ntime, mark, audio, video {\\n  margin: 0;\\n  padding: 0;\\n  border: 0;\\n  font-size: 100%;\\n  font: inherit;\\n  vertical-align: baseline;\\n}\\n\\n/* HTML5 display-role reset for older browsers */\\narticle, aside, details, figcaption, figure,\\nfooter, header, hgroup, main, menu, nav, section {\\n  display: block;\\n}\\n\\n/* HTML5 hidden-attribute fix for newer browsers */\\n*[hidden] {\\n  display: none;\\n}\\n\\nbody {\\n  line-height: 1;\\n}\\n\\nmenu, ol, ul {\\n  list-style: none;\\n}\\n\\nblockquote, q {\\n  quotes: none;\\n}\\n\\nblockquote:before, blockquote:after,\\nq:before, q:after {\\n  content: \\\"\\\";\\n  content: none;\\n}\\n\\ntable {\\n  border-collapse: collapse;\\n  border-spacing: 0;\\n}\\n\\n@font-face {\\n  font-weight: 300;\\n  font-family: \\\"Montserrat\\\";\\n  font-style: normal;\\n  font-display: swap;\\n  src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_0___ + \") format(\\\"woff2\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_1___ + \") format(\\\"woff\\\");\\n}\\n@font-face {\\n  font-weight: 400;\\n  font-family: \\\"Montserrat\\\";\\n  font-style: normal;\\n  font-display: swap;\\n  src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_2___ + \") format(\\\"woff2\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_3___ + \") format(\\\"woff\\\");\\n}\\n@font-face {\\n  font-weight: 500;\\n  font-family: \\\"Montserrat\\\";\\n  font-style: normal;\\n  font-display: swap;\\n  src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_4___ + \") format(\\\"woff2\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_5___ + \") format(\\\"woff\\\");\\n}\\n@font-face {\\n  font-weight: 700;\\n  font-family: \\\"Montserrat\\\";\\n  font-style: normal;\\n  font-display: swap;\\n  src: url(\" + ___CSS_LOADER_URL_REPLACEMENT_6___ + \") format(\\\"woff2\\\"), url(\" + ___CSS_LOADER_URL_REPLACEMENT_7___ + \") format(\\\"woff\\\");\\n}\\n*,\\n*::before,\\n*::after {\\n  box-sizing: border-box;\\n  -webkit-tap-highlight-color: transparent;\\n}\\n\\nhtml {\\n  font-size: 10px;\\n  line-height: 1.2;\\n}\\n@media screen and (max-width: 1536px) {\\n  html {\\n    font-size: 9px;\\n  }\\n}\\n@media screen and (max-width: 1199px) {\\n  html {\\n    font-size: 8px;\\n  }\\n}\\n@media screen and (max-width: 767px) {\\n  html {\\n    font-size: 10px;\\n  }\\n}\\n@media screen and (max-width: 310px) {\\n  html {\\n    font-size: 8px;\\n  }\\n}\\n\\nbody {\\n  color: var(--color-white);\\n  font: var(--font-body);\\n  background-color: var(--color-page-bg);\\n}\\n\\nul,\\nol {\\n  list-style: none;\\n}\\n\\nol {\\n  counter-reset: ordered-list;\\n}\\nol > li {\\n  counter-increment: ordered-list;\\n}\\nol > li::before {\\n  content: counter(ordered-list, decimal-leading-zero) \\\".\\\";\\n}\\n\\ninput,\\ntextarea {\\n  border: none;\\n  border-radius: 0;\\n  font: inherit;\\n  outline: none;\\n  box-shadow: none;\\n  border-radius: 0;\\n  width: 100%;\\n  background-color: transparent;\\n  display: block;\\n}\\n\\ninput:not([type=checkbox]):not([type=radio]) {\\n  appearance: none;\\n  -webkit-appearance: none;\\n}\\n\\ntextarea {\\n  resize: none;\\n  box-shadow: none;\\n  display: block;\\n  width: 100%;\\n  overflow: auto;\\n  height: 20rem;\\n}\\ntextarea::-webkit-scrollbar {\\n  background-color: var(--color-grey-300);\\n  width: 0.2rem;\\n}\\ntextarea::-webkit-scrollbar-thumb {\\n  background: var(--color-grey-600);\\n}\\ntextarea::-webkit-scrollbar-button {\\n  display: none;\\n}\\ntextarea::-webkit-scrollbar-track {\\n  background-color: var(--color-grey-300);\\n}\\n\\ninput::-webkit-outer-spin-button,\\ninput::-webkit-inner-spin-button {\\n  -webkit-appearance: none;\\n  appearance: none;\\n  margin: 0;\\n}\\n\\ninput[type=number] {\\n  -moz-appearance: textfield;\\n}\\n\\ninput[type=search] {\\n  -webkit-appearance: textfield;\\n  /* 1 */\\n  outline-offset: -2px;\\n  /* 2 */\\n}\\n\\ninput[type=search] {\\n  -webkit-appearance: textfield;\\n}\\n\\ninput[type=search]::-webkit-search-decoration {\\n  -webkit-appearance: none;\\n}\\n\\ninput[type=search]::-webkit-search-cancel-button {\\n  -webkit-appearance: none;\\n  display: none;\\n}\\n\\nbutton {\\n  border: none;\\n  background-color: transparent;\\n  cursor: pointer;\\n  user-select: none;\\n  -webkit-appearance: none;\\n  font: inherit;\\n  color: inherit;\\n  outline: none;\\n  display: inline-flex;\\n  position: relative;\\n  transition: color 0.2s;\\n  padding: 0;\\n  margin: 0;\\n}\\n\\na {\\n  background-color: transparent;\\n  text-decoration: none;\\n  transition: color 0.2s;\\n  color: inherit;\\n}\\n\\nsvg {\\n  flex-shrink: 0;\\n  display: block;\\n  user-select: none;\\n  fill: currentColor;\\n  transition: fill 0.2s;\\n}\\n\\nimg {\\n  max-width: 100%;\\n  height: auto;\\n  vertical-align: middle;\\n}\\n\\n.list-rest {\\n  padding: 0;\\n  margin: 0;\\n  list-style: none;\\n}\\n\\n.visually-hidden {\\n  position: absolute;\\n  width: 1px;\\n  height: 1px;\\n  margin: -1px;\\n  clip: rect(0 0 0 0);\\n}\\n\\n.site-container {\\n  max-width: 1680px;\\n  width: 100%;\\n  margin-right: auto;\\n  margin-left: auto;\\n  padding-right: var(--content-padding);\\n  padding-left: var(--content-padding);\\n}\\n\\n.page-wrapper {\\n  display: flex;\\n  flex-direction: column;\\n  min-height: 100vh;\\n  overflow: hidden;\\n}\\n\\n.page-main {\\n  flex-grow: 1;\\n}\\n\\n.button-reset {\\n  margin: 0;\\n  padding: 0;\\n  background-color: transparent;\\n  border-radius: 0;\\n  border: none;\\n}\\n\\n.js-focus-visible button:focus:not(.focus-visible) {\\n  outline: none;\\n}\\n\\nbutton {\\n  color: inherit;\\n}\\n\\nbutton:focus {\\n  outline: none;\\n}\\n\\ninput:-webkit-autofill,\\ninput:-webkit-autofill:hover,\\ninput:-webkit-autofill:focus,\\ntextarea:-webkit-autofill,\\ntextarea:-webkit-autofill:hover,\\ntextarea:-webkit-autofill:focus,\\nselect:-webkit-autofill,\\nselect:-webkit-autofill:hover,\\nselect:-webkit-autofill:focus {\\n  background-color: transparent;\\n}\\n\\n.grid-container {\\n  display: grid;\\n  grid-template-columns: repeat(12, 1fr);\\n  gap: var(--grid-offset);\\n}\\n.grid-container__block:nth-child(1) {\\n  grid-column: 1 span;\\n}\\n.grid-container__block:nth-child(2) {\\n  grid-column: 11 span;\\n}\\n\\n.disable-scroll {\\n  overflow: hidden;\\n  height: 100vh;\\n  position: fixed;\\n  left: 0;\\n  top: 0;\\n  width: 100%;\\n}\\n\\n.logo {\\n  max-width: 12.6rem;\\n  width: 100%;\\n}\\n.logo img {\\n  display: block;\\n  width: 100%;\\n  height: auto;\\n}\\n\\n.site-second-heading {\\n  font: var(--font-heading-h2);\\n  text-transform: uppercase;\\n}\\n.site-second-heading span {\\n  font-weight: 300;\\n}\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack://ricc-app/./src/styles/App.global.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
-/***/ "./src/shared/UI/Header/header.scss":
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/Header.scss":
+/*!***************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/Header.scss ***!
+  \***************************************************************************************************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.id, \".Header-header--nNTur {\\n  color: var(--color-white);\\n  padding-top: 3.8rem;\\n  padding-bottom: 1rem;\\n}\\n\\n.Header-container--2RO7d {\\n  display: flex;\\n  align-items: center;\\n}\\n\\n.Header-logo--245Bb {\\n  margin-right: 1rem;\\n}\\n\\n.Header-btns--3o9FD {\\n  margin-left: auto;\\n  display: flex;\\n  align-items: center;\\n}\\n\\n.Header-btnItem--ku5St {\\n  margin-right: 6rem;\\n}\\n.Header-btnItem--ku5St:last-child {\\n  margin-right: 0;\\n}\\n\\n.Header-btn--2ezXD {\\n  color: var(--color-white);\\n  font: var(--font-btn-s);\\n  letter-spacing: 0.09em;\\n  text-transform: uppercase;\\n}\", \"\"]);\n// Exports\nexports.locals = {\n\t\"header\": \"Header-header--nNTur\",\n\t\"container\": \"Header-container--2RO7d\",\n\t\"logo\": \"Header-logo--245Bb\",\n\t\"btns\": \"Header-btns--3o9FD\",\n\t\"btnItem\": \"Header-btnItem--ku5St\",\n\t\"btn\": \"Header-btn--2ezXD\"\n};\nmodule.exports = exports;\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/Header.scss?./node_modules/css-loader/dist/cjs.js??ruleSet%5B1%5D.rules%5B1%5D.use%5B1%5D!./node_modules/sass-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./src/assets/fonts/Montserrat-Bold.woff":
+/*!***********************************************!*\
+  !*** ./src/assets/fonts/Montserrat-Bold.woff ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"Montserrat-Bold.woff\");\n\n//# sourceURL=webpack://ricc-app/./src/assets/fonts/Montserrat-Bold.woff?");
+
+/***/ }),
+
+/***/ "./src/assets/fonts/Montserrat-Bold.woff2":
+/*!************************************************!*\
+  !*** ./src/assets/fonts/Montserrat-Bold.woff2 ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"Montserrat-Bold.woff2\");\n\n//# sourceURL=webpack://ricc-app/./src/assets/fonts/Montserrat-Bold.woff2?");
+
+/***/ }),
+
+/***/ "./src/assets/fonts/Montserrat-Light.woff":
+/*!************************************************!*\
+  !*** ./src/assets/fonts/Montserrat-Light.woff ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"Montserrat-Light.woff\");\n\n//# sourceURL=webpack://ricc-app/./src/assets/fonts/Montserrat-Light.woff?");
+
+/***/ }),
+
+/***/ "./src/assets/fonts/Montserrat-Light.woff2":
+/*!*************************************************!*\
+  !*** ./src/assets/fonts/Montserrat-Light.woff2 ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"Montserrat-Light.woff2\");\n\n//# sourceURL=webpack://ricc-app/./src/assets/fonts/Montserrat-Light.woff2?");
+
+/***/ }),
+
+/***/ "./src/assets/fonts/Montserrat-Medium.woff":
+/*!*************************************************!*\
+  !*** ./src/assets/fonts/Montserrat-Medium.woff ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"Montserrat-Medium.woff\");\n\n//# sourceURL=webpack://ricc-app/./src/assets/fonts/Montserrat-Medium.woff?");
+
+/***/ }),
+
+/***/ "./src/assets/fonts/Montserrat-Medium.woff2":
+/*!**************************************************!*\
+  !*** ./src/assets/fonts/Montserrat-Medium.woff2 ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"Montserrat-Medium.woff2\");\n\n//# sourceURL=webpack://ricc-app/./src/assets/fonts/Montserrat-Medium.woff2?");
+
+/***/ }),
+
+/***/ "./src/assets/fonts/Montserrat-Regular.woff":
+/*!**************************************************!*\
+  !*** ./src/assets/fonts/Montserrat-Regular.woff ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"Montserrat-Regular.woff\");\n\n//# sourceURL=webpack://ricc-app/./src/assets/fonts/Montserrat-Regular.woff?");
+
+/***/ }),
+
+/***/ "./src/assets/fonts/Montserrat-Regular.woff2":
+/*!***************************************************!*\
+  !*** ./src/assets/fonts/Montserrat-Regular.woff2 ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"Montserrat-Regular.woff2\");\n\n//# sourceURL=webpack://ricc-app/./src/assets/fonts/Montserrat-Regular.woff2?");
+
+/***/ }),
+
+/***/ "./src/styles/App.global.scss":
+/*!************************************!*\
+  !*** ./src/styles/App.global.scss ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("var api = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./App.global.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/App.global.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.id, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\nvar exported = content.locals ? content.locals : {};\n\n\nif (true) {\n  if (!content.locals) {\n    module.hot.accept(\n      /*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./App.global.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/App.global.scss\",\n      function () {\n        var newContent = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./App.global.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/App.global.scss\");\n\n              newContent = newContent.__esModule ? newContent.default : newContent;\n\n              if (typeof newContent === 'string') {\n                newContent = [[module.id, newContent, '']];\n              }\n\n              update(newContent);\n      }\n    )\n  }\n\n  module.hot.dispose(function() { \n    update();\n  });\n}\n\nmodule.exports = exported;\n\n//# sourceURL=webpack://ricc-app/./src/styles/App.global.scss?");
+
+/***/ }),
+
+/***/ "./src/shared/UI/Header/Header.scss":
 /*!******************************************!*\
-  !*** ./src/shared/UI/Header/header.scss ***!
+  !*** ./src/shared/UI/Header/Header.scss ***!
   \******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("var api = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./header.scss */ \"./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/header.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.id, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\nvar exported = content.locals ? content.locals : {};\n\n\nif (true) {\n  if (!content.locals) {\n    module.hot.accept(\n      /*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./header.scss */ \"./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/header.scss\",\n      function () {\n        var newContent = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./header.scss */ \"./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/header.scss\");\n\n              newContent = newContent.__esModule ? newContent.default : newContent;\n\n              if (typeof newContent === 'string') {\n                newContent = [[module.id, newContent, '']];\n              }\n\n              update(newContent);\n      }\n    )\n  }\n\n  module.hot.dispose(function() { \n    update();\n  });\n}\n\nmodule.exports = exported;\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/header.scss?");
+eval("var api = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./Header.scss */ \"./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/Header.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.id, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\nvar exported = content.locals ? content.locals : {};\n\n\nif (true) {\n  if (!content.locals) {\n    module.hot.accept(\n      /*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./Header.scss */ \"./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/Header.scss\",\n      function () {\n        var newContent = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!../../../../node_modules/sass-loader/dist/cjs.js!./Header.scss */ \"./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/shared/UI/Header/Header.scss\");\n\n              newContent = newContent.__esModule ? newContent.default : newContent;\n\n              if (typeof newContent === 'string') {\n                newContent = [[module.id, newContent, '']];\n              }\n\n              update(newContent);\n      }\n    )\n  }\n\n  module.hot.dispose(function() { \n    update();\n  });\n}\n\nmodule.exports = exported;\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/Header.scss?");
 
 /***/ }),
 
@@ -136,6 +244,17 @@ eval("\r\nmodule.exports = ({ onlyFirst = false } = {}) => {\r\n    const patter
 
 "use strict";
 eval("\r\n/*\r\n  MIT License http://www.opensource.org/licenses/mit-license.php\r\n  Author Tobias Koppers @sokra\r\n*/\r\n// css base code, injected by the css-loader\r\n// eslint-disable-next-line func-names\r\nmodule.exports = function (useSourceMap) {\r\n    var list = []; // return the list of modules as css string\r\n    list.toString = function toString() {\r\n        return this.map(function (item) {\r\n            var content = cssWithMappingToString(item, useSourceMap);\r\n            if (item[2]) {\r\n                return \"@media \".concat(item[2], \" {\").concat(content, \"}\");\r\n            }\r\n            return content;\r\n        }).join('');\r\n    }; // import a list of modules into the list\r\n    // eslint-disable-next-line func-names\r\n    list.i = function (modules, mediaQuery, dedupe) {\r\n        if (typeof modules === 'string') {\r\n            // eslint-disable-next-line no-param-reassign\r\n            modules = [[null, modules, '']];\r\n        }\r\n        var alreadyImportedModules = {};\r\n        if (dedupe) {\r\n            for (var i = 0; i < this.length; i++) {\r\n                // eslint-disable-next-line prefer-destructuring\r\n                var id = this[i][0];\r\n                if (id != null) {\r\n                    alreadyImportedModules[id] = true;\r\n                }\r\n            }\r\n        }\r\n        for (var _i = 0; _i < modules.length; _i++) {\r\n            var item = [].concat(modules[_i]);\r\n            if (dedupe && alreadyImportedModules[item[0]]) {\r\n                // eslint-disable-next-line no-continue\r\n                continue;\r\n            }\r\n            if (mediaQuery) {\r\n                if (!item[2]) {\r\n                    item[2] = mediaQuery;\r\n                }\r\n                else {\r\n                    item[2] = \"\".concat(mediaQuery, \" and \").concat(item[2]);\r\n                }\r\n            }\r\n            list.push(item);\r\n        }\r\n    };\r\n    return list;\r\n};\r\nfunction cssWithMappingToString(item, useSourceMap) {\r\n    var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\r\n    var cssMapping = item[3];\r\n    if (!cssMapping) {\r\n        return content;\r\n    }\r\n    if (useSourceMap && typeof btoa === 'function') {\r\n        var sourceMapping = toComment(cssMapping);\r\n        var sourceURLs = cssMapping.sources.map(function (source) {\r\n            return \"/*# sourceURL=\".concat(cssMapping.sourceRoot || '').concat(source, \" */\");\r\n        });\r\n        return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\r\n    }\r\n    return [content].join('\\n');\r\n} // Adapted from convert-source-map (MIT)\r\nfunction toComment(sourceMap) {\r\n    // eslint-disable-next-line no-undef\r\n    var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\r\n    var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\r\n    return \"/*# \".concat(data, \" */\");\r\n}\r\n\n\n//# sourceURL=webpack://ricc-app/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+"use strict";
+eval("\r\nmodule.exports = function (url, options) {\r\n    if (!options) {\r\n        // eslint-disable-next-line no-param-reassign\r\n        options = {};\r\n    } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\r\n    url = url && url.__esModule ? url.default : url;\r\n    if (typeof url !== 'string') {\r\n        return url;\r\n    } // If url is already wrapped in quotes, remove them\r\n    if (/^['\"].*['\"]$/.test(url)) {\r\n        // eslint-disable-next-line no-param-reassign\r\n        url = url.slice(1, -1);\r\n    }\r\n    if (options.hash) {\r\n        // eslint-disable-next-line no-param-reassign\r\n        url += options.hash;\r\n    } // Should url be wrapped?\r\n    // See https://drafts.csswg.org/css-values-3/#urls\r\n    if (/[\"'() \\t\\n]/.test(url) || options.needQuotes) {\r\n        return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n'), \"\\\"\");\r\n    }\r\n    return url;\r\n};\r\n\n\n//# sourceURL=webpack://ricc-app/./node_modules/css-loader/dist/runtime/getUrl.js?");
 
 /***/ }),
 
@@ -458,6 +577,17 @@ eval("\r\n/**\r\n * Based heavily on https://github.com/webpack/webpack/blob/\r\
 
 /***/ }),
 
+/***/ "./src/client/App.jsx":
+/*!****************************!*\
+  !*** ./src/client/App.jsx ***!
+  \****************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\n__webpack_require__(/*! ../styles/App.global.scss */ \"./src/styles/App.global.scss\");\r\nconst Header_1 = __webpack_require__(/*! ../shared/UI/Header/Header */ \"./src/shared/UI/Header/Header.jsx\");\r\nconst App = () => {\r\n    return (react_1.default.createElement(Header_1.Header, null));\r\n};\r\nexports[\"default\"] = App;\r\n\n\n//# sourceURL=webpack://ricc-app/./src/client/App.jsx?");
+
+/***/ }),
+
 /***/ "./src/client/index.jsx":
 /*!******************************!*\
   !*** ./src/client/index.jsx ***!
@@ -465,7 +595,7 @@ eval("\r\n/**\r\n * Based heavily on https://github.com/webpack/webpack/blob/\r\
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ \"./node_modules/@hot-loader/react-dom/index.js\"));\r\nconst Header_1 = __webpack_require__(/*! ../shared/UI/Header/Header */ \"./src/shared/UI/Header/Header.jsx\");\r\nwindow.addEventListener('load', () => {\r\n    react_dom_1.default.hydrate(react_1.default.createElement(Header_1.Header, null), document.getElementById('reactDom'));\r\n});\r\n\n\n//# sourceURL=webpack://ricc-app/./src/client/index.jsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ \"./node_modules/@hot-loader/react-dom/index.js\"));\r\nconst App_1 = __importDefault(__webpack_require__(/*! ./App */ \"./src/client/App.jsx\"));\r\nwindow.addEventListener('load', () => {\r\n    react_dom_1.default.hydrate(react_1.default.createElement(App_1.default, null), document.getElementById('reactDom'));\r\n});\r\n\n\n//# sourceURL=webpack://ricc-app/./src/client/index.jsx?");
 
 /***/ }),
 
@@ -476,7 +606,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.Header = void 0;\r\nconst root_1 = __webpack_require__(/*! react-hot-loader/root */ \"./node_modules/react-hot-loader/root.js\");\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst header_scss_1 = __importDefault(__webpack_require__(/*! ./header.scss */ \"./src/shared/UI/Header/header.scss\"));\r\nconst HeaderComponent = () => {\r\n    console.log(header_scss_1.default);\r\n    return (react_1.default.createElement(\"header\", { className: header_scss_1.default.test },\r\n        react_1.default.createElement(\"h1\", { className: header_scss_1.default.test__test }, \"Header Test\"),\r\n        react_1.default.createElement(\"p\", null, \"hello there\")));\r\n};\r\nexports.Header = (0, root_1.hot)(HeaderComponent);\r\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/Header.jsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.Header = void 0;\r\nconst root_1 = __webpack_require__(/*! react-hot-loader/root */ \"./node_modules/react-hot-loader/root.js\");\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\r\nconst Header_scss_1 = __importDefault(__webpack_require__(/*! ./Header.scss */ \"./src/shared/UI/Header/Header.scss\"));\r\nconst HeaderComponent = () => {\r\n    console.log(Header_scss_1.default);\r\n    return (react_1.default.createElement(\"header\", { className: Header_scss_1.default.header },\r\n        react_1.default.createElement(\"div\", { className: Header_scss_1.default.container += \" site-container\" },\r\n            react_1.default.createElement(\"a\", { className: Header_scss_1.default.logo, href: \"/\" }),\r\n            react_1.default.createElement(\"ul\", { className: Header_scss_1.default.btns },\r\n                react_1.default.createElement(\"li\", { className: Header_scss_1.default.btnItem },\r\n                    react_1.default.createElement(\"a\", { className: Header_scss_1.default.btn, href: \"/\" }, \"Benefits\")),\r\n                react_1.default.createElement(\"li\", { className: Header_scss_1.default.btnItem },\r\n                    react_1.default.createElement(\"a\", { className: Header_scss_1.default.btn, href: \"/\" }, \"RICC\")),\r\n                react_1.default.createElement(\"li\", { className: Header_scss_1.default.btnItem },\r\n                    react_1.default.createElement(\"a\", { className: Header_scss_1.default.btn, href: \"/\" }, \"Contact us\")),\r\n                react_1.default.createElement(\"li\", { className: Header_scss_1.default.btnItem },\r\n                    react_1.default.createElement(\"button\", { className: \"button\" }, \"Try demo\"))))));\r\n};\r\nexports.Header = (0, root_1.hot)(HeaderComponent);\r\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/Header.jsx?");
 
 /***/ })
 
@@ -540,6 +670,18 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /******/ 		__webpack_require__.amdO = {};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/get javascript update chunk filename */
 /******/ 	(() => {
 /******/ 		// This function allow to reference all chunks
@@ -556,7 +698,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("2887eb81dc29a3287c5f")
+/******/ 		__webpack_require__.h = () => ("c8a1809246a851952286")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -607,6 +749,17 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
 /******/ 			script.onload = onScriptComplete.bind(null, script.onload);
 /******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
 /******/ 	

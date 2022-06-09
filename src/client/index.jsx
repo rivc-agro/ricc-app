@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from "react-dom";
-import { Header } from "../shared/UI/Header/Header";
+import App from './App';
 
 window.addEventListener('load', () => {
-    ReactDom.hydrate(<Header/>, document.getElementById('reactDom'))
+    ReactDom.hydrate(<App/>, document.getElementById('reactDom'))
 })

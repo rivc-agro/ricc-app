@@ -9,13 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/shared/UI/Header/header.scss":
+/***/ "./src/shared/UI/Header/Header.scss":
 /*!******************************************!*\
-  !*** ./src/shared/UI/Header/header.scss ***!
+  !*** ./src/shared/UI/Header/Header.scss ***!
   \******************************************/
 /***/ ((module) => {
 
-eval("// Exports\nmodule.exports = {\n\t\"test\": \"header-test--bhB3f\",\n\t\"test__test\": \"header-test__test--1-BXA\"\n};\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/header.scss?");
+eval("// Exports\nmodule.exports = {\n\t\"header\": \"Header-header--nNTur\",\n\t\"container\": \"Header-container--2RO7d\",\n\t\"logo\": \"Header-logo--245Bb\",\n\t\"btns\": \"Header-btns--3o9FD\",\n\t\"btnItem\": \"Header-btnItem--ku5St\",\n\t\"btn\": \"Header-btn--2ezXD\"\n};\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/Header.scss?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("// Exports\nmodule.exports = {\n\t\"test\": \"header-test--bhB3f\",\n\t\"t
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.indextemplate = void 0;\r\nconst indextemplate = (content) => `\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n    <script src=\"/static/client.js\" type=\"application/javascript\"></script>\r\n</head>\r\n<body>\r\n    <div id=\"reactDom\">${content}</div>\r\n</body>\r\n</html>\r\n`;\r\nexports.indextemplate = indextemplate;\r\n\n\n//# sourceURL=webpack://ricc-app/./src/server/indexTemplate.js?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.indextemplate = void 0;\r\nconst indextemplate = (content) => `\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <meta name=\"description\" content=\"Описание сайта\">\r\n    <title>Главная | RICC</title>\r\n    <script src=\"/static/client.js\" type=\"application/javascript\"></script>\r\n</head>\r\n<body>\r\n    <div id=\"reactDom\">${content}</div>\r\n</body>\r\n</html>\r\n`;\r\nexports.indextemplate = indextemplate;\r\n\n\n//# sourceURL=webpack://ricc-app/./src/server/indexTemplate.js?");
 
 /***/ }),
 
@@ -48,7 +48,7 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.Header = void 0;\r\nconst root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst header_scss_1 = __importDefault(__webpack_require__(/*! ./header.scss */ \"./src/shared/UI/Header/header.scss\"));\r\nconst HeaderComponent = () => {\r\n    console.log(header_scss_1.default);\r\n    return (react_1.default.createElement(\"header\", { className: header_scss_1.default.test },\r\n        react_1.default.createElement(\"h1\", { className: header_scss_1.default.test__test }, \"Header Test\"),\r\n        react_1.default.createElement(\"p\", null, \"hello there\")));\r\n};\r\nexports.Header = (0, root_1.hot)(HeaderComponent);\r\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/Header.jsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.Header = void 0;\r\nconst root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst Header_scss_1 = __importDefault(__webpack_require__(/*! ./Header.scss */ \"./src/shared/UI/Header/Header.scss\"));\r\nconst HeaderComponent = () => {\r\n    console.log(Header_scss_1.default);\r\n    return (react_1.default.createElement(\"header\", { className: Header_scss_1.default.header },\r\n        react_1.default.createElement(\"div\", { className: Header_scss_1.default.container += \" site-container\" },\r\n            react_1.default.createElement(\"a\", { className: Header_scss_1.default.logo, href: \"/\" }),\r\n            react_1.default.createElement(\"ul\", { className: Header_scss_1.default.btns },\r\n                react_1.default.createElement(\"li\", { className: Header_scss_1.default.btnItem },\r\n                    react_1.default.createElement(\"a\", { className: Header_scss_1.default.btn, href: \"/\" }, \"Benefits\")),\r\n                react_1.default.createElement(\"li\", { className: Header_scss_1.default.btnItem },\r\n                    react_1.default.createElement(\"a\", { className: Header_scss_1.default.btn, href: \"/\" }, \"RICC\")),\r\n                react_1.default.createElement(\"li\", { className: Header_scss_1.default.btnItem },\r\n                    react_1.default.createElement(\"a\", { className: Header_scss_1.default.btn, href: \"/\" }, \"Contact us\")),\r\n                react_1.default.createElement(\"li\", { className: Header_scss_1.default.btnItem },\r\n                    react_1.default.createElement(\"button\", { className: \"button\" }, \"Try demo\"))))));\r\n};\r\nexports.Header = (0, root_1.hot)(HeaderComponent);\r\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/Header.jsx?");
 
 /***/ }),
 
