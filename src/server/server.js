@@ -1,7 +1,7 @@
 import express from 'express';
 import ReactDom from 'react-dom/server';
-import { Header } from '../shared/UI/Header/Header';
 import { indextemplate } from './indexTemplate';
+import App from '../shared/App';
 
 const app = express();
 
@@ -9,7 +9,7 @@ app.use('/static', express.static('./dist/client'));
 
 app.get('/', (req, res) => {
     res.send(
-        indextemplate(ReactDom.renderToString(Header())),
+        indextemplate(ReactDom.renderToString(App())),
     );
 });
 

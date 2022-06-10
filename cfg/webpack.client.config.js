@@ -39,7 +39,7 @@ module.exports = {
         rules: [
             {
                 test: /\.[jt]sx?$/,
-                use: ['ts-loader']
+                use: ['ts-loader'],
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -54,20 +54,40 @@ module.exports = {
                             }
                         }
                     },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: false,
+                            postcssOptions: {
+                                config: path.resolve(__dirname, "postcss.config.js"),
+                            },
+                        }
+                    },
                     'sass-loader',
                 ],
                 exclude: GLOBAL_SCSS_REGEX,
             },
             {
                 test: GLOBAL_SCSS_REGEX,
-                use: ['style-loader', 'css-loader' ,'sass-loader']
+                use: ['style-loader', 'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: false,
+                            postcssOptions: {
+                                config: path.resolve(__dirname, "postcss.config.js"),
+                            },
+                        }
+                    },
+                    'sass-loader'
+                ]
             },
             {
                 // Fonts
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]'
+                    name: '[name].[ext]',
                 }
             }
         ]

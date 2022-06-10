@@ -1,7 +1,6 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const NODE_ENV = process.env.NODE_ENV;
-const copyWebpack = require('copy-webpack-plugin');
 
 const GLOBAL_SCSS_REGEX = /\.global\.scss/
 
@@ -26,7 +25,8 @@ module.exports = {
         rules: [
             {
                 test: /\.[jt]sx?$/,
-                use: ['ts-loader']
+                use: ['ts-loader'],
+                exclude: /node_modules/
             },
             {
                 test: /\.s[ac]ss$/i,
@@ -41,13 +41,33 @@ module.exports = {
                             onlyLocals: true,
                         }
                     },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: false,
+                            postcssOptions: {
+                                config: path.resolve(__dirname, "postcss.config.js"),
+                            },
+                        }
+                    },
                     'sass-loader',
                 ],
                 exclude: GLOBAL_SCSS_REGEX,
             },
             {
                 test: GLOBAL_SCSS_REGEX,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            sourceMap: false,
+                            postcssOptions: {
+                                config: path.resolve(__dirname, "postcss.config.js"),
+                            },
+                        }
+                    },
+                    'sass-loader'
+                ]
             },
             {
                 // Fonts
@@ -62,15 +82,4 @@ module.exports = {
     optimization: {
         minimize: false
     },
-    plugins: [
-        new copyWebpack({
-            patterns: [
-                // Fonts:
-                {
-                    from: `${PATHS.src}/assets/fonts`,
-                    to: `${PATHS.dist}/assets/fonts`
-                }
-            ]
-        })
-    ],
 };
