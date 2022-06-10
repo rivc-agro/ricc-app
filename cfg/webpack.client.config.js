@@ -84,7 +84,15 @@ module.exports = {
             },
             {
                 // Fonts
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                }
+            },
+            {
+                // imgs
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',
@@ -97,25 +105,6 @@ module.exports = {
         ? [
             new CleanWebpackPlugin(),
             new HotModuleReplacementPlugin(),
-            new copyWebpack({
-                patterns: [
-                    // Fonts:
-                    {
-                        from: `${PATHS.src}/assets/fonts`,
-                        to: `${PATHS.dist}/assets/fonts`
-                    },
-                ]
-            })
         ]
-        : [
-            new copyWebpack({
-                patterns: [
-                    // Fonts:
-                    {
-                        from: `${PATHS.src}/assets/fonts`,
-                        to: `${PATHS.dist}/assets/fonts`
-                    }
-                ]
-            })
-        ],
+        : [],
 };

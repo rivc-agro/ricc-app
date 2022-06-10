@@ -49,6 +49,16 @@ eval("// Exports\nmodule.exports = {\n\t\"header\": \"Header-header--nNTur\",\n\
 
 /***/ }),
 
+/***/ "./src/shared/pages/sections/intro/intro.scss":
+/*!****************************************************!*\
+  !*** ./src/shared/pages/sections/intro/intro.scss ***!
+  \****************************************************/
+/***/ ((module) => {
+
+eval("// Exports\nmodule.exports = {\n\t\"intro\": \"intro-intro--1wit8\",\n\t\"container\": \"intro-container--1PKon\",\n\t\"block\": \"intro-block--sYXks\",\n\t\"headingText\": \"intro-headingText--1oYkY\",\n\t\"heading\": \"intro-heading--LA57g\",\n\t\"text\": \"intro-text--18wNh\",\n\t\"btns\": \"intro-btns--3nZX4\",\n\t\"btnDemo\": \"intro-btnDemo--2Rjw4\",\n\t\"modMore\": \"intro-modMore--s23aU\",\n\t\"intro__btn-demo-img\": \"intro-intro__btn-demo-img--1t015\",\n\t\"btnDemoImg\": \"intro-btnDemoImg--Xd1Wz\",\n\t\"btnDemoSmallText\": \"intro-btnDemoSmallText--2bYfE\",\n\t\"btnDemoText\": \"intro-btnDemoText--1jjoY\",\n\t\"btnDemoIcon\": \"intro-btnDemoIcon--1KQwi\"\n};\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/pages/sections/intro/intro.scss?");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/runtime/api.js":
 /*!*****************************************************!*\
   !*** ./node_modules/css-loader/dist/runtime/api.js ***!
@@ -232,7 +242,18 @@ eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod)
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst Main = () => {\r\n    return (react_1.default.createElement(\"main\", { className: \"page-main main\" }));\r\n};\r\nexports[\"default\"] = Main;\r\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/pages/Main.jsx?");
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst Intro_1 = __webpack_require__(/*! ./sections/intro/Intro */ \"./src/shared/pages/sections/intro/Intro.jsx\");\r\nconst Main = () => {\r\n    return (react_1.default.createElement(\"main\", { className: \"page-main main\" },\r\n        react_1.default.createElement(Intro_1.Intro, null)));\r\n};\r\nexports[\"default\"] = Main;\r\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/pages/Main.jsx?");
+
+/***/ }),
+
+/***/ "./src/shared/pages/sections/intro/Intro.jsx":
+/*!***************************************************!*\
+  !*** ./src/shared/pages/sections/intro/Intro.jsx ***!
+  \***************************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\r\nexports.Intro = void 0;\r\nconst root_1 = __webpack_require__(/*! react-hot-loader/root */ \"react-hot-loader/root\");\r\nconst react_1 = __importDefault(__webpack_require__(/*! react */ \"react\"));\r\nconst intro_scss_1 = __importDefault(__webpack_require__(/*! ./intro.scss */ \"./src/shared/pages/sections/intro/intro.scss\"));\r\nconst introComponent = () => {\r\n    return (react_1.default.createElement(\"section\", { className: intro_scss_1.default.intro },\r\n        react_1.default.createElement(\"div\", { className: \"site-container\" },\r\n            react_1.default.createElement(\"div\", { className: intro_scss_1.default.container },\r\n                react_1.default.createElement(\"div\", { className: intro_scss_1.default.block },\r\n                    react_1.default.createElement(\"p\", { className: intro_scss_1.default.headingText },\r\n                        \"Business intelligence 123\",\r\n                        react_1.default.createElement(\"span\", null, \" in agriculture\"))),\r\n                react_1.default.createElement(\"div\", { className: intro_scss_1.default.block },\r\n                    react_1.default.createElement(\"h1\", { className: intro_scss_1.default.heading }, \"Start making decisions based on all data\"),\r\n                    react_1.default.createElement(\"p\", { className: intro_scss_1.default.text }, \"Business analysis with BI help you to use data effectively to manage your farm with maximum benefit.\"),\r\n                    react_1.default.createElement(\"div\", { className: intro_scss_1.default.btns },\r\n                        react_1.default.createElement(\"button\", { className: intro_scss_1.default.btnDemo },\r\n                            react_1.default.createElement(\"span\", { className: intro_scss_1.default.btnDemoSmallText }, \"try the demo now\"),\r\n                            react_1.default.createElement(\"span\", { className: intro_scss_1.default.btnDemoText }, \"Try demo\")),\r\n                        react_1.default.createElement(\"button\", { className: intro_scss_1.default.btnDemo + intro_scss_1.default.modMore },\r\n                            react_1.default.createElement(\"span\", { className: intro_scss_1.default.btnDemoText }, \"Know more about our solution\"))))))));\r\n};\r\nexports.Intro = (0, root_1.hot)(introComponent);\r\n\n\n//# sourceURL=webpack://ricc-app/./src/shared/pages/sections/intro/Intro.jsx?");
 
 /***/ }),
 
