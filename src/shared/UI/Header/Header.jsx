@@ -2,6 +2,8 @@ import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import styles from './Header.scss';
 import { Button } from '../Button/Button.jsx';
+import { Logo } from '../Logo/Logo';
+
 
 const HeaderComponent = () => {
     const NavItems = [
@@ -23,13 +25,20 @@ const HeaderComponent = () => {
         <header className={styles.header}>
             <div className={styles.container + ' site-container'}>
                 <a className={styles.logo} href="">
-                    <img className="logo__img" src="" alt="RICC Logo" />
+                    <Logo />
                 </a>
                 <ul className={styles.btns}>
                     {
                         NavItems.map(item =>
-                            <li key={item.name} className={styles.btnItem}>
-                                <a className={styles.btn} href={item.link}>{item.name}</a>
+                            <li
+                                key={item.name}
+                                className={styles.btnItem}>
+                                <a
+                                    className={styles.btn}
+                                    href={item.link}
+                                >
+                                    {item.name}
+                                </a>
                             </li>
                         )
                     }

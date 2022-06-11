@@ -1,7 +1,6 @@
 const path = require('path');
 const { HotModuleReplacementPlugin } = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const copyWebpack = require('copy-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
 const IS_DEV = NODE_ENV === 'development';
