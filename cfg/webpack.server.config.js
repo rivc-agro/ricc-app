@@ -4,11 +4,6 @@ const NODE_ENV = process.env.NODE_ENV;
 
 const GLOBAL_SCSS_REGEX = /\.global\.scss/
 
-const PATHS = {
-    src: path.resolve(__dirname, '../src'),
-    dist: path.resolve(__dirname, '../dist'),
-}
-
 module.exports = {
     target: "node",
     mode: NODE_ENV ? NODE_ENV : 'development',
@@ -25,9 +20,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.[jt]sx?$/,
-                use: ['ts-loader'],
-                exclude: /node_modules/
+                test: /\.(js|jsx|mjs)?$/,
+                exclude: [/node_modules/],
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
             {
                 test: /\.s[ac]ss$/i,

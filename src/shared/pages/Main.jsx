@@ -1,6 +1,7 @@
 import React from 'react';
 import { Benefits } from './sections/Benefits/Benefits';
 import { Intro } from './sections/Intro/Intro';
+import { Types } from './sections/Types/Types';
 
 const Main = () => {
     return (
@@ -10,9 +11,9 @@ const Main = () => {
                 <div className="grid-container__block">
                     <Intro />
                     <Benefits />
+                    <Types />
                 </div>
             </div>
-
         </main>
     );
 };

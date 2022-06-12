@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Header.scss';
 import { Button } from '../Button/Button.jsx';
 import { Logo } from '../Logo/Logo';
-
+import { Link  } from 'react-router-dom';
 
 const HeaderComponent = () => {
     const NavItems = [
@@ -24,9 +24,9 @@ const HeaderComponent = () => {
     return (
         <header className={styles.header}>
             <div className={styles.container + ' site-container'}>
-                <a className={styles.logo} href="">
+                <Link className={[styles.logo, 'logo'].join(' ')} to='/'>
                     <Logo />
-                </a>
+                </Link>
                 <ul className={styles.btns}>
                     {
                         NavItems.map(item =>
@@ -43,9 +43,7 @@ const HeaderComponent = () => {
                         )
                     }
                     <li className={styles.btnItem}>
-                        <Button>
-                            Try Demo
-                        </Button>
+                        <Link className={styles.demoBtn} to='/demo'>Try Demo</Link>
                     </li>
                 </ul>
             </div>

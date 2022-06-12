@@ -12,11 +12,6 @@ const setupDevtool = () => {
     if (IS_PROD) return false;
 };
 
-const PATHS = {
-    src: path.resolve(__dirname, '../src'),
-    dist: path.resolve(__dirname, '../dist'),
-}
-
 module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json'],
@@ -37,8 +32,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.[jt]sx?$/,
-                use: ['ts-loader'],
+                test: /\.(js|jsx|mjs)?$/,
+                exclude: [/node_modules/],
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
             {
                 test: /\.s[ac]ss$/i,
