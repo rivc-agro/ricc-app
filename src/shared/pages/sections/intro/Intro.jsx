@@ -1,26 +1,14 @@
 import { hot } from 'react-hot-loader/root';
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import styles from './intro.scss';
 import StrapiAPI from '../../../../API/StrapiAPI';
 import ArrowRight from '../../../UI/Icons/ArrowRight';
 import IconPolygons from '../../../UI/Icons/IconPolygons';
 import BtnImg from '../../../../assets/img/intro-btn-tablet.png';
+import { AppContext } from '../../../../context';
 
 const introComponent = () => {
-    const [heading, setHeading] = useState(null);
-    const [descr, setDescr] = useState(null);
-
-    async function fetchIntro() {
-        const IntroInfo = await StrapiAPI.getIntro();
-        const DataHeading = IntroInfo.data[0].attributes.heading;
-        const DataDescr = IntroInfo.data[0].attributes.description;
-        setHeading(DataHeading);
-        setDescr(DataDescr);
-    };
-
-    useEffect(() => {
-        fetchIntro();
-    }, [setHeading, setDescr]);
+    const { APIdata, setAPIdata } = useContext(AppContext);
 
     return (
         <section className={styles.intro}>
@@ -31,12 +19,11 @@ const introComponent = () => {
                     </p>
                 </div>
                 <div className={styles.block}>
-                    <h1 className="visually-hidden">START MAKING DECISIONS BASED ON ALL DATA</h1>
                     <div className={styles.heading}>
-                        { heading }
+                        { APIdata.heading }
                     </div>
                     <p className={styles.text}>
-                        { descr }
+                        { APIdata.description }
                     </p>
                     <div className={styles.btns}>
                         <button className={styles.btnDemo}>

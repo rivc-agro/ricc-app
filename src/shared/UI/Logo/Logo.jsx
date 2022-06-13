@@ -1,24 +1,15 @@
 import { hot } from 'react-hot-loader/root';
 import React, {useState, useEffect, useContext } from 'react';
 import StrapiAPI from '../../../API/StrapiAPI';
+import { AppContext } from '../../../context';
 
 const LogoComponent = () => {
-    const [logo, setLogo] = useState(null);
-
-    async function fetchLogo() {
-        const logoData = await StrapiAPI.getLogo();
-        const url = logoData.data[0].attributes.logo.data.attributes.url;
-        setLogo(url);
-    };
-
-    useEffect(() => {
-        fetchLogo();
-    }, [setLogo]);
+    const { APIdata, setAPIdata } = useContext(AppContext);
 
     return (
         <img
             className="logo__img"
-            src={'http://localhost:1337' + logo }
+            src={'http://localhost:1337' + APIdata.logo}
             alt="RICC Logo" />
     );
 };

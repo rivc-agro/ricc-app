@@ -1,20 +1,12 @@
 import { hot } from 'react-hot-loader/root';
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import StrapiAPI from '../../../../API/StrapiAPI';
 import styles from './Benefits.scss';
 import { BenefitItem } from '../../../UI/BenefitItem/BenefitItem';
+import { AppContext } from '../../../../context';
 
 const BenefitsComponent = () => {
-    const [BenefitsList, setBenefitsList] = useState([]);
-
-    async function fetchBenefitItems() {
-        const response = await StrapiAPI.getBenefits();
-        setBenefitsList(response.data);
-    };
-
-    useEffect(() => {
-        fetchBenefitItems();
-    }, [setBenefitsList]);
+    const { APIdata, setAPIdata } = useContext(AppContext);
 
     return (
         <section className={styles.benefits}>
@@ -38,15 +30,15 @@ const BenefitsComponent = () => {
                 <div className={styles.bodyContainerBlock}>
                     <ul className={styles.list}>
                         {
-                            BenefitsList.map(item =>
+                            APIdata.benefits.map(item =>
                                 <BenefitItem 
                                     key={item.id} 
                                     class={styles.item}
                                     classImg={styles.itemImg}
-                                    srcImg={'http://localhost:1337' + item.attributes.icon.data[0].attributes.url}
-                                    altImg={item.attributes.icon.data[0].attributes.caption}
+                                    srcImg={'http://localhost:1337' + item.iconURL}
+                                    altImg={item.iconCaption}
                                     classCaption={styles.itemCaption}
-                                    caption={item.attributes.descr}
+                                    caption={item.caption}
                                 />
                             )
                         }

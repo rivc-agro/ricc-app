@@ -6,6 +6,8 @@ import App from '../shared/App';
 window.addEventListener('load', () => {
     ReactDom.hydrate(
         <BrowserRouter>
-            <App />
-        </BrowserRouter>, document.getElementById('reactDom'))
+            <App serverData={window.__INITIAL_DATA__} />
+        </BrowserRouter>
+        ,
+        document.getElementById('reactDom'))
 })

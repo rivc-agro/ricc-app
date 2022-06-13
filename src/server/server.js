@@ -3,22 +3,59 @@ import React from 'react';
 import ReactDom from 'react-dom/server';
 import { indextemplate } from './indexTemplate';
 import { StaticRouter } from 'react-router-dom/server';
+import serialize from 'serialize-javascript';
 import App from '../shared/App';
+import StrapiAPI from '../API/StrapiAPI';
 
 const app = express();
+let data = {};
 
 app.use('/static/', express.static('./dist/client'));
 
+StrapiAPI.getLogo()
+    .then((resp) => {
+        data.logo = resp.data[0].attributes.logo.data.attributes.url;
+    });
+
+StrapiAPI.getIntro()
+    .then((resp) => {
+        data.heading = resp.data[0].attributes.heading;
+    });
+
+StrapiAPI.getIntro()
+    .then((resp) => {
+        data.description = resp.data[0].attributes.description;
+    });
+
+StrapiAPI.getBenefits()
+    .then((resp) => {
+        const respData = resp.data;
+        data.benefits = [];
+
+        respData.map((item, i) => {
+            data.benefits.push(
+                {
+                    id: item.id,
+                    iconURL: item.attributes.icon.data[0].attributes.url,
+                    iconCaption: item.attributes.icon.data[0].attributes.caption,
+                    caption: item.attributes.descr
+                }
+            )
+        });
+    });
+
 app.get('*', (req, res) => {
+    const markup = ReactDom.renderToString(
+        <StaticRouter location={req.url}>
+            <App serverData={data} />
+        </StaticRouter>
+    );
+
     res.send(
-        indextemplate(ReactDom.renderToString(
-            <StaticRouter location={req.url}>
-                <App />
-            </StaticRouter>
-        )),
+        indextemplate(markup, serialize(data))
     );
 });
 
 app.listen(3000, () => {
-    console.log("server started on localhost:3000");
+    console.log("server started on http://localhost:3000");
 });
