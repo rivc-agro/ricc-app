@@ -16,7 +16,11 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.json']
     },
-    externals: [nodeExternals()],
+    externals: [nodeExternals({
+        allowlist: [
+            'swiper'
+        ]
+    })],
     module: {
         rules: [
             {

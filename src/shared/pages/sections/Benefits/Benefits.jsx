@@ -1,9 +1,9 @@
 import { hot } from 'react-hot-loader/root';
 import React, { useContext } from 'react';
-import StrapiAPI from '../../../../API/StrapiAPI';
 import styles from './Benefits.scss';
 import { BenefitItem } from '../../../UI/BenefitItem/BenefitItem';
 import { AppContext } from '../../../../context';
+import { server } from '../../../../data/data';
 
 const BenefitsComponent = () => {
     const { APIdata, setAPIdata } = useContext(AppContext);
@@ -35,7 +35,7 @@ const BenefitsComponent = () => {
                                     key={item.id} 
                                     class={styles.item}
                                     classImg={styles.itemImg}
-                                    srcImg={'http://localhost:1337' + item.iconURL}
+                                    srcImg={[server, item.iconURL].join('')}
                                     altImg={item.iconCaption}
                                     classCaption={styles.itemCaption}
                                     caption={item.caption}

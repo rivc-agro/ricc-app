@@ -23,6 +23,7 @@
     font: var(--font-heading-h3);
     text-transform: uppercase;
     max-width: 41.6rem;
+    opacity: 0;
 
     span {
         display: block;
@@ -40,6 +41,7 @@
     text-transform: uppercase;
     max-width: 67.4rem;
     margin-bottom: 10rem;
+    opacity: 0;
 }
 
 .text {
@@ -47,6 +49,7 @@
     font: var(--font-body-M);
     color: var(--color-purple-text);
     margin-bottom: 4.8rem;
+    opacity: 0;
 }
 
 .btns {
@@ -111,4 +114,11 @@
 
 .btnDemoIcon {
     fill: #3B496D;
+}
+
+.bgCircleImg {
+    position: absolute;
+    top: 36.7rem;
+    left: 0;
+    mix-blend-mode: lighten;
 }

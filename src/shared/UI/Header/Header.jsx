@@ -1,7 +1,6 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import styles from './Header.scss';
-import { Button } from '../Button/Button.jsx';
 import { Logo } from '../Logo/Logo';
 import { Link  } from 'react-router-dom';
 
