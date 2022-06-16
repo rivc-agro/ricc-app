@@ -33,13 +33,13 @@
 
 .bodyContainer {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(11, 1fr);
     gap: var(--grid-offset);
 }
 
 .bodyContainerBlock {
     &:nth-child(1) {
-        grid-column: 3 span;
+        grid-column: 2 span;
     }
 
     &:nth-child(2) {

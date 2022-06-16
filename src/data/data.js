@@ -1,4 +1,4 @@
-const server = 'http://localhost:1337';
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjU0ODY2MjE3LCJleHAiOjE2NTc0NTgyMTd9.BoWbvEDPyP_Uo6Z0I5o2BeWlOH_ynRJiIci4Qqo2UxI';
+const server = 'http://app.nailgalimov.site';
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU1Mjk3ODg1LCJleHAiOjE2NTc4ODk4ODV9.J8Y8hDtEEMsZBFeeGxfpUsYeBT1FkPGCi_D93_fCF78';
 
 export {server, token};

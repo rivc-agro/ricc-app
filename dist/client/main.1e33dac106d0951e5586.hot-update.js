@@ -1,0 +1,30 @@
+"use strict";
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+self["webpackHotUpdatericc_app"]("main",{
+
+/***/ "./src/shared/UI/Header/Header.jsx":
+/*!*****************************************!*\
+  !*** ./src/shared/UI/Header/Header.jsx ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Header\": function() { return /* binding */ Header; }\n/* harmony export */ });\n/* harmony import */ var react_hot_loader_root__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-hot-loader/root */ \"./node_modules/react-hot-loader/root.js\");\n/* harmony import */ var react_hot_loader_root__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_hot_loader_root__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header.scss */ \"./src/shared/UI/Header/Header.scss\");\n/* harmony import */ var _Header_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Header_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _Logo_Logo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Logo/Logo */ \"./src/shared/UI/Logo/Logo.jsx\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router/index.js\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/index.js\");\n/* harmony import */ var react_router_hash_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-hash-link */ \"./node_modules/react-router-hash-link/dist/react-router-hash-link.esm.js\");\n\n\n\n\n\n\n\nvar HeaderComponent = function HeaderComponent() {\n  var _useLocation = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useLocation)(),\n      pathname = _useLocation.pathname;\n\n  var NavItems = [{\n    name: \"Benefits\",\n    link: \"#Benefits\"\n  }, {\n    name: \"RICC\",\n    link: \"#RICC\"\n  }, {\n    name: \"Contact us\",\n    link: \"#contactUs\"\n  }];\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"header\", {\n    className: (_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().header)\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n    className: (_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().container) + ' site-container'\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {\n    className: [(_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().logo), 'logo'].join(' '),\n    to: \"/\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Logo_Logo__WEBPACK_IMPORTED_MODULE_2__.Logo, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"ul\", {\n    className: (_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().btns)\n  }, pathname !== '/' ? null : NavItems.map(function (item) {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"li\", {\n      key: item.name,\n      className: (_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().btnItem)\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_hash_link__WEBPACK_IMPORTED_MODULE_5__.HashLink, {\n      className: (_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().btn),\n      scroll: function scroll(el) {\n        return el.scrollIntoView({\n          behavior: 'smooth',\n          block: 'center'\n        });\n      },\n      to: item.link\n    }, item.name));\n  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"li\", {\n    className: (_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().btnItem)\n  }, pathname !== '/' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {\n    className: (_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().demoBtn),\n    to: \"/\"\n  }, \"Back To Main\") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {\n    className: (_Header_scss__WEBPACK_IMPORTED_MODULE_1___default().demoBtn),\n    to: \"/demo\"\n  }, \"Try Demo\")))));\n};\n\nvar Header = (0,react_hot_loader_root__WEBPACK_IMPORTED_MODULE_6__.hot)(HeaderComponent);\n\n//# sourceURL=webpack://ricc-app/./src/shared/UI/Header/Header.jsx?");
+
+/***/ })
+
+},
+/******/ function(__webpack_require__) { // webpackRuntimeModules
+/******/ /* webpack/runtime/getFullHash */
+/******/ !function() {
+/******/ 	__webpack_require__.h = function() { return "dff3e980b218bf7f8aaf"; }
+/******/ }();
+/******/ 
+/******/ }
+);

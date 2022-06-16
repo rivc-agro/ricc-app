@@ -8,6 +8,7 @@ import circle from '../../../../assets/img/circle.png';
 import { AppContext } from '../../../../context';
 import gsap from 'gsap';
 import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
+import { Link } from 'react-router-dom';
 // import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 gsap.registerPlugin(SplitText);
@@ -20,6 +21,8 @@ const introComponent = () => {
     const SplittedHeadingText = useRef();
     const SplittedCaptionText = useRef();
     const ScaleImage = useRef();
+    const BtnsLayer = useRef();
+    const timeLine = gsap.timeline();
 
     const spltText = (element, splittedElement) => {
         gsap.set(element.current, {
@@ -28,15 +31,6 @@ const introComponent = () => {
 
         gsap.set(splittedElement.lines, {
             overflow: 'hidden',
-        });
-
-        gsap.fromTo(splittedElement.chars, {
-            yPercent: 100
-        }, {
-            yPercent: 0,
-            duration: 0.2,
-            ease: 'power3.out',
-            duration: 0.9
         });
     };
 
@@ -62,11 +56,38 @@ const introComponent = () => {
 
         spltText(SplittedTex, splitedText);
         spltText(SplittedCaptionText, splitedCaptionText);
+
+        timeLine
+            .fromTo(splitedText.chars, {
+                yPercent: 100
+            }, {
+                yPercent: 0,
+                duration: 0.2,
+                ease: 'power3.out',
+                duration: 0.9,
+                delay: 0.2
+            })
+            .fromTo(splitedCaptionText.chars, {
+                yPercent: 100
+            }, {
+                yPercent: 0,
+                duration: 0.2,
+                ease: 'power3.out',
+                duration: 0.9,
+            }, '-=0.7')
+            .fromTo(BtnsLayer.current, {
+                height: 0,
+                opacity: 1
+            }, {
+                height: '100%',
+                ease: 'power3.out',
+                duration: 0.9,
+            }, '-=0.7');
     }, []);
-    
+
     return (
         <section className={styles.intro}>
-            <img src={circle} alt="" ref={ScaleImage} className={styles.bgCircleImg}/>
+            <img src={circle} alt="" ref={ScaleImage} className={styles.bgCircleImg} />
             <div className={styles.container}>
                 <div className={styles.block}>
                     <p className={styles.headingText} ref={SplittedHeadingText}>
@@ -81,16 +102,18 @@ const introComponent = () => {
                         {APIdata.description}
                     </p>
                     <div className={styles.btns}>
-                        <button className={styles.btnDemo}>
-                            <img className={styles.btnDemoImg} src={BtnImg} alt="tablet" />
-                            <span className={styles.btnDemoSmallText}>try the demo now</span>
-                            <span className={styles.btnDemoText}>Try demo</span>
-                        </button>
-                        <button className={[styles.btnDemo, styles.modMore].join(' ')}>
-                            <IconPolygons width="181" height="148" className={styles.btnDemoImg} />
-                            <ArrowRight width="19" height="8" className={['icon', 'icon-arrow', styles.btnDemoIcon].join(' ')} />
-                            <span className={styles.btnDemoText}>Know more about our solution</span>
-                        </button>
+                        <div className={styles.btnsAnimatedWrapper} ref={BtnsLayer}>
+                            <Link className={styles.btnDemo} to='/demo'>
+                                <img className={styles.btnDemoImg} src={BtnImg} alt="tablet" />
+                                <span className={styles.btnDemoSmallText}>try the demo now</span>
+                                <span className={styles.btnDemoText}>Try demo</span>
+                            </Link>
+                            <button className={[styles.btnDemo, styles.modMore].join(' ')}>
+                                <IconPolygons width="181" height="148" className={styles.btnDemoImg} />
+                                <ArrowRight width="19" height="8" className={['icon', 'icon-arrow', styles.btnDemoIcon].join(' ')} />
+                                <span className={styles.btnDemoText}>Know more about our solution</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

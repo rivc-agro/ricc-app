@@ -1,45 +1,66 @@
 import { hot } from 'react-hot-loader/root';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext, useRef, useLayoutEffect } from 'react'
 import SliderNav from '../../../UI/SlideNav/SliderNav';
 import styles from './Types.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {
     Navigation,
 } from "swiper";
-import StrapiAPI from '../../../../API/StrapiAPI';
 import { server } from '../../../../data/data';
+import { AppContext } from '../../../../context';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
+SwiperCore.use([
+    Navigation,
+]);
 
 const TypesComponent = () => {
-    const [SlidesList, setSlidesList] = useState([]);
+    const { SlidesList, setSlidesList } = useContext(AppContext);
+    const Heading = useRef();
+    const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
-    async function fetchSlidesList() {
-        const resp = await StrapiAPI.getTypesSliders();
-        setSlidesList(resp.data);
-    };
+    useIsomorphicLayoutEffect(() => {
+        const SplitedText = new SplitText(Heading.current, {
+            type: 'lines, chars',
+            linesClass: "line"
+        });
 
-    useEffect(() => {
-        fetchSlidesList();
-    }, [setSlidesList]);
+        gsap.set(SplitedText.lines, {
+            overflow: 'hidden',
+        });
 
-    SwiperCore.use([
-        Navigation,
-    ]);
+        gsap.fromTo(SplitedText.chars, {
+            yPercent: 100
+        }, {
+            scrollTrigger: {
+                trigger: Heading.current
+            },
+            yPercent: 0,
+            duration: 0.2,
+            ease: 'power3.out',
+            duration: 0.9,
+            delay: 0.2
+        });
+    }, []);
 
     return (
         <section className={[styles.types, styles.container].join(' ')}>
-            <h2 className={[styles.heading, 'site-second-heading'].join(' ')}>
+            <h2 className={[styles.heading, 'site-second-heading'].join(' ')} ref={Heading}>
                 It can be used for any types of farms
                 <span> and productions</span>
             </h2>
             <div className={styles.sliderContainer}>
                 <div className={styles.sliderContainerBlock}>
-                    <SliderNav 
-                        classes={{prev: "types-swiper-button-prev", next: "types-swiper-button-next"}} 
+                    <SliderNav
+                        classes={{ prev: "types-swiper-button-prev", next: "types-swiper-button-next" }}
                     />
                 </div>
                 <div className={styles.sliderContainerBlock}>
                     <Swiper className={styles.slider}
-                        spaceBetween={50}
+                        spaceBetween={0}
                         slidesPerView={3}
                         navigation={{
                             nextEl: ".types-swiper-button-next",

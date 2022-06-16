@@ -1,0 +1,29 @@
+.DemoContainer {
+    padding-top: 18.5rem;
+    display: flex;
+}
+
+.DemoImage {
+    display: block;
+    width: 85.2rem;
+    height: 50rem;
+    object-fit: contain;
+    margin-right: 8.8rem;
+}
+
+.DemoHeading {
+    font: var(--font-heading-h1);
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+}
+
+.DemoText {
+    font: var(--font-body-M);
+    color: var(--color-purple-text);
+    max-width: 53.5rem;
+    margin-bottom: 4rem;
+}
+
+.DemoContentWrapper {
+    margin-top: 7rem;
+}

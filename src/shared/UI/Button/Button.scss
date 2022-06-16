@@ -1,7 +1,8 @@
 .button {
-    padding: 1rem 2rem;
+    display: inline-block;
+    padding: 2rem 3.4rem;
     color: var(--color-white);
-    font: var(--font-btn-s);
+    font: 400 1.8rem/2.1rem var(--main-ff);
     text-transform: uppercase;
     letter-spacing: 0.09em;
     background-color: var(--color-accent1);

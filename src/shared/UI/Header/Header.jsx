@@ -1,10 +1,13 @@
 import { hot } from 'react-hot-loader/root';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Header.scss';
 import { Logo } from '../Logo/Logo';
-import { Link  } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 const HeaderComponent = () => {
+    const { pathname } = useLocation();
+
     const NavItems = [
         {
             name: "Benefits",
@@ -18,7 +21,7 @@ const HeaderComponent = () => {
             name: "Contact us",
             link: "#contactUs"
         }
-    ]
+    ];
 
     return (
         <header className={styles.header}>
@@ -27,22 +30,37 @@ const HeaderComponent = () => {
                     <Logo />
                 </Link>
                 <ul className={styles.btns}>
-                    {
+                    {pathname !== '/'
+                        ?
+                        null
+                        :
                         NavItems.map(item =>
                             <li
                                 key={item.name}
                                 className={styles.btnItem}>
-                                <a
+                                <HashLink
                                     className={styles.btn}
-                                    href={item.link}
+                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                                    to={item.link}
                                 >
                                     {item.name}
-                                </a>
+                                </HashLink>
                             </li>
                         )
                     }
                     <li className={styles.btnItem}>
-                        <Link className={styles.demoBtn} to='/demo'>Try Demo</Link>
+                        {
+                            pathname !== '/'
+                                ?
+                                <Link className={styles.demoBtn} to='/'>
+                                    Back To Main
+                                </Link>
+                                :
+                                <Link className={styles.demoBtn} to='/demo'>
+                                    Try Demo
+                                </Link>
+                        }
+
                     </li>
                 </ul>
             </div>

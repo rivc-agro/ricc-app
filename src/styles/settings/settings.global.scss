@@ -177,6 +177,11 @@ img {
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
+
+  background-image: url(../assets/img/page-bg.png);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 100% 206.2rem;
 }
 
 .page-main {
