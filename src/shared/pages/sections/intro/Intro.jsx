@@ -1,17 +1,18 @@
 import { hot } from 'react-hot-loader/root';
 import React, { useState, useContext, useEffect, useRef, useLayoutEffect } from 'react';
 import styles from './intro.scss';
+import sphere from '../../../../assets/img/spheres2.mp4';
 import ArrowRight from '../../../UI/Icons/ArrowRight';
 import IconPolygons from '../../../UI/Icons/IconPolygons';
-import BtnImg from '../../../../assets/img/intro-btn-tablet.png';
+import BtnImg from '../../../../assets/img/intro-btn-tablet2.png';
 import circle from '../../../../assets/img/circle.png';
 import { AppContext } from '../../../../context';
 import gsap from 'gsap';
 import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
 import { Link } from 'react-router-dom';
-// import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const introComponent = () => {
     const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
@@ -23,6 +24,7 @@ const introComponent = () => {
     const ScaleImage = useRef();
     const BtnsLayer = useRef();
     const timeLine = gsap.timeline();
+    const Vid = useRef();
 
     const spltText = (element, splittedElement) => {
         gsap.set(element.current, {
@@ -83,11 +85,26 @@ const introComponent = () => {
                 ease: 'power3.out',
                 duration: 0.9,
             }, '-=0.7');
+
+        gsap.to(Vid.current, {
+            scrollTrigger: {
+                trigger: Vid.current,
+                start: 'top top',
+                scrub: true,
+                // markers: true
+            },
+            scale: 0.7,
+            y: '20%',
+            transformOrigin: 'center left',
+        })
+
+        
     }, []);
 
     return (
         <section className={styles.intro}>
-            <img src={circle} alt="" ref={ScaleImage} className={styles.bgCircleImg} />
+            {/* <img src={circle} alt="" ref={ScaleImage} className={styles.bgCircleImg} /> */}
+            <video src={sphere} className={styles.bgCircleImg} ref={Vid} playsInline muted autoPlay loop></video>
             <div className={styles.container}>
                 <div className={styles.block}>
                     <p className={styles.headingText} ref={SplittedHeadingText}>

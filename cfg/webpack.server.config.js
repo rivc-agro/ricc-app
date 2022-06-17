@@ -84,7 +84,15 @@ module.exports = {
             },
             {
                 // imgs
-                test: /\.(png|jpe?g|gif|svg)$/i,
+                test: /\.(png|jpe?g|gif|svg|webp)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                }
+            },
+            {
+                // vids
+                test: /\.(mov|mp4)$/i,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]',

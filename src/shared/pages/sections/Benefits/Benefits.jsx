@@ -48,7 +48,6 @@ const BenefitsComponent = () => {
             },
             y: 0,
             opacity: 1,
-            duration: 0.2,
             ease: 'power3.out',
             duration: 0.9,
             delay: 0.2
@@ -85,6 +84,7 @@ const BenefitsComponent = () => {
                                     srcImg={[server, item.iconURL].join('')}
                                     altImg={item.iconCaption}
                                     classCaption={styles.itemCaption}
+                                    classInner={styles.itemInner}
                                     caption={item.caption}
                                 />
                             )

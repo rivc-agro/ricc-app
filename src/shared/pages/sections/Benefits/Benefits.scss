@@ -26,6 +26,7 @@
 
 .headingText {
     font: var(--font-body-M);
+    font-weight: 300;
     max-width: 53.5rem;
     color: var(--color-purple-text);
     padding-top: 15rem;
@@ -55,6 +56,9 @@
 
 .item {
     grid-column: 3 span;
+}
+
+.itemInner {
     display: flex;
     align-items: center;
 }

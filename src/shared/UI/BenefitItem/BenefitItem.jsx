@@ -1,17 +1,22 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
+import FadeIn from '../FadeIn/FadeIn';
 
 const BenefitItemComponent = (props) => {
     return (
         <li className={props.class}>
-            <img
-                className={props.classImg}
-                src={props.srcImg}
-                alt={props.altImg} 
-            />
-            <span className={props.classCaption} >
-                {props.caption}
-            </span>
+            <FadeIn>
+                <div className={props.classInner}>
+                    <img
+                        className={props.classImg}
+                        src={props.srcImg}
+                        alt={props.altImg} 
+                    />
+                    <span className={props.classCaption} >
+                        {props.caption}
+                    </span>
+                </div>
+            </FadeIn>
         </li>
     );
 };

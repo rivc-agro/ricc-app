@@ -97,6 +97,14 @@ module.exports = {
                 options: {
                     name: '[name].[ext]',
                 }
+            },
+            {
+                // vids
+                test: /\.(mov|mp4)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                }
             }
         ]
     },

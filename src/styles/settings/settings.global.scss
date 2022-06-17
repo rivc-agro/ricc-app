@@ -263,8 +263,5 @@ select:-webkit-autofill:focus {
 .site-second-heading {
   font: var(--font-heading-h2);
   text-transform: uppercase;
-
-  span {
-    font-weight: 300;
-  }
+  font-weight: 300;
 }

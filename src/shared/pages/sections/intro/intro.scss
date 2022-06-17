@@ -47,6 +47,7 @@
 .text {
     max-width: 53.5rem;
     font: var(--font-body-M);
+    font-weight: 300;
     color: var(--color-purple-text);
     margin-bottom: 4.8rem;
     opacity: 0;
@@ -81,7 +82,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-image: url(../../../../assets/img/intro-btn-bg.png);
+    background-image: url(../../../../assets/img/intro-btn-bg2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -127,13 +128,27 @@
 }
 
 .btnDemoIcon {
-    fill: #3B496D;
+    color: #3B496D;
 }
 
 .bgCircleImg {
     position: absolute;
-    top: 36.7rem;
-    left: 0;
+    top: 25.7rem;
+    left: -15rem;
     z-index: -1;
     mix-blend-mode: lighten;
+    width: 110rem;
+    height: auto;
+    object-fit: cover;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

@@ -11,6 +11,7 @@ import { AppContext } from '../../../../context';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
+import FadeIn from '../../../UI/FadeIn/FadeIn';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 SwiperCore.use([
@@ -39,7 +40,6 @@ const TypesComponent = () => {
                 trigger: Heading.current
             },
             yPercent: 0,
-            duration: 0.2,
             ease: 'power3.out',
             duration: 0.9,
             delay: 0.2
@@ -52,46 +52,48 @@ const TypesComponent = () => {
                 It can be used for any types of farms
                 <span> and productions</span>
             </h2>
-            <div className={styles.sliderContainer}>
-                <div className={styles.sliderContainerBlock}>
-                    <SliderNav
-                        classes={{ prev: "types-swiper-button-prev", next: "types-swiper-button-next" }}
-                    />
-                </div>
-                <div className={styles.sliderContainerBlock}>
-                    <Swiper className={styles.slider}
-                        spaceBetween={0}
-                        slidesPerView={3}
-                        navigation={{
-                            nextEl: ".types-swiper-button-next",
-                            prevEl: ".types-swiper-button-prev",
-                        }}
-                    >
-                        {
-                            SlidesList.map(item =>
-                                <SwiperSlide key={item.id}>
-                                    <div className={styles.item}>
-                                        <div className={styles.itemImageWrapper}>
-                                            <div className={[styles.itemImageBg, styles.itemImageBg1].join(' ')}></div>
-                                            <div className={[styles.itemImageBg, styles.itemImageBg2].join(' ')}></div>
-                                            <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot1].join(' ')}></div>
-                                            <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot2].join(' ')}></div>
-                                            <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot3].join(' ')}></div>
-                                            <img
-                                                src={[server, item.attributes.Image.data.attributes.url].join('')}
-                                                className={styles.img}
-                                                alt={item.attributes.Image.data.attributes.url} />
+            <FadeIn>
+                <div className={styles.sliderContainer}>
+                    <div className={styles.sliderContainerBlock}>
+                        <SliderNav
+                            classes={{ prev: "types-swiper-button-prev", next: "types-swiper-button-next" }}
+                        />
+                    </div>
+                    <div className={styles.sliderContainerBlock}>
+                        <Swiper className={styles.slider}
+                            spaceBetween={0}
+                            slidesPerView={3}
+                            navigation={{
+                                nextEl: ".types-swiper-button-next",
+                                prevEl: ".types-swiper-button-prev",
+                            }}
+                        >
+                            {
+                                SlidesList.map(item =>
+                                    <SwiperSlide key={item.id}>
+                                        <div className={styles.item}>
+                                            <div className={styles.itemImageWrapper}>
+                                                <div className={[styles.itemImageBg, styles.itemImageBg1].join(' ')}></div>
+                                                <div className={[styles.itemImageBg, styles.itemImageBg2].join(' ')}></div>
+                                                <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot1].join(' ')}></div>
+                                                <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot2].join(' ')}></div>
+                                                <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot3].join(' ')}></div>
+                                                <img
+                                                    src={[server, item.attributes.Image.data.attributes.url].join('')}
+                                                    className={styles.img}
+                                                    alt={item.attributes.Image.data.attributes.url} />
+                                            </div>
+                                            <span className={styles.itemCaption}>
+                                                {item.attributes.Caption}
+                                            </span>
                                         </div>
-                                        <span className={styles.itemCaption}>
-                                            {item.attributes.Caption}
-                                        </span>
-                                    </div>
-                                </SwiperSlide>
-                            )
-                        }
-                    </Swiper>
+                                    </SwiperSlide>
+                                )
+                            }
+                        </Swiper>
+                    </div>
                 </div>
-            </div>
+            </FadeIn>
         </section>
     )
 }
