@@ -6,8 +6,14 @@ import { StaticRouter } from 'react-router-dom/server';
 import serialize from 'serialize-javascript';
 import App from '../shared/App';
 import StrapiAPI from '../API/StrapiAPI';
+import compression from 'compression';
+import helmet from 'helmet';
 
 const app = express();
+app.use(compression());
+// app.use(helmet({
+//     contentSecurityPolicy: false
+// }));
 let data = {};
 
 app.use('/static/', express.static('./dist/client'));
