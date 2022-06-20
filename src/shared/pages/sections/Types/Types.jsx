@@ -50,7 +50,7 @@ const TypesComponent = () => {
         <section className={[styles.types, styles.container].join(' ')}>
             <h2 className={[styles.heading, 'site-second-heading'].join(' ')} ref={Heading}>
                 It can be used for any types of farms
-                <span> and productions</span>
+                and&nbsp;productions
             </h2>
             <FadeIn>
                 <div className={styles.sliderContainer}>
@@ -66,6 +66,15 @@ const TypesComponent = () => {
                             navigation={{
                                 nextEl: ".types-swiper-button-next",
                                 prevEl: ".types-swiper-button-prev",
+                            }}
+                            breakpoints={{
+                                280: {
+                                    slidesPerView: 1.8,
+                                    spaceBetween: 10
+                                },
+                                768: {
+                                    slidesPerView: 3.1,
+                                }
                             }}
                         >
                             {

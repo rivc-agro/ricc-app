@@ -16,7 +16,7 @@ html {
     font-size: 9px;
   }
 
-  @include mq(lg) {
+  @include mq(custom, max, 1440) {
     font-size: 8px;
   }
 
@@ -173,6 +173,7 @@ img {
 }
 
 .page-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -182,6 +183,10 @@ img {
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 100% 206.2rem;
+
+  @include mq(sm) {
+    background-size: 100% 61.2rem;
+  }
 }
 
 .page-main {
@@ -236,6 +241,10 @@ select:-webkit-autofill:focus {
       grid-column: 11 span;
     }
   }
+
+  @include mq(lg) {
+    display: block;
+  }
 }
 
 .disable-scroll {
@@ -257,6 +266,10 @@ select:-webkit-autofill:focus {
     width: 100%;
     height: auto;
   }
+  
+  @include mq(sm) {
+    max-width: 10.4rem;
+  }
 }
 
 
@@ -264,4 +277,13 @@ select:-webkit-autofill:focus {
   font: var(--font-heading-h2);
   text-transform: uppercase;
   font-weight: 300;
+
+  @include mq(md) {
+    font: var(--font-heading-h3);
+    font-weight: 300;
+  }
+
+  @include mq(sm) {
+    font: 300 2.2rem/1 var(--main-ff);
+  }
 }

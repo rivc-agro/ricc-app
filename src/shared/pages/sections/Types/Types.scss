@@ -1,3 +1,5 @@
+@import '../../../../styles/helpers/media.scss';
+
 .types {
   margin-bottom: 24.1rem;
 }
@@ -5,12 +7,24 @@
 .heading {
   max-width: 45.7rem;
   margin-bottom: 9rem;
+
+  @include mq(md) {
+    max-width: 61.7rem;
+  }
+
+  @include mq(sm) {
+    margin-bottom: 7rem;
+  }
 }
 
 .sliderContainer {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   gap: var(--grid-offset);
+
+  @include mq(lg) {
+    display: block;
+  }
 }
 
 .sliderContainerBlock {
@@ -32,6 +46,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @include mq(sm) {
+    width: auto;
+  }
 }
 
 .itemImageWrapper {
@@ -45,7 +63,17 @@
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 7.7rem;
-  // overflow: hidden;
+
+  @include mq(md) {
+    height: 18rem;
+    width: 18rem;
+  }
+
+  @include mq(sm) {
+    width: 13.4rem;
+    height: 13.4rem;
+    margin-bottom: 3.8rem;
+  }
 }
 
 .img {
@@ -60,6 +88,12 @@
   text-align: center;
   color: var(--color-white);
   max-width: 17.3rem;
+
+  @include mq(sm) {
+    font: 400 1rem/1.2rem var(--main-ff);
+    letter-spacing: 0.08em;
+    max-width: 11.6rem;
+  }
 }
 
 .slider {
@@ -67,6 +101,16 @@
   margin-right: -100%;
   padding-top: 6rem;
   margin-top: -6rem;
+
+  @include mq(md) {
+    padding-top: 5rem;
+    margin-top: -5rem;
+  }
+
+  @include mq(sm) {
+    margin-top: -3rem;
+    padding-top: 3rem;
+  }
 }
 
 .itemImageBg {
@@ -80,36 +124,76 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+
+  @include mq(md) {
+    width: 26rem;
+    height: 28rem;
+  }
+
+  @include mq(sm) {
+    height: 21rem;
+    width: 20rem;
+  }
 }
 
 .itemImageBg1 {
   background-image: url(../../../../assets/img/typesSvgLine11.png);
-  animation: rotatingBack 100s linear infinite;
+  animation: rotatingBack 70s linear infinite;
 }
 
 .itemImageBg2 {
   background-image: url(../../../../assets/img/typesSvgLine22.png);
-  animation: rotating 100s linear infinite;
+  animation: rotating 70s linear infinite;
 }
 
 .itemImageBgDot1 {
   background-image: url(../../../../assets/img/typesSvgDots1.png);
-  animation: rotating 100s linear infinite;
+  animation: rotating 70s linear infinite;
   height: 29rem;
   width: 35rem;
+
+  @include mq(md) {
+    height: 24rem;
+    width: 26rem;
+  }
+
+  @include mq(sm) {
+    height: 17rem;
+    width: 17rem;
+  }
 }
 
 .itemImageBgDot2 {
   background-image: url(../../../../assets/img/typesSvgDots2.png);
-  animation: rotatingBack 100s linear infinite 0.8s;
+  animation: rotatingBack 70s linear infinite 0.8s;
   width: 38rem;
   height: 33rem;
+
+  @include mq(md) {
+    height: 26rem;
+    width: 26rem;
+  }
+
+  @include mq(sm) {
+    height: 19rem;
+    width: 19rem;
+  }
 }
 
 .itemImageBgDot3 {
   background-image: url(../../../../assets/img/typesSvgDotsBg.png);
   height: 54rem;
   width: 40rem;
+
+  @include mq(md) {
+    height: 37rem;
+    width: 34rem;
+  }
+
+  @include mq(sm) {
+    height: 27rem;
+    width: 25rem;
+  }
 }
 
 @keyframes rotating {

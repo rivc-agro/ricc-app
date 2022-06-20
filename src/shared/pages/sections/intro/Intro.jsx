@@ -17,14 +17,13 @@ gsap.registerPlugin(SplitText, ScrollTrigger);
 const introComponent = () => {
     const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
     const { APIdata, setAPIdata } = useContext(AppContext);
-    const [spitText, setspitText] = useState(false);
     const SplittedTex = useRef();
     const SplittedHeadingText = useRef();
     const SplittedCaptionText = useRef();
-    const ScaleImage = useRef();
     const BtnsLayer = useRef();
     const timeLine = gsap.timeline();
     const Vid = useRef();
+    let killed;
 
     const spltText = (element, splittedElement) => {
         gsap.set(element.current, {
@@ -86,24 +85,32 @@ const introComponent = () => {
                 duration: 0.9,
             }, '-=0.7');
 
-        gsap.to(Vid.current, {
-            scrollTrigger: {
-                trigger: Vid.current,
-                start: 'top top',
-                scrub: true,
-                // markers: true
-            },
-            scale: 0.7,
-            y: '20%',
-            transformOrigin: 'center left',
+        ScrollTrigger.matchMedia({
+            "(min-width: 1200px)": function () {
+                if (!killed) {
+                    gsap.to(Vid.current, {
+                        scrollTrigger: {
+                            trigger: Vid.current,
+                            start: 'top top',
+                            scrub: true,
+                            // markers: true
+                        },
+                        scale: 0.7,
+                        y: '20%',
+                        transformOrigin: 'center left',
+                    });
+                }
+            }
         })
 
-        
+        return () => {
+            ScrollTrigger.kill();
+            killed = true;
+        }
     }, []);
 
     return (
         <section className={styles.intro}>
-            {/* <img src={circle} alt="" ref={ScaleImage} className={styles.bgCircleImg} /> */}
             <video src={sphere} className={styles.bgCircleImg} ref={Vid} playsInline muted autoPlay loop></video>
             <div className={styles.container}>
                 <div className={styles.block}>

@@ -1,3 +1,5 @@
+@import '../../../styles/helpers/media';
+
 .sliderNav {
     display: flex;
     align-items: center;
@@ -6,6 +8,10 @@
     padding: 0.6rem;
     border-radius: 5.5rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
+
+    @include mq(lg) {
+        display: none;
+    }
 }
 
 .btn {

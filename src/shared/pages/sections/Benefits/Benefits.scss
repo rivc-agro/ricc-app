@@ -1,5 +1,16 @@
+@import '../../../../styles/helpers/media.scss';
+@import '../../../../styles/settings/mixins.scss';
+
 .benefits {
     margin-bottom: 24.1rem;
+
+    @include mq(lg) {
+        margin-bottom: 15rem;
+    }
+
+    @include mq(sm) {
+        margin-bottom: 9.8rem;
+    }
 }
 
 .headingContainer {
@@ -8,6 +19,18 @@
     grid-template-columns: repeat(11, 1fr);
     gap: var(--grid-offset);
     margin-bottom: 11.8rem;
+
+    @include mq(lg) {
+        display: block;
+    }
+
+    @include mq(md) {
+        margin-bottom: 6rem;
+    }
+
+    @include mq(sm) {
+        margin-bottom: 2.4rem;
+    }
 }
 
 .headingBlock {
@@ -30,12 +53,29 @@
     max-width: 53.5rem;
     color: var(--color-purple-text);
     padding-top: 15rem;
+
+    @include mq(lg) {
+        padding-top: 5rem;
+    }
+
+    @include mq(md) {
+        padding-top: 3rem;
+        font: var(--font-body);
+    }
+
+    @include mq(sm) {
+        padding-top: 3.2rem;
+    }
 }
 
 .bodyContainer {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     gap: var(--grid-offset);
+
+    @include mq(lg) {
+        display: block;
+    }
 }
 
 .bodyContainerBlock {
@@ -52,15 +92,56 @@
     display: grid;
     grid-template-columns: repeat(9, 1fr);
     gap: 7.6rem var(--grid-offset);
+
+    @include mq(lg) {
+        gap: var(--grid-offset);
+    }
+
+    @include mq(sm) {
+        gap: 0.4rem;
+        grid-template-columns: none;
+        grid-template-rows: 14.3rem 14.3rem;
+        grid-auto-columns: 14.6rem;
+        grid-auto-flow: column dense;
+        overflow: auto;
+        margin-right: calc(var(--content-padding) * -1);
+        padding-right: var(--content-padding);
+
+        @include noScrollbar();
+    }
 }
 
 .item {
     grid-column: 3 span;
+    flex-shrink: 0;
+
+    @include mq(sm) {
+        grid-column: auto;
+
+        >div {
+            height: 100%;
+        }
+    }
 }
 
 .itemInner {
     display: flex;
     align-items: center;
+
+    @include mq(lg) {
+        background-color: rgba(255, 255, 255, 0.04);
+        padding: 2rem;
+        border-radius: 0.8rem;
+        min-height: 17.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @include mq(md) {
+        min-height: 0;
+        height: 100%;
+        padding: 1.2rem;
+    }
 }
 
 .itemImg {
@@ -70,6 +151,11 @@
     display: block;
     object-fit: cover;
     margin-right: 2rem;
+
+    @include mq(sm) {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
 }
 
 .itemCaption {
@@ -78,4 +164,13 @@
     letter-spacing: 0.09em;
     text-transform: uppercase;
     max-width: 64%;
+
+    @include mq(lg) {
+        margin-top: auto;
+        max-width: 100%;
+    }
+
+    @include mq(md) {
+        font: var(--font-btn-s);
+    }
 }

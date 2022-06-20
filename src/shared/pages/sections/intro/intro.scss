@@ -1,12 +1,28 @@
+@import '../../../../styles/helpers/media.scss';
+
 .intro {
     padding-top: 13rem;
     margin-bottom: 32.7rem;
+
+    @include mq(lg) {
+        padding-top: 8rem;
+        margin-bottom: 15rem;
+    }
+
+    @include mq(sm) {
+        padding-top: 7.6rem;
+        margin-bottom: 9.8rem;
+    }
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     gap: var(--grid-offset);
+
+    @include mq(lg) {
+        display: block;
+    }
 }
 
 .block {
@@ -33,6 +49,22 @@
         background-clip: text;
         text-fill-color: transparent;
     }
+
+    @include mq(lg) {
+        margin-bottom: 4rem;
+    }
+
+    @include mq(md) {
+        font: var(--font-body-M);
+        font-weight: 300;
+        line-height: 1;
+        margin-bottom: 8rem;
+    }
+
+    @include mq(sm) {
+        font: var(--font-heading-h4);
+        margin-bottom: 9.5rem;
+    }
 }
 
 .heading {
@@ -42,6 +74,17 @@
     max-width: 67.4rem;
     margin-bottom: 10rem;
     opacity: 0;
+
+    @include mq(md) {
+        font: var(--font-heading-h2);
+        font-weight: 300;
+        margin-bottom: 4rem;
+    }
+
+    @include mq(sm) {
+        font: 300 3.4rem/1 var(--main-ff);
+        margin-bottom: 4.4rem;
+    }
 }
 
 .text {
@@ -51,13 +94,36 @@
     color: var(--color-purple-text);
     margin-bottom: 4.8rem;
     opacity: 0;
+
+    @include mq(md) {
+        font: var(--font-body);
+        font-weight: 300;
+    }
+
+    @include mq(sm) {
+        font: var(--font-body-S);
+        margin-bottom: 2.8rem;
+        letter-spacing: 0.03em;
+    }
 }
 
 .btns {
     position: relative;
     overflow: hidden;
     height: 23rem;
-    width: 77rem;
+
+    @include mq(custom, max, 1280) {
+        height: 17rem;
+    }
+
+    @include mq(md) {
+        height: 12rem;
+    }
+
+    @include mq(sm) {
+        width: 100%;
+        height: 16.6rem;
+    }
 }
 
 .btnsAnimatedWrapper {
@@ -67,9 +133,24 @@
     width: 100%;
     height: 23rem;
     display: flex;
-    gap: 1.6rem;
+    gap: 0.8rem;
     overflow: hidden;
     opacity: 0;
+
+    @include mq(custom, max, 1280) {
+        height: 17rem;
+    }
+
+    @include mq(md) {
+        width: 70%;
+        height: 12rem;
+    }
+
+    @include mq(sm) {
+        width: 100%;
+        flex-direction: column;
+        height: 16.6rem;
+    }
 }
 
 .btnDemo {
@@ -97,6 +178,33 @@
         .btnDemoImg {
             height: auto;
             right: 0;
+
+            @include mq(sm) {
+                right: -2rem;
+                top: -4.7rem;
+            }
+        }
+    }
+
+    @include mq(custom, max, 1280) {
+        height: 17rem;
+    }
+
+    @include mq(md) {
+        height: 12rem;
+        padding: 1.5rem;
+    }
+
+    @include mq(sm) {
+        height: 10.2rem;
+        flex-shrink: 0;
+        justify-content: center;
+        padding: 2rem 1.6rem;
+        background-position: center right;
+
+        &.modMore {
+            width: 100%;
+            height: 5.6rem;
         }
     }
 }
@@ -107,6 +215,16 @@
     right: 2.4rem;
     height: 100%;
     width: auto;
+    object-fit: cover;
+
+    @include mq(custom, max, 1280) {
+        right: -2.3rem;
+    }
+
+    @include mq(sm) {
+        right: 2.4rem;
+        height: 118%;
+    }
 }
 
 .btnDemoSmallText {
@@ -117,6 +235,10 @@
     color: rgba($color: #fff, $alpha: 0.2);
     max-width: 9rem;
     text-align: left;
+
+    @include mq(sm) {
+        display: none;
+    }
 }
 
 .btnDemoText {
@@ -125,10 +247,27 @@
     letter-spacing: 0.09em;
     text-transform: uppercase;
     text-align: left;
+
+    @include mq(md) {
+        font: var(--font-btn-s);
+    }
+
+    @include mq(sm) {
+        margin-top: 0;
+        font: var(--font-body-S);
+        font-weight: 300;
+    }
 }
 
 .btnDemoIcon {
     color: #3B496D;
+
+    @include mq(sm) {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+    }
 }
 
 .bgCircleImg {
@@ -141,6 +280,21 @@
     height: auto;
     object-fit: cover;
     animation: fadeIn 0.2s ease-in-out;
+
+    @include mq(lg) {
+        left: auto;
+        right: -20rem;
+        top: -15rem;
+        width: 80rem;
+    }
+
+    @include mq(md) {
+        width: 59rem;
+    }
+
+    @include mq(sm) {
+        width: 48rem;
+    }
 }
 
 @keyframes fadeIn {

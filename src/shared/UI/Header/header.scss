@@ -1,7 +1,13 @@
+@import '../../../styles/helpers/media';
+
 .header {
     color: var(--color-white);
     padding-top: 3.8rem;
     padding-bottom: 1rem;
+
+    @include mq(sm) {
+        padding-top: 1.6rem;
+    }
 }
 
 .container {
@@ -24,6 +30,12 @@
 
     &:last-child {
         margin-right: 0;
+    }
+
+    @include mq(sm) {
+        &:not(:last-child) {
+            display: none;
+        }
     }
 }
 
