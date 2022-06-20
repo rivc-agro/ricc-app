@@ -2,8 +2,10 @@ import React from 'react';
 import { Footer } from '../UI/Footer/Footer';
 import { Header } from '../UI/Header/Header';
 import { Benefits } from './sections/Benefits/Benefits';
+import { Dashbord } from './sections/Dashbord/Dashbord';
 import { Intro } from './sections/Intro/Intro';
 import { Types } from './sections/Types/Types';
+import { Integrations } from './sections/Integrations/Integrations';
 
 const Main = () => {
     return (
@@ -16,6 +18,8 @@ const Main = () => {
                         <Intro />
                         <Benefits />
                         <Types />
+                        <Dashbord />
+                        <Integrations />
                     </div>
                 </div>
             </main>

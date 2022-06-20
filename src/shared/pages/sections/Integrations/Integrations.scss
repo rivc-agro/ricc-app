@@ -1,0 +1,43 @@
+.section {
+    margin-bottom: 28.4rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: var(--grid-offset);
+}
+
+.containerBlock {
+    &:nth-child(1) {
+        grid-column: 5 span;
+    }
+
+    &:nth-child(2) {
+        grid-column: 6 span;
+    }
+}
+
+.text {
+    font: 300 3.4rem/110% var(--main-ff);
+    margin-bottom: 7.6rem;
+    max-width: 52.8rem;
+}
+
+.slider {
+    display: flex;
+    gap: 0.8rem;
+    overflow: visible;
+    margin-bottom: 0.8rem;
+}
+
+.sliderItem {
+    flex-shrink: 0;
+    width: 19.4rem;
+    height: 19.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border-radius: 1rem;
+}

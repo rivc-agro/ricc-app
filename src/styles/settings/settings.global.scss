@@ -266,7 +266,7 @@ select:-webkit-autofill:focus {
     width: 100%;
     height: auto;
   }
-  
+
   @include mq(sm) {
     max-width: 10.4rem;
   }
@@ -285,5 +285,11 @@ select:-webkit-autofill:focus {
 
   @include mq(sm) {
     font: 300 2.2rem/1 var(--main-ff);
+  }
+}
+
+.swiper-linear {
+  .swiper-wrapper {
+    transition-timing-function: linear;
   }
 }
