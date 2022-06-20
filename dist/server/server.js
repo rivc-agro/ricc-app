@@ -1517,8 +1517,8 @@ var Benefits_Benefits = (0,root_namespaceObject.hot)(BenefitsComponent);
 // EXTERNAL MODULE: ./src/shared/pages/sections/Intro/intro.scss
 var intro = __webpack_require__(540);
 var intro_default = /*#__PURE__*/__webpack_require__.n(intro);
-;// CONCATENATED MODULE: ./src/assets/img/spheres2.mp4
-/* harmony default export */ const spheres2 = (__webpack_require__.p + "spheres2.mp4");
+;// CONCATENATED MODULE: ./src/assets/img/sphere3.mp4
+/* harmony default export */ const sphere3 = (__webpack_require__.p + "sphere3.mp4");
 ;// CONCATENATED MODULE: ./src/shared/UI/Icons/ArrowRight.jsx
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
@@ -1617,9 +1617,9 @@ function Intro_defineProperty(obj, key, value) { if (key in obj) { Object.define
 
 
 
-external_gsap_default().registerPlugin(SplitText, (ScrollTrigger_default()));
 
 var introComponent = function introComponent() {
+  external_gsap_default().registerPlugin(SplitText, (ScrollTrigger_default()));
   var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? external_react_namespaceObject.useLayoutEffect : external_react_namespaceObject.useEffect;
 
   var _useContext = (0,external_react_namespaceObject.useContext)(AppContext),
@@ -1632,7 +1632,7 @@ var introComponent = function introComponent() {
   var BtnsLayer = (0,external_react_namespaceObject.useRef)();
   var timeLine = external_gsap_default().timeline();
   var Vid = (0,external_react_namespaceObject.useRef)();
-  var killed;
+  var killed = false;
 
   var spltText = function spltText(element, splittedElement) {
     external_gsap_default().set(element.current, {
@@ -1701,14 +1701,16 @@ var introComponent = function introComponent() {
       }
     });
     return function () {
-      ScrollTrigger_default().kill();
+      ScrollTrigger_default().getAll().forEach(function (t) {
+        return t.kill();
+      });
       killed = true;
     };
   }, []);
   return /*#__PURE__*/external_react_default().createElement("section", {
     className: (intro_default()).intro
   }, /*#__PURE__*/external_react_default().createElement("video", {
-    src: spheres2,
+    src: sphere3,
     className: (intro_default()).bgCircleImg,
     ref: Vid,
     playsInline: true,

@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import React, { useState, useContext, useEffect, useRef, useLayoutEffect } from 'react';
 import styles from './intro.scss';
-import sphere from '../../../../assets/img/spheres2.mp4';
+import sphere from '../../../../assets/img/sphere3.mp4';
 import ArrowRight from '../../../UI/Icons/ArrowRight';
 import IconPolygons from '../../../UI/Icons/IconPolygons';
 import BtnImg from '../../../../assets/img/intro-btn-tablet2.png';
@@ -12,9 +12,8 @@ import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
 import { Link } from 'react-router-dom';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
-gsap.registerPlugin(SplitText, ScrollTrigger);
-
 const introComponent = () => {
+    gsap.registerPlugin(SplitText, ScrollTrigger);
     const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
     const { APIdata, setAPIdata } = useContext(AppContext);
     const SplittedTex = useRef();
@@ -23,7 +22,7 @@ const introComponent = () => {
     const BtnsLayer = useRef();
     const timeLine = gsap.timeline();
     const Vid = useRef();
-    let killed;
+    let killed = false;
 
     const spltText = (element, splittedElement) => {
         gsap.set(element.current, {
@@ -104,7 +103,7 @@ const introComponent = () => {
         })
 
         return () => {
-            ScrollTrigger.kill();
+            ScrollTrigger.getAll().forEach(t => t.kill());
             killed = true;
         }
     }, []);
