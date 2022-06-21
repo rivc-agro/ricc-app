@@ -16,6 +16,16 @@ const WeWorkComponent = () => {
                                 Selection of needs for analysis
                             </p>
                         </li>
+                        <li className={styles.item}>
+                            <p className={styles.itemText}>
+                                Сompany audit to get full insight
+                            </p>
+                        </li>
+                        <li className={styles.item}>
+                            <p className={styles.itemText}>
+                                Creating of customized solution
+                            </p>
+                        </li>
                     </ul>
                 </div>
                 <div className={styles.containerTopBlock}>
@@ -29,6 +39,16 @@ const WeWorkComponent = () => {
                         <li className={styles.item}>
                             <p className={styles.itemText}>
                                 BI-system implementation
+                            </p>
+                        </li>
+                        <li className={styles.item}>
+                            <p className={styles.itemText}>
+                                BI-system training
+                            </p>
+                        </li>
+                        <li className={styles.item}>
+                            <p className={styles.itemText}>
+                                Technical support
                             </p>
                         </li>
                     </ul>

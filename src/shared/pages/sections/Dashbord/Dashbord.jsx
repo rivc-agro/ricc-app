@@ -5,6 +5,7 @@ import dashbordImg from '../../../../assets/img/dashboard.jpg';
 import { Button } from '../../../UI/Button/Button';
 import whyBg from '../../../../assets/img/whyBg.png';
 import whyBgWebp from '../../../../assets/img/whyBg.webp';
+import { PlayBtn } from '../../../UI/Icons/PlayBtn';
 
 const DashbordComponent = () => {
   return (
@@ -26,7 +27,22 @@ const DashbordComponent = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <div className={styles.textContainerBLock}></div>
+        <div className={styles.textContainerBLock}>
+          <div className={styles.howItWorks}>
+            <span className={styles.howItWorksheading}>
+              how BI works
+            </span>
+            <span className={styles.howItWorksSmallHeading}>
+              video about RICC
+            </span>
+            <button className={styles.howItWorksVideoBtn}>
+              <PlayBtn className={styles.howItWorksVideoBtnIcon} />
+            </button>
+            <span className={styles.howItWorkscaption}>
+              1m 30s
+            </span>
+          </div>
+        </div>
         <div className={styles.textContainerBLock}>
           <p className={styles.text}>
             Our solution can combine data from all different systems and machineries under one platform with the possibility of any integration and limitless data collection.
