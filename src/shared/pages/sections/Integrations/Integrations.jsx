@@ -35,7 +35,7 @@ const IntegrationsComponent = () => {
                 speed={8000}
                 loop={true}
                 allowTouchMove={false}
-                // autoplay={{ delay: 1 }}
+                autoplay={{ delay: 1 }}
                 modules={[Autoplay]}
             >
                 {
@@ -54,7 +54,7 @@ const IntegrationsComponent = () => {
                 speed={8000}
                 loop={true}
                 allowTouchMove={false}
-                // autoplay={{ delay: 1 }}
+                autoplay={{ delay: 1 }}
                 modules={[Autoplay]}
                 dir={'rtl'}
             >

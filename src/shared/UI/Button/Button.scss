@@ -7,4 +7,17 @@
     letter-spacing: 0.09em;
     background-color: var(--color-accent1);
     border-radius: 5.5rem;
+    flex-shrink: 0;
+
+    &.modWhite {
+        background-color: var(--color-white);
+
+        span {
+            background: var(--color-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+    }
 }

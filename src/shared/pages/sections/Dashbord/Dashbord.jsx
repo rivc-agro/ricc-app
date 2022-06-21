@@ -3,10 +3,16 @@ import React from 'react'
 import styles from './Dashbord.scss';
 import dashbordImg from '../../../../assets/img/dashboard.jpg';
 import { Button } from '../../../UI/Button/Button';
+import whyBg from '../../../../assets/img/whyBg.png';
+import whyBgWebp from '../../../../assets/img/whyBg.webp';
 
 const DashbordComponent = () => {
   return (
     <section className={styles.section}>
+      <picture>
+        <source srcSet={whyBgWebp} type='image/webp' />
+        <img className={styles.sectionBgImg} src={whyBg} alt="" />
+      </picture>
       <h1 className={styles.heading}>
         Create your own dashboard and&nbsp;report
       </h1>
@@ -23,10 +29,10 @@ const DashbordComponent = () => {
         <div className={styles.textContainerBLock}></div>
         <div className={styles.textContainerBLock}>
           <p className={styles.text}>
-            Our solution can combine data from all different systems and machineries under one platform with the possibility of any integration and limitless data collection. 
+            Our solution can combine data from all different systems and machineries under one platform with the possibility of any integration and limitless data collection.
           </p>
           <p className={styles.smallText}>
-            It also visualize data to generate analysis for business reports and accurate decisions. 
+            It also visualize data to generate analysis for business reports and accurate decisions.
           </p>
           <Button NavLink to='/demo'>
             Try demo

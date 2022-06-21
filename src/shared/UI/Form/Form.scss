@@ -1,0 +1,67 @@
+@import '../../../styles/settings/mixins.scss';
+
+.form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background: var(--color-gradient);
+    border-radius: 2rem;
+    padding: 8.7rem 7.5rem 7.5rem;
+}
+
+.label {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 6.4rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid rgba($color: #FFFFFF, $alpha: 0.2);
+
+    &:nth-last-of-type(1) {
+        margin-bottom: 0;
+    }
+
+    span {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        font: var(--font-btn-s);
+    }
+}
+
+.input {
+    width: 100%;
+    height: auto;
+    letter-spacing: 0.03em;
+    font: 400 2rem/110% var(--main-ff);
+    color: var(--color-white);
+
+    @include placeholder {
+        letter-spacing: 0.03em;
+        font: 400 2rem/110% var(--main-ff);
+        color: var(--color-white);
+    }
+}
+
+.btnWrapper {
+    margin-top: 6.8rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.agreement {
+    font: 400 1rem/1.2rem var(--main-ff);
+    text-transform: uppercase;
+    color: rgba(161, 179, 227, 0.4);
+    max-width: 27.1rem;
+
+    a {
+        color: var(--color-white);
+    }
+}

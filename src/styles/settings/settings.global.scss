@@ -12,6 +12,10 @@ html {
   font-size: 10px;
   line-height: 1.2;
 
+  @include mq(custom, min, 2010) {
+    font-size: 11px;
+  }
+
   @include mq(custom, max, 1536) {
     font-size: 9px;
   }
@@ -33,6 +37,11 @@ body {
   color: var(--color-white);
   font: var(--font-body);
   background-color: var(--color-page-bg);
+
+  ::selection {
+    background-color: var(--color-accent2);
+    color: var(--color-white);
+  }
 }
 
 ul,
@@ -164,7 +173,7 @@ img {
 }
 
 .site-container {
-  max-width: 1680px;
+  // max-width: 1680px;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -291,5 +300,11 @@ select:-webkit-autofill:focus {
 .swiper-linear {
   .swiper-wrapper {
     transition-timing-function: linear;
+  }
+}
+
+.swiper-container {
+  .swiper-slide {
+    user-select: none;
   }
 }

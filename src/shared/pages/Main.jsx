@@ -6,6 +6,8 @@ import { Dashbord } from './sections/Dashbord/Dashbord';
 import { Intro } from './sections/Intro/Intro';
 import { Types } from './sections/Types/Types';
 import { Integrations } from './sections/Integrations/Integrations';
+import { WhyUs } from './sections/WhyUs/WhyUs';
+import { WeWork } from './sections/WeWork/WeWork';
 
 const Main = () => {
     return (
@@ -20,6 +22,8 @@ const Main = () => {
                         <Types />
                         <Dashbord />
                         <Integrations />
+                        <WhyUs />
+                        <WeWork />
                     </div>
                 </div>
             </main>

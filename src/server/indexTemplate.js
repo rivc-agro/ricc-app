@@ -13,8 +13,8 @@ export const indextemplate = (content, data) => `
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <meta name="description" content="Описание сайта">
-    <title>Главная | RICC</title>
+    <meta name="description" content="Business analysis with BI help you to use data effectively to manage your farm with maximum benefit.">
+    <title>RICC Business Iintelligence in Agriculture</title>
 
     <script>
         window.__INITIAL_DATA__ = ${data}
