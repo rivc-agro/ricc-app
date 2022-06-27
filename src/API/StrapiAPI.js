@@ -37,4 +37,22 @@ export default class StrapiAPI {
         })
         return response.data;
     }
+
+    static async getSourses() {
+        const response = await axios.get(`${server}/api/data-sourses?populate=*`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        return response.data;
+    }
+
+    static async getDashboard() {
+        const response = await axios.get(`${server}/api/dashbords?populate=*`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        return response.data;
+    }
 }

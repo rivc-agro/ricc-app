@@ -11,15 +11,15 @@ const HeaderComponent = () => {
     const NavItems = [
         {
             name: "Benefits",
-            link: "#Benefits"
+            link: ""
         },
         {
             name: "RICC",
-            link: "#RICC",
+            link: "",
         },
         {
             name: "Contact us",
-            link: "#contactUs"
+            link: ""
         }
     ];
 
@@ -40,7 +40,7 @@ const HeaderComponent = () => {
                                 className={styles.btnItem}>
                                 <HashLink
                                     className={styles.btn}
-                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                                    scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'start' })}
                                     to={item.link}
                                 >
                                     {item.name}

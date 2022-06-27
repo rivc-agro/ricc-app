@@ -8,7 +8,7 @@ const ButtonComponent = ({ children, NavLink, modWhite, to, ...props }) => {
 
     if (NavLink) {
         return (
-            <Link {...props} to={to} className={styles.button}>
+            <Link {...props} to={to} className={[styles.button, isWhite].join(' ')}>
                 <span>
                     {children}
                 </span>

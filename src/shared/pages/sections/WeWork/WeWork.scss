@@ -66,10 +66,29 @@
         left: 3.2rem;
         content: counter(lis)". ";
     }
+
+    &:hover {
+        .itemBg {
+            opacity: 1;
+        }
+    }
 }
 
 .itemText {
     max-width: 22.4rem;
     font: 400 2.4rem/110% var(--main-ff);
     letter-spacing: 0.03em;
+}
+
+.itemBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+    opacity: 0;
+    transition: opacity 400ms;
 }

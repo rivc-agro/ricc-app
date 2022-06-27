@@ -17,6 +17,7 @@
 }
 
 .containerBlock {
+    position: relative;
     &:nth-child(1) {
         grid-column: 5 span;
     }
@@ -128,4 +129,16 @@
     &:last-child {
         margin-left: auto;
     }
+}
+
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    width: 115.4rem;
+    height: auto;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+    transform: translate(-50%, -50%) rotate(-233deg);
 }

@@ -1,20 +1,33 @@
 import { hot } from 'react-hot-loader/root';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Integrations.scss';
 import logoCompany from '../../../../assets/img/logoCompany.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {
     Autoplay
 } from "swiper";
+import { server } from '../../../../data/data';
+import StrapiAPI from '../../../../API/StrapiAPI';
 
 const IntegrationsComponent = () => {
     SwiperCore.use([
         Autoplay,
     ]);
 
-    const companys = [
-        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-    ];
+    const [SoursesFirst, setSoursesFirst] = useState([]);
+    const [SoursesSecond, setSoursesSecond] = useState([]);
+
+    async function fetchSourses() {
+        const resp = await StrapiAPI.getSourses();
+        const First = resp.data[0].attributes.sourseFirstRow.data;
+        const Second = resp.data[0].attributes.sourseSecondRow.data;
+        setSoursesFirst(First);
+        setSoursesSecond(Second);
+    };
+
+    useEffect(() => {
+        fetchSourses();
+    }, [setSoursesFirst, setSoursesSecond]);
 
     return (
         <section className={styles.section}>
@@ -36,12 +49,16 @@ const IntegrationsComponent = () => {
                 loop={true}
                 allowTouchMove={false}
                 autoplay={{ delay: 1 }}
+                loopedSlides={17}
                 modules={[Autoplay]}
             >
                 {
-                    companys.map(item =>
-                        <SwiperSlide key={item} className={styles.sliderItem}>
-                            <img src={logoCompany} alt='' className={styles.sliderImg} />
+                    SoursesFirst.map((item) =>
+                        <SwiperSlide key={item.id} className={styles.sliderItem}>
+                            <img
+                                src={[server, item.attributes.url].join('')}
+                                alt={item.attributes.caption}
+                                className={styles.sliderImg} />
                         </SwiperSlide>
                     )
                 }
@@ -56,12 +73,16 @@ const IntegrationsComponent = () => {
                 allowTouchMove={false}
                 autoplay={{ delay: 1 }}
                 modules={[Autoplay]}
+                loopedSlides={17}
                 dir={'rtl'}
             >
                 {
-                    companys.map(item =>
-                        <SwiperSlide key={item} className={styles.sliderItem}>
-                            <img src={logoCompany} alt='' className={styles.sliderImg} />
+                    SoursesSecond.map((item) =>
+                        <SwiperSlide key={item.id} className={styles.sliderItem}>
+                            <img
+                                src={[server, item.attributes.url].join('')}
+                                alt={item.attributes.caption}
+                                className={styles.sliderImg} />
                         </SwiperSlide>
                     )
                 }

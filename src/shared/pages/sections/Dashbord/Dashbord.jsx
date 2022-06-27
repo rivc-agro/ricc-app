@@ -1,13 +1,30 @@
 import { hot } from 'react-hot-loader/root';
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Dashbord.scss';
 import dashbordImg from '../../../../assets/img/dashboard.jpg';
 import { Button } from '../../../UI/Button/Button';
 import whyBg from '../../../../assets/img/whyBg.png';
 import whyBgWebp from '../../../../assets/img/whyBg.webp';
 import { PlayBtn } from '../../../UI/Icons/PlayBtn';
+import SpinnerPreloader from '../../../UI/Preloader/SpinnerPreloader';
+import StrapiAPI from '../../../../API/StrapiAPI';
+import { server } from '../../../../data/data';
 
 const DashbordComponent = () => {
+  const [dashboardImage, setdashboardImage] = useState(null);
+  const [isLoading, setisLoading] = useState(true);
+
+  async function fetchDashbord() {
+    const resp = await StrapiAPI.getDashboard();
+    const img = resp.data[0].attributes.DashbordImage.data.attributes.url;
+    setdashboardImage(img)
+  };
+
+  useEffect(() => {
+    fetchDashbord();
+    setisLoading(false);
+  }, [setdashboardImage]);
+
   return (
     <section className={styles.section}>
       <picture>
@@ -20,8 +37,9 @@ const DashbordComponent = () => {
       <div className={styles.container}>
         <div className={styles.containerBLock}></div>
         <div className={styles.containerBLock}>
+          {isLoading && <SpinnerPreloader />}
           <img
-            src={dashbordImg}
+            src={[server, dashboardImage].join('')}
             alt='Create your own dashboard and report'
             className={styles.image} />
         </div>

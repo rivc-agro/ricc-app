@@ -34,6 +34,9 @@
 }
 
 .containerBLock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &:nth-child(1) {
         grid-column: 2 span;
     }

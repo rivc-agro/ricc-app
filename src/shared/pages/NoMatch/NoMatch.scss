@@ -1,0 +1,78 @@
+@import '../../../styles/helpers/media.scss';
+
+.section {
+    padding-top: 15.8rem;
+    min-height: calc(100vh - 7.7rem);
+
+    @include mq(md) {
+        padding-top: 10rem;
+    }
+
+    @include mq(sm) {
+        padding-top: 10.5rem;
+        min-height: 50rem;
+    }
+}
+
+.heading {
+    font: var(--font-heading-h1);
+    margin-bottom: 5.3rem;
+    max-width: 52.7rem;
+    text-transform: uppercase;
+
+    @include mq(sm) {
+        max-width: 100%;
+        font: 300 3.4rem/1 var(--main-ff);
+        letter-spacing: -0.02em;
+        margin-bottom: 3.7rem;
+    }
+}
+
+.text {
+    font: 300 2.4rem/130% var(--main-ff);
+    max-width: 42.7rem;
+    margin-bottom: 4rem;
+
+    @include mq(sm) {
+        max-width: 26.1rem;
+        font: var(--font-body-S);
+        letter-spacing: 0.03em;
+        margin-bottom: 2rem;
+    }
+}
+
+.img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 88.1rem;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.4;
+
+    @include mq(md) {
+        width: 58.1rem;
+    }
+
+    @include mq(sm) {
+        width: 32.6rem;
+        bottom: 3rem;
+    } 
+}
+
+.sectionBgImg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
+    mix-blend-mode: screen;
+    filter: blur(122px);
+}

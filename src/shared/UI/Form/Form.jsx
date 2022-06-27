@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './Form.scss';
 import { Button } from '../Button/Button';
 import { useForm } from 'react-hook-form';
-// import InputMask from 'react-input-mask';
+import { Link } from 'react-router-dom';
 
 const FormComponent = () => {
   const { register, formState: { errors }, handleSubmit, reset, } = useForm({
@@ -65,7 +65,7 @@ const FormComponent = () => {
             send request
           </Button>
           <p className={styles.agreement}>
-            By clicking the Send Request button you agree to our <a href="/">Privacy Policy</a> terms
+            By clicking the Send Request button you agree to our <Link to="/privacy">Privacy Policy</Link> terms
           </p>
         </div>
       </div>

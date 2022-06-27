@@ -1,8 +1,38 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react'
 import styles from './WeWork.scss';
+import bgItemFeats from '../../../../assets/img/bgItemFeats.png';
 
 const WeWorkComponent = () => {
+    const data1 = [
+        {
+            id: 0,
+            name: 'Selection of needs for analysis'
+        },
+        {
+            id: 1,
+            name: 'Сompany audit to get full insight'
+        },
+        {
+            id: 2,
+            name: 'Creating of customized solution'
+        }
+    ]
+    const data2 = [
+        {
+            id: 0,
+            name: 'BI-system implementation'
+        },
+        {
+            id: 1,
+            name: 'BI-system training'
+        },
+        {
+            id: 2,
+            name: 'Technical support'
+        }
+    ]
+
     return (
         <section className={styles.section}>
             <h2 className={styles.heading}>
@@ -11,21 +41,16 @@ const WeWorkComponent = () => {
             <div className={styles.container}>
                 <div className={styles.containerTopBlock}>
                     <ul className={styles.list}>
-                        <li className={styles.item}>
-                            <p className={styles.itemText}>
-                                Selection of needs for analysis
-                            </p>
-                        </li>
-                        <li className={styles.item}>
-                            <p className={styles.itemText}>
-                                Сompany audit to get full insight
-                            </p>
-                        </li>
-                        <li className={styles.item}>
-                            <p className={styles.itemText}>
-                                Creating of customized solution
-                            </p>
-                        </li>
+                        {
+                            data1.map(({id, name}) =>
+                                <li key={id} className={styles.item}>
+                                    <img src={bgItemFeats} alt={name} className={styles.itemBg} />
+                                    <p className={styles.itemText}>
+                                        {name}
+                                    </p>
+                                </li>
+                            )
+                        }
                     </ul>
                 </div>
                 <div className={styles.containerTopBlock}>
@@ -36,21 +61,16 @@ const WeWorkComponent = () => {
                 </div>
                 <div className={styles.containerBottomBlock}>
                     <ul className={[styles.list, styles.startWith4].join(' ')}>
-                        <li className={styles.item}>
-                            <p className={styles.itemText}>
-                                BI-system implementation
-                            </p>
-                        </li>
-                        <li className={styles.item}>
-                            <p className={styles.itemText}>
-                                BI-system training
-                            </p>
-                        </li>
-                        <li className={styles.item}>
-                            <p className={styles.itemText}>
-                                Technical support
-                            </p>
-                        </li>
+                        {
+                            data2.map(({id, name}) =>
+                                <li key={id} className={styles.item}>
+                                    <img src={bgItemFeats} alt={name} className={styles.itemBg} />
+                                    <p className={styles.itemText}>
+                                        {name}
+                                    </p>
+                                </li>
+                            )
+                        }
                     </ul>
                 </div>
             </div>

@@ -17,11 +17,11 @@ html {
   }
 
   @include mq(custom, max, 1536) {
-    font-size: 9px;
+    font-size: 8px;
   }
 
-  @include mq(custom, max, 1440) {
-    font-size: 8px;
+  @include mq(custom, max, 1366) {
+    font-size: 7px;
   }
 
   @include mq(sm) {
@@ -193,6 +193,10 @@ img {
   background-position: top left;
   background-repeat: no-repeat;
   background-size: 100% 206.2rem;
+
+  &.no-bg {
+    background-image: none;
+  }
 
   @include mq(sm) {
     background-size: 100% 61.2rem;

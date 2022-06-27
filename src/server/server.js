@@ -11,9 +11,10 @@ import helmet from 'helmet';
 
 const app = express();
 app.use(compression());
-// app.use(helmet({
-//     contentSecurityPolicy: false
-// }));
+app.use(helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+}));
 let data = {};
 
 app.use('/static/', express.static('./dist/client'));
@@ -21,6 +22,10 @@ app.use('/static/', express.static('./dist/client'));
 StrapiAPI.getLogo()
     .then((resp) => {
         data.logo = resp.data[0].attributes.logo.data.attributes.url;
+        data.infoEmail = resp.data[0].attributes.infoEmail;
+        data.supportEmail = resp.data[0].attributes.supportEmail;
+        data.salesEmail = resp.data[0].attributes.salesEmail;
+        data.salesPhone = resp.data[0].attributes.salesPhone;
     });
 
 StrapiAPI.getIntro()

@@ -6,10 +6,12 @@ import Twitter from '../../UI/Icons/Twitter';
 import Facebook from '../../UI/Icons/Facebook';
 import { Form } from '../Form/Form';
 import MarkWeber from '../../../assets/img/MarkWeber.svg';
+import sphereVideo from '../../../assets/img/sphere5.mp4';
+import { Link } from 'react-router-dom';
 
 const FooterComponent = () => {
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer} id="contactUs">
             <div className="site-container grid-container">
                 <div className="grid-container__block"></div>
                 <div className="grid-container__block">
@@ -78,6 +80,7 @@ const FooterComponent = () => {
                             </ul>
                         </div>
                         <div className={styles.containerBlock}>
+                            <video src={sphereVideo} className={styles.video} playsInline muted autoPlay loop></video>
                             <Form />
                         </div>
                     </div>
@@ -85,9 +88,9 @@ const FooterComponent = () => {
                         <span className={styles.copyrightItem}>
                             ALL RIGHT RESERVED 2022
                         </span>
-                        <a href="/" className={styles.copyrightItem}>
+                        <Link to='/privacy' href="/" className={styles.copyrightItem}>
                             Privacy Policy
-                        </a>
+                        </Link>
 
                         <a href="/" className={styles.copyrightItem}>
                             Made by
