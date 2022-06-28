@@ -15,6 +15,7 @@ import StrapiAPI from '../API/StrapiAPI'
 import NoMatch from './pages/NoMatch/NoMatch';
 import Privacy from './pages/Privacy/Privacy';
 import Preloader from './UI/Preloader/Preloader';
+import SpinnerPreloader from './UI/Preloader/SpinnerPreloader';
 
 const App = ({ serverData }) => {
     const [APIdata, setAPIdata] = useState(serverData);
@@ -37,7 +38,7 @@ const App = ({ serverData }) => {
             SlidesList,
             setSlidesList
         }}>
-            {/* {isLoading && <Preloader />} */}
+            {/* {isLoading && <SpinnerPreloader />} */}
             <Routes>
                 <Route path="/" element={<Main />} />
                 <Route path="/demo" element={<Demo />} />

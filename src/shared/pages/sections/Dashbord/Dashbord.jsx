@@ -25,6 +25,10 @@ const DashbordComponent = () => {
     setisLoading(false);
   }, [setdashboardImage]);
 
+  if (isLoading) {
+    return <SpinnerPreloader />
+  }
+
   return (
     <section className={styles.section}>
       <picture>
@@ -37,7 +41,6 @@ const DashbordComponent = () => {
       <div className={styles.container}>
         <div className={styles.containerBLock}></div>
         <div className={styles.containerBLock}>
-          {isLoading && <SpinnerPreloader />}
           <img
             src={[server, dashboardImage].join('')}
             alt='Create your own dashboard and report'

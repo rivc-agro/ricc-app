@@ -4,10 +4,12 @@ import styles from './Header.scss';
 import { Logo } from '../Logo/Logo';
 import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useScrollPosition from '../../../hooks/useScrollPosition';
 
 const HeaderComponent = () => {
     const { pathname } = useLocation();
-
+    const scrollPosition = useScrollPosition();
+   
     const NavItems = [
         {
             name: "Benefits",
@@ -24,7 +26,10 @@ const HeaderComponent = () => {
     ];
 
     return (
-        <header className={styles.header}>
+        <header className={[
+            styles.header,
+            scrollPosition ? styles.fixed : null
+        ].join(' ')}>
             <div className={styles.container + ' site-container'}>
                 <Link className={[styles.logo, 'logo'].join(' ')} to='/'>
                     <Logo />
