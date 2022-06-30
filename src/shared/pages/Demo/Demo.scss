@@ -1,6 +1,33 @@
+@import '../../../styles/helpers/media.scss';
+
+
+.DemoContainerMobile {
+    display: none;
+
+    h2 {
+        font: var(--font-heading-h2);
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 10rem;
+
+        @include mq(sm) {
+            font: var(--font-heading-h3);
+        }
+    }
+
+    @include mq(lg) {
+        display: block;
+    }
+}
+
 .DemoContainer {
     padding-top: 18.5rem;
     display: flex;
+
+    @include mq(lg) {
+        display: none;
+    }
 }
 
 .DemoImage {

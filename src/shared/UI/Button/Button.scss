@@ -23,6 +23,16 @@
         }
     }
 
+    &.modTransparent {
+        background-color: transparent;
+        border: 0.1rem solid var(--color-white);
+        background-image: url(../../../assets/img/bgBtnPolygons.png);
+        background-position: center right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 1.9rem 3.3rem;
+    }
+
     @include mq(sm) {
         padding: 1.6rem 3.2rem;
         font: 400 1.2rem/1.4rem var(--main-ff);

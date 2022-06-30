@@ -1,10 +1,19 @@
-.section {}
+@import '../../../../styles/helpers/media.scss';
+
+.section {
+    margin-bottom: 0;
+}
 
 .heading {
     margin-bottom: 6.5rem;
     text-transform: uppercase;
     font: var(--font-heading-h1);
     letter-spacing: -0.02em;
+
+    @include mq(lg) {
+        font: var(--font-heading-h2);
+        font-weight: 300;
+    }
 }
 
 .container {
@@ -15,6 +24,10 @@
 
     &:nth-last-of-type(1) {
         margin-bottom: 0;
+    }
+
+    @include mq(lg) {
+        display: block;
     }
 }
 
@@ -48,6 +61,14 @@
     &.startWith4 {
         --start-value: 3;
     }
+
+    @include mq(md) {
+        grid-template-columns: repeat(10, 1fr);
+    }
+
+    @include mq(sm) {
+        gap: 0.8rem;
+    }
 }
 
 .item {
@@ -60,11 +81,28 @@
     height: 37.5rem;
     counter-increment: lis;
 
+    @include mq(md) {
+        height: 33.5rem;
+        grid-column: 5 span;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include mq(sm) {
+        height: 16.8rem;
+        padding: 1.2rem 1.6rem;
+    }
+
     &::before {
         position: absolute;
         top: 2.7rem;
         left: 3.2rem;
         content: counter(lis)". ";
+
+        @include mq(sm) {
+            top: 1.6rem;
+            left: 1.2rem;
+        }
     }
 
     &:hover {
@@ -78,6 +116,15 @@
     max-width: 22.4rem;
     font: 400 2.4rem/110% var(--main-ff);
     letter-spacing: 0.03em;
+
+    @include mq(md) {
+        margin-top: auto;
+    }
+
+    @include mq(sm) {
+        font: var(--font-body-S);
+        font-weight: 300;
+    }
 }
 
 .itemBg {

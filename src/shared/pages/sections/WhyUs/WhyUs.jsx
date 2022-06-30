@@ -86,6 +86,9 @@ const WhyUsComponent = () => {
             <Button>
               contACT us
             </Button>
+            <Button modBgImg>
+              Know more about our solution
+            </Button>
           </div>
         </div>
       </div>

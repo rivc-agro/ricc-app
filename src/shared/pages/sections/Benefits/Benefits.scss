@@ -152,6 +152,11 @@
     object-fit: cover;
     margin-right: 2rem;
 
+    @include mq(md) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
     @include mq(sm) {
         width: 3.5rem;
         height: 3.5rem;

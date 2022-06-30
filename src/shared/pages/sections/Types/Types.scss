@@ -2,6 +2,14 @@
 
 .types {
   margin-bottom: 24.1rem;
+  
+  @include mq(lg) {
+    margin-bottom: 15rem;
+  }
+
+  @include mq(sm) {
+    margin-bottom: 10rem;
+  }
 }
 
 .heading {

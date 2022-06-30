@@ -2,7 +2,7 @@ import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import styles from './Footer.scss';
 import WhatsUp from '../../UI/Icons/WhatsUp';
-import Twitter from '../../UI/Icons/Twitter';
+import LinkendIn from '../../UI/Icons/LinkendIn';
 import Facebook from '../../UI/Icons/Facebook';
 import { Form } from '../Form/Form';
 import MarkWeber from '../../../assets/img/MarkWeber.svg';
@@ -61,15 +61,7 @@ const FooterComponent = () => {
                                         </li>
                                         <li className={styles.socialItem}>
                                             <a href="/" className={styles.socialLink}>
-                                                <Twitter
-                                                    width='32'
-                                                    height='32'
-                                                    className={styles.socialLinkIcon} />
-                                            </a>
-                                        </li>
-                                        <li className={styles.socialItem}>
-                                            <a href="/" className={styles.socialLink}>
-                                                <Facebook
+                                                <LinkendIn
                                                     width='32'
                                                     height='32'
                                                     className={styles.socialLinkIcon} />

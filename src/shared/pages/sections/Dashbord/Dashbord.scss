@@ -1,6 +1,16 @@
+@import '../../../../styles/helpers/media.scss';
+
 .section {
     position: relative;
     margin-bottom: 51.8rem;
+
+    @include mq(md) {
+        margin-bottom: 15rem;
+    }
+
+    @include mq(sm) {
+        margin-bottom: 10rem;
+    }
 }
 
 .sectionBgImg {
@@ -17,6 +27,24 @@
     transform: translate3d(0, 0, 0);
     transform: translateZ(0);
     filter: blur(169px);
+
+    @include mq(md) {
+        top: 0;
+        left: auto;
+        right: 0;
+        width: 70rem;
+        height: 110rem;
+        object-fit: contain;
+        filter: blur(109px);
+    }
+
+    @include mq(sm) {
+        right: -100px;
+        top: -70px;
+        width: 70rem;
+        filter: blur(70px);
+        height: 85rem;
+    }
 }
 
 .heading {
@@ -25,18 +53,33 @@
     letter-spacing: -0.02em;
     max-width: 74.8rem;
     margin-bottom: 8rem;
+
+    @include mq(lg) {
+        font: var(--font-heading-h2);
+        font-weight: 300;
+    }
+
+    @include mq(sm) {
+        font: 300 3.4rem/1 var(--main-ff);
+        margin-bottom: 5.2rem;
+    }
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     gap: var(--grid-offset);
+
+    @include mq(md) {
+        display: block;
+    }
 }
 
 .containerBLock {
     display: flex;
     align-items: center;
     justify-content: center;
+
     &:nth-child(1) {
         grid-column: 2 span;
     }
@@ -52,6 +95,10 @@
     border-radius: 2rem;
     object-fit: cover;
     margin-bottom: 12.5rem;
+
+    @include mq(sm) {
+        margin-bottom: 16rem;
+    }
 }
 
 .textContainerBLock {
@@ -67,6 +114,16 @@
 .text {
     font: 300 3.4rem/110% var(--main-ff);
     margin-bottom: 7.6rem;
+
+    @include mq(md) {
+        font: var(--font-body-M);
+        margin-bottom: 4rem;
+    }
+
+    @include mq(sm) {
+        font: 300 2rem/2.2rem var(--main-ff);
+        margin-bottom: 2.8rem;
+    }
 }
 
 .smallText {
@@ -74,6 +131,17 @@
     color: var(--color-purple-text);
     font: var(--font-body-M);
     margin-bottom: 5.3rem;
+
+    @include mq(md) {
+        font: var(--font-body);
+    }
+
+    @include mq(sm) {
+        font: 300 1.4rem/1.5rem var(--main-ff);
+        margin-bottom: 2.8rem;
+        letter-spacing: 0.03em;
+        max-width: 28.4rem;
+    }
 }
 
 .howItWorks {
@@ -84,6 +152,21 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include mq(lg) {
+        top: 49rem;
+        left: -2rem;
+    }
+
+    @include mq(md) {
+        top: auto;
+        left: auto;
+        margin-bottom: 8rem;
+    }
+
+    @include mq(sm) {
+        margin-bottom: 10.9rem;
+    }
 }
 
 .howItWorksheading {
@@ -92,6 +175,15 @@
     text-transform: uppercase;
     letter-spacing: -0.02em;
     margin-bottom: 1.1rem;
+
+    @include mq(md) {
+        font: 400 2.5rem/1 var(--main-ff);
+    }
+
+    @include mq(sm) {
+        font: 400 2.2rem/1 var(--main-ff);
+        margin-bottom: 0.3rem;
+    }
 }
 
 .howItWorksSmallHeading {
@@ -99,6 +191,11 @@
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 3.8rem;
+
+    @include mq(sm) {
+        font: 400 1rem/1.2rem var(--main-ff);
+        margin-bottom: 2rem;
+    }
 }
 
 .howItWorksVideoBtn {
@@ -108,12 +205,17 @@
     width: 18.6rem;
     height: 8rem;
     border-radius: 12.7rem;
-    background: 
-        linear-gradient(0deg, rgba(42, 51, 135, 0.7), rgba(42, 51, 135, 0.7)), 
+    background:
+        linear-gradient(0deg, rgba(42, 51, 135, 0.7), rgba(42, 51, 135, 0.7)),
         url(../../../../assets/img/howItWorksBgImg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include mq(sm) {
+        width: 8.8rem;
+        height: 3.6rem;
+    }
 }
 
 .howItWorksVideoBtnIcon {
@@ -121,6 +223,11 @@
     width: 3.2rem;
     height: 3.2rem;
     color: var(--color-white);
+
+    @include mq(sm) {
+        width: 2rem;
+        height: 2rem;
+    }
 }
 
 .howItWorkscaption {
@@ -129,4 +236,8 @@
     letter-spacing: 0.09em;
     text-transform: uppercase;
     margin-top: 11rem;
+
+    @include mq(sm) {
+        margin-top: 5.4rem;
+    }
 }

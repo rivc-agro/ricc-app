@@ -9,22 +9,20 @@ import useScrollPosition from '../../../hooks/useScrollPosition';
 const HeaderComponent = () => {
     const { pathname } = useLocation();
     const scrollPosition = useScrollPosition();
-   
-    const NavItems = [
-        {
-            name: "Benefits",
-            link: ""
-        },
-        {
-            name: "RICC",
-            link: "",
-        },
-        {
-            name: "Contact us",
-            link: ""
-        }
-    ];
 
+    const NavItems = [{
+        name: "Benefits",
+        link: ""
+    },
+    {
+        name: "RICC",
+        link: "",
+    },
+    {
+        name: "Contact us",
+        link: ""
+    }];
+    
     return (
         <header className={[
             styles.header,

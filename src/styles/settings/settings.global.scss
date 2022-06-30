@@ -247,6 +247,8 @@ select:-webkit-autofill:focus {
   gap: var(--grid-offset);
 
   &__block {
+    min-width: 0;
+  
     &:nth-child(1) {
       grid-column: 1 span;
     }

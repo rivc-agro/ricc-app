@@ -11,6 +11,11 @@ const Demo = () => {
             <Header />
             <main className="page-main main">
                 <div className="site-container">
+                    <div className={styles.DemoContainerMobile}>
+                        <h2>
+                            To browse demo use desktop devices
+                        </h2>
+                    </div>
                     <div className={styles.DemoContainer}>
                         <img src={Laptop} alt="Product demo" className={styles.DemoImage} />
                         <div className={styles.DemoContentWrapper}>

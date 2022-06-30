@@ -1,4 +1,5 @@
 @import '../../../styles/settings/mixins.scss';
+@import '../../../styles/helpers/media.scss';
 
 .form {
     position: relative;
@@ -12,6 +13,14 @@
     background: var(--color-gradient);
     border-radius: 2rem;
     padding: 8.7rem 7.5rem 7.5rem;
+
+    @include mq(md) {
+        padding: 3.2rem;
+    }
+
+    @include mq(sm) {
+        padding: 4rem 2.4rem;
+    }
 }
 
 .label {
@@ -32,6 +41,10 @@
         bottom: 0;
         font: var(--font-btn-s);
     }
+
+    @include mq(sm) {
+        margin-bottom: 3.6rem;
+    }
 }
 
 .input {
@@ -46,6 +59,14 @@
         font: 400 2rem/110% var(--main-ff);
         color: var(--color-white);
     }
+
+    @include mq(sm) {
+        font: 400 1.4rem/110% var(--main-ff);
+
+        @include placeholder {
+            font: 400 1.4rem/110% var(--main-ff);
+        }
+    }
 }
 
 .btnWrapper {
@@ -53,6 +74,14 @@
     display: flex;
     align-items: center;
     gap: 4rem;
+
+    @include mq(sm) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+
+        margin-top: 4rem;
+    }
 }
 
 .agreement {
@@ -63,5 +92,10 @@
 
     a {
         color: var(--color-white);
+    }
+
+    @include mq(sm) {
+        color: rgba(161, 179, 227, 0.5);
+        max-width: 100%;
     }
 }
