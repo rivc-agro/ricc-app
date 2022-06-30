@@ -11,10 +11,10 @@ import helmet from 'helmet';
 
 const app = express();
 app.use(compression());
-// app.use(helmet({
-//     contentSecurityPolicy: false,
-//     crossOriginEmbedderPolicy: false,
-// }));
+app.use(helmet({
+    contentSecurityPolicy: false,
+    crossOriginEmbedderPolicy: false,
+}));
 let data = {};
 
 app.use('/static/', express.static('./dist/client'));

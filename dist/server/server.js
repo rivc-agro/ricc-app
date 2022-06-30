@@ -8293,6 +8293,7 @@ const external_compression_namespaceObject = require("compression");
 var external_compression_default = /*#__PURE__*/__webpack_require__.n(external_compression_namespaceObject);
 ;// CONCATENATED MODULE: external "helmet"
 const external_helmet_namespaceObject = require("helmet");
+var external_helmet_default = /*#__PURE__*/__webpack_require__.n(external_helmet_namespaceObject);
 ;// CONCATENATED MODULE: ./src/server/server.js
 
 
@@ -8305,11 +8306,11 @@ const external_helmet_namespaceObject = require("helmet");
 
 
 var app = external_express_default()();
-app.use(external_compression_default()()); // app.use(helmet({
-//     contentSecurityPolicy: false,
-//     crossOriginEmbedderPolicy: false,
-// }));
-
+app.use(external_compression_default()());
+app.use(external_helmet_default()({
+  contentSecurityPolicy: false,
+  crossOriginEmbedderPolicy: false
+}));
 var data = {};
 app.use('/static/', external_express_default()["static"]('./dist/client'));
 StrapiAPI.getLogo().then(function (resp) {
