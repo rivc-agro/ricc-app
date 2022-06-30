@@ -169,11 +169,27 @@
     background-size: cover;
     overflow: hidden;
 
+    &:hover {
+        .btnDemoImg {
+            transform: scale(1.1);
+        }
+    }
+
     &.modMore {
         width: 28.3rem;
         flex-grow: 0;
         background-color: #131F3F;
         background-image: none;
+
+        &:hover {
+            .btnDemoIcon {
+                color: var(--color-white);
+            }
+
+            .btnDemoImg {
+                transform: scale(1);
+            }
+        }
 
         .btnDemoImg {
             height: auto;
@@ -216,6 +232,7 @@
     height: 100%;
     width: auto;
     object-fit: cover;
+    transition: transform 300ms;
 
     @include mq(custom, max, 1280) {
         right: -2.3rem;
@@ -261,6 +278,7 @@
 
 .btnDemoIcon {
     color: #3B496D;
+    transition: fill var(--transition), color var(--transition);
 
     @include mq(sm) {
         position: absolute;

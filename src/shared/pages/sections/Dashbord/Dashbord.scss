@@ -212,6 +212,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    &:hover {
+        .howItWorksVideoBtnIcon {
+            color: var(--color-accent1);
+        }
+    }
+
     @include mq(sm) {
         width: 8.8rem;
         height: 3.6rem;
@@ -223,6 +229,7 @@
     width: 3.2rem;
     height: 3.2rem;
     color: var(--color-white);
+    transition: color var(--transition);
 
     @include mq(sm) {
         width: 2rem;

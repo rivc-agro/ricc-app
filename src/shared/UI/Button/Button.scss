@@ -10,6 +10,11 @@
     background-color: var(--color-accent1);
     border-radius: 5.5rem;
     flex-shrink: 0;
+    transition: background-color var(--transition);
+
+    &:hover {
+        background-color: #1750E1;
+    }
 
     &.modWhite {
         background-color: var(--color-white);
@@ -31,6 +36,12 @@
         background-repeat: no-repeat;
         background-size: contain;
         padding: 1.9rem 3.3rem;
+        transition: border-color var(--transition), color var(--transition);
+
+        &:hover {
+            border-color: #1750E1;
+            color: #1750E1;
+        }
     }
 
     @include mq(sm) {

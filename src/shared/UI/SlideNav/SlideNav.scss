@@ -24,6 +24,12 @@
     align-items: center;
     justify-content: center;
 
+    &:hover {
+       &::before {
+        background-color: #1750E1;
+       }
+    }
+
     &.isActive {
         &::before {
             opacity: 1;
@@ -40,6 +46,7 @@
         background-color: var(--color-accent1);
         border-radius: 3.6rem;
         opacity: 0;
+        transition: background-color var(--transition);
         content: "";
     }
 

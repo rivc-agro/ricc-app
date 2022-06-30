@@ -128,6 +128,12 @@
     justify-content: center;
     width: 3.2rem;
     height: 3.2rem;
+
+    &:hover {
+        .socialLinkIcon {
+            color: var(--color-accent1);
+        }
+    }
 }
 
 .socialItem {
@@ -154,6 +160,7 @@
     width: 100%;
     height: 100%;
     color: var(--color-white);
+    transition: color var(--transition);
 }
 
 .copyright {
@@ -183,6 +190,10 @@
     letter-spacing: 0.09em;
     text-transform: uppercase;
     gap: 2.1rem;
+
+    &:not(span.copyrightItem):hover {
+        color: var(--color-white)
+    }
 
     &:last-child {
         margin-left: auto;

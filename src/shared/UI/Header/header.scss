@@ -66,6 +66,11 @@
     font: var(--font-btn-s);
     letter-spacing: 0.09em;
     text-transform: uppercase;
+    transition: color var(--transition);
+
+    &:hover {
+        color: var(--color-accent1);
+    }
 }
 
 .demoBtn {
@@ -76,4 +81,10 @@
     letter-spacing: 0.09em;
     background-color: var(--color-accent1);
     border-radius: 5.5rem;
+
+    transition: background-color var(--transition);
+
+    &:hover {
+        background-color: #1750E1;
+    }
 }
