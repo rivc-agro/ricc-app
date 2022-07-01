@@ -11,7 +11,7 @@ export const indextemplate = (content, data) => `
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
     <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#06112E">
 
     <meta name="description" content="Business analysis with BI help you to use data effectively to manage your farm with maximum benefit.">
     <title>RICC Business Iintelligence in Agriculture</title>
