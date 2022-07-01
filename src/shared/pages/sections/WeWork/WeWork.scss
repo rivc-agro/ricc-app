@@ -139,3 +139,17 @@
     opacity: 0;
     transition: opacity 400ms;
 }
+
+.mobileContainer {
+    display: none;
+
+    @include mq(md) {
+        display: block;
+    }
+}
+
+.descktopContainer {
+    @include mq(md) {
+        display: none;
+    }
+}

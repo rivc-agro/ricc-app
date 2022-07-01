@@ -146,26 +146,36 @@
 
 .howItWorks {
     position: relative;
-    top: 41rem;
-    left: -14rem;
+    top: 30rem;
+    left: -4rem;
+    width: 60rem;
+    height: 60rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    @include mq(custom, max, 1440) {
+        left: -9rem;
+    }
+
     @include mq(lg) {
-        top: 49rem;
-        left: -2rem;
+        left: 2rem;
+        top: 43rem;
     }
 
     @include mq(md) {
         top: auto;
         left: auto;
         margin-bottom: 8rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     @include mq(sm) {
         margin-bottom: 10.9rem;
+        width: auto;
+        height: auto;
     }
 }
 
@@ -246,5 +256,115 @@
 
     @include mq(sm) {
         margin-top: 5.4rem;
+    }
+}
+
+.videoBgLine {
+    position: absolute;
+    top: 45%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    width: 91rem;
+    height: 90rem;
+    margin-right: -50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    @include mq(lg) {
+        height: 75rem;
+        width: 80rem;
+    }
+
+    @include mq(sm) {
+        top: 34%;
+        left: 52%;
+        background-size: contain;
+        height: 51rem;
+        width: 45rem;
+    }
+}
+
+.videoBgLine1 {
+    background-image: url(../../../../assets/img/videoBgLine.png);
+    animation: rotating 90s linear infinite 0.8s;
+}
+
+.videoBgLine2 {
+    background-image: url(../../../../assets/img/videoBgLine2.png);
+    width: 77rem;
+    height: 79rem;
+    left: 50%;
+    animation: rotating 70s linear infinite 0.8s;
+
+    @include mq(lg) {
+        height: 67rem;
+        left: 51%;
+        width: 68rem;
+    }
+
+    @include mq(sm) {
+        height: 42rem;
+        left: 51%;
+        width: 37rem;
+    }
+}
+
+.videoBgLine3 {
+    background-image: url(../../../../assets/img/videoBgLine3.png);
+    width: 77rem;
+    height: 79rem;
+    left: 50%;
+    animation: rotatingBack 70s linear infinite 0.8s;
+
+    @include mq(lg) {
+        height: 67rem;
+        left: 51%;
+        width: 68rem;
+    }
+
+    @include mq(sm) {
+        height: 42rem;
+        left: 51%;
+        width: 37rem;
+    }
+}
+
+.videoBgLine4 {
+    background-image: url(../../../../assets/img/videoBgLine4.png);
+    width: 97rem;
+    height: 97rem;
+
+    @include mq(lg) {
+        height: 80rem;
+        left: 57%;
+        width: 89rem;
+    }
+
+    @include mq(sm) {
+        height: 51rem;
+        left: 56%;
+        width: 45rem;
+    }
+}
+
+@keyframes rotating {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+@keyframes rotatingBack {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
     }
 }

@@ -50,6 +50,10 @@ const DashbordComponent = () => {
       <div className={styles.container}>
         <div className={styles.textContainerBLock}>
           <div className={styles.howItWorks}>
+            <div className={[styles.videoBgLine, styles.videoBgLine1].join(' ')}></div>
+            <div className={[styles.videoBgLine, styles.videoBgLine2].join(' ')}></div>
+            <div className={[styles.videoBgLine, styles.videoBgLine3].join(' ')}></div>
+            <div className={[styles.videoBgLine, styles.videoBgLine4].join(' ')}></div>
             <span className={styles.howItWorksheading}>
               how BI works
             </span>
