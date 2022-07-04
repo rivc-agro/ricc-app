@@ -9,6 +9,7 @@ import { PlayBtn } from '../../../UI/Icons/PlayBtn';
 import SpinnerPreloader from '../../../UI/Preloader/SpinnerPreloader';
 import StrapiAPI from '../../../../API/StrapiAPI';
 import { server } from '../../../../data/data';
+import LazyLoadComponentWrapper from '../../../UI/LazyLoadComponent/LazyLoadComponentWrapper';
 
 const DashbordComponent = () => {
   const [dashboardImage, setdashboardImage] = useState(null);
@@ -30,57 +31,61 @@ const DashbordComponent = () => {
   }
 
   return (
-    <section className={styles.section}>
-      <picture>
-        <source srcSet={whyBgWebp} type='image/webp' />
-        <img className={styles.sectionBgImg} src={whyBg} alt="" />
-      </picture>
-      <h1 className={styles.heading}>
-        Create your own dashboard and&nbsp;report
-      </h1>
-      <div className={styles.container}>
-        <div className={styles.containerBLock}></div>
-        <div className={styles.containerBLock}>
-          <img
-            src={[server, dashboardImage].join('')}
-            alt='Create your own dashboard and report'
-            className={styles.image} />
-        </div>
-      </div>
-      <div className={styles.container}>
-        <div className={styles.textContainerBLock}>
-          <div className={styles.howItWorks}>
-            <div className={[styles.videoBgLine, styles.videoBgLine1].join(' ')}></div>
-            <div className={[styles.videoBgLine, styles.videoBgLine2].join(' ')}></div>
-            <div className={[styles.videoBgLine, styles.videoBgLine3].join(' ')}></div>
-            <div className={[styles.videoBgLine, styles.videoBgLine4].join(' ')}></div>
-            <span className={styles.howItWorksheading}>
-              how BI works
-            </span>
-            <span className={styles.howItWorksSmallHeading}>
-              video about RICC
-            </span>
-            <button className={styles.howItWorksVideoBtn}>
-              <PlayBtn className={styles.howItWorksVideoBtnIcon} />
-            </button>
-            <span className={styles.howItWorkscaption}>
-              1m 30s
-            </span>
+    <LazyLoadComponentWrapper
+      threshold="1000"
+    >
+      <section className={styles.section}>
+        <picture>
+          <source srcSet={whyBgWebp} type='image/webp' />
+          <img className={styles.sectionBgImg} src={whyBg} alt="" />
+        </picture>
+        <h1 className={styles.heading}>
+          Create your own dashboard and&nbsp;report
+        </h1>
+        <div className={styles.container}>
+          <div className={styles.containerBLock}></div>
+          <div className={styles.containerBLock}>
+            <img
+              src={[server, dashboardImage].join('')}
+              alt='Create your own dashboard and report'
+              className={styles.image} />
           </div>
         </div>
-        <div className={styles.textContainerBLock}>
-          <p className={styles.text}>
-            Our solution can combine data from all different systems and machineries under one platform with the possibility of any integration and limitless data collection.
-          </p>
-          <p className={styles.smallText}>
-            It also visualize data to generate analysis for business reports and accurate decisions.
-          </p>
-          <Button NavLink to='/demo'>
-            Try demo
-          </Button>
+        <div className={styles.container}>
+          <div className={styles.textContainerBLock}>
+            <div className={styles.howItWorks}>
+              <div className={[styles.videoBgLine, styles.videoBgLine1].join(' ')}></div>
+              <div className={[styles.videoBgLine, styles.videoBgLine2].join(' ')}></div>
+              <div className={[styles.videoBgLine, styles.videoBgLine3].join(' ')}></div>
+              <div className={[styles.videoBgLine, styles.videoBgLine4].join(' ')}></div>
+              <span className={styles.howItWorksheading}>
+                how BI works
+              </span>
+              <span className={styles.howItWorksSmallHeading}>
+                video about RICC
+              </span>
+              <button className={styles.howItWorksVideoBtn}>
+                <PlayBtn className={styles.howItWorksVideoBtnIcon} />
+              </button>
+              <span className={styles.howItWorkscaption}>
+                1m 30s
+              </span>
+            </div>
+          </div>
+          <div className={styles.textContainerBLock}>
+            <p className={styles.text}>
+              Our solution can combine data from all different systems and machineries under one platform with the possibility of any integration and limitless data collection.
+            </p>
+            <p className={styles.smallText}>
+              It also visualize data to generate analysis for business reports and accurate decisions.
+            </p>
+            <Button NavLink to='/demo'>
+              Try demo
+            </Button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </LazyLoadComponentWrapper>
   )
 }
 

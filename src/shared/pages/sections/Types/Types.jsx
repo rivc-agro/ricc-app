@@ -12,6 +12,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
 import FadeIn from '../../../UI/FadeIn/FadeIn';
+import LazyLoadComponentWrapper from '../../../UI/LazyLoadComponent/LazyLoadComponentWrapper';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 SwiperCore.use([
@@ -47,62 +48,67 @@ const TypesComponent = () => {
     }, []);
 
     return (
+
         <section className={[styles.types, styles.container].join(' ')}>
             <h2 className={[styles.heading, 'site-second-heading'].join(' ')} ref={Heading}>
                 It can be used for any types of farms
                 and&nbsp;productions
             </h2>
-            <FadeIn>
-                <div className={styles.sliderContainer}>
-                    <div className={styles.sliderContainerBlock}>
-                        <SliderNav
-                            classes={{ prev: "types-swiper-button-prev", next: "types-swiper-button-next" }}
-                        />
-                    </div>
-                    <div className={styles.sliderContainerBlock}>
-                        <Swiper className={styles.slider}
-                            spaceBetween={0}
-                            slidesPerView={3}
-                            navigation={{
-                                nextEl: ".types-swiper-button-next",
-                                prevEl: ".types-swiper-button-prev",
-                            }}
-                            breakpoints={{
-                                280: {
-                                    slidesPerView: 1.8,
-                                    spaceBetween: 10
-                                },
-                                768: {
-                                    slidesPerView: 3.1,
-                                }
-                            }}
-                        >
-                            {
-                                SlidesList.map(item =>
-                                    <SwiperSlide key={item.id}>
-                                        <div className={styles.item}>
-                                            <div className={styles.itemImageWrapper}>
-                                                <div className={[styles.itemImageBg, styles.itemImageBg1].join(' ')}></div>
-                                                <div className={[styles.itemImageBg, styles.itemImageBg2].join(' ')}></div>
-                                                <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot1].join(' ')}></div>
-                                                <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot2].join(' ')}></div>
-                                                <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot3].join(' ')}></div>
-                                                <img
-                                                    src={[server, item.attributes.Image.data.attributes.url].join('')}
-                                                    className={styles.img}
-                                                    alt={item.attributes.Image.data.attributes.url} />
+            <LazyLoadComponentWrapper
+                threshold="1000"
+            >
+                <FadeIn>
+                    <div className={styles.sliderContainer}>
+                        <div className={styles.sliderContainerBlock}>
+                            <SliderNav
+                                classes={{ prev: "types-swiper-button-prev", next: "types-swiper-button-next" }}
+                            />
+                        </div>
+                        <div className={styles.sliderContainerBlock}>
+                            <Swiper className={styles.slider}
+                                spaceBetween={0}
+                                slidesPerView={3}
+                                navigation={{
+                                    nextEl: ".types-swiper-button-next",
+                                    prevEl: ".types-swiper-button-prev",
+                                }}
+                                breakpoints={{
+                                    280: {
+                                        slidesPerView: 1.8,
+                                        spaceBetween: 10
+                                    },
+                                    768: {
+                                        slidesPerView: 3.1,
+                                    }
+                                }}
+                            >
+                                {
+                                    SlidesList.map(item =>
+                                        <SwiperSlide key={item.id}>
+                                            <div className={styles.item}>
+                                                <div className={styles.itemImageWrapper}>
+                                                    <div className={[styles.itemImageBg, styles.itemImageBg1].join(' ')}></div>
+                                                    <div className={[styles.itemImageBg, styles.itemImageBg2].join(' ')}></div>
+                                                    <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot1].join(' ')}></div>
+                                                    <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot2].join(' ')}></div>
+                                                    <div className={[styles.itemImageBg, styles.itemImageBgDot, styles.itemImageBgDot3].join(' ')}></div>
+                                                    <img
+                                                        src={[server, item.attributes.Image.data.attributes.url].join('')}
+                                                        className={styles.img}
+                                                        alt={item.attributes.Image.data.attributes.url} />
+                                                </div>
+                                                <span className={styles.itemCaption}>
+                                                    {item.attributes.Caption}
+                                                </span>
                                             </div>
-                                            <span className={styles.itemCaption}>
-                                                {item.attributes.Caption}
-                                            </span>
-                                        </div>
-                                    </SwiperSlide>
-                                )
-                            }
-                        </Swiper>
+                                        </SwiperSlide>
+                                    )
+                                }
+                            </Swiper>
+                        </div>
                     </div>
-                </div>
-            </FadeIn>
+                </FadeIn>
+            </LazyLoadComponentWrapper >
         </section>
     )
 }

@@ -5,7 +5,9 @@ import App from '../shared/App';
 import ScrollToTop from '../shared/UI/ScrollToTop/ScrollToTop';
 
 window.addEventListener('load', () => {
-    ReactDom.hydrate(
+    const renderMethod = module.hot ? ReactDom.render : ReactDom.hydrate;
+
+    renderMethod(
         <BrowserRouter>
             <ScrollToTop />
             <App serverData={window.__INITIAL_DATA__} />
