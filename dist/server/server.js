@@ -922,37 +922,6 @@ var Form_Form = (0,root_namespaceObject.hot)(FormComponent);
 /* harmony default export */ const MarkWeber = (__webpack_require__.p + "MarkWeber.svg");
 ;// CONCATENATED MODULE: ./src/assets/img/sphere5.mp4
 /* harmony default export */ const sphere5 = (__webpack_require__.p + "sphere5.mp4");
-;// CONCATENATED MODULE: external "react-lazy-load-image-component"
-const external_react_lazy_load_image_component_namespaceObject = require("react-lazy-load-image-component");
-;// CONCATENATED MODULE: external "use-ssr"
-const external_use_ssr_namespaceObject = require("use-ssr");
-var external_use_ssr_default = /*#__PURE__*/__webpack_require__.n(external_use_ssr_namespaceObject);
-;// CONCATENATED MODULE: ./src/shared/UI/LazyLoadComponent/LazyLoadComponentWrapper.jsx
-var LazyLoadComponentWrapper_excluded = ["children"];
-
-function LazyLoadComponentWrapper_extends() { LazyLoadComponentWrapper_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return LazyLoadComponentWrapper_extends.apply(this, arguments); }
-
-function LazyLoadComponentWrapper_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = LazyLoadComponentWrapper_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function LazyLoadComponentWrapper_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-var LazyLoadComponentWrapper = function LazyLoadComponentWrapper(_ref) {
-  var children = _ref.children,
-      props = LazyLoadComponentWrapper_objectWithoutProperties(_ref, LazyLoadComponentWrapper_excluded);
-
-  var _useSSR = external_use_ssr_default()(),
-      isServer = _useSSR.isServer;
-
-  return /*#__PURE__*/external_react_default().createElement(external_react_lazy_load_image_component_namespaceObject.LazyLoadComponent, LazyLoadComponentWrapper_extends({}, props, {
-    visibleByDefault: isServer
-  }), children);
-};
-
-/* harmony default export */ const LazyLoadComponent_LazyLoadComponentWrapper = ((0,external_react_lazy_load_image_component_namespaceObject.trackWindowScroll)(LazyLoadComponentWrapper));
 ;// CONCATENATED MODULE: ./src/shared/UI/Footer/Footer.jsx
 
 
@@ -965,11 +934,8 @@ var LazyLoadComponentWrapper = function LazyLoadComponentWrapper(_ref) {
 
 
 
-
 var FooterComponent = function FooterComponent() {
-  return /*#__PURE__*/external_react_default().createElement(LazyLoadComponent_LazyLoadComponentWrapper, {
-    threshold: "1000"
-  }, /*#__PURE__*/external_react_default().createElement("footer", {
+  return /*#__PURE__*/external_react_default().createElement("footer", {
     className: (Footer_default()).footer,
     id: "contactUs"
   }, /*#__PURE__*/external_react_default().createElement("div", {
@@ -1065,7 +1031,7 @@ var FooterComponent = function FooterComponent() {
     src: MarkWeber,
     alt: "Website made by MarkWeber company",
     className: (Footer_default()).copyrightImage
-  })))))));
+  }))))));
 };
 
 var Footer_Footer = (0,root_namespaceObject.hot)(FooterComponent);
@@ -2392,7 +2358,6 @@ function Dashbord_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var DashbordComponent = function DashbordComponent() {
   var _useState = (0,external_react_namespaceObject.useState)(null),
       _useState2 = Dashbord_slicedToArray(_useState, 2),
@@ -2443,9 +2408,7 @@ var DashbordComponent = function DashbordComponent() {
     return /*#__PURE__*/external_react_default().createElement(Preloader_SpinnerPreloader, null);
   }
 
-  return /*#__PURE__*/external_react_default().createElement(LazyLoadComponent_LazyLoadComponentWrapper, {
-    threshold: "1000"
-  }, /*#__PURE__*/external_react_default().createElement("section", {
+  return /*#__PURE__*/external_react_default().createElement("section", {
     className: (Dashbord_default()).section
   }, /*#__PURE__*/external_react_default().createElement("picture", null, /*#__PURE__*/external_react_default().createElement("source", {
     srcSet: img_whyBg,
@@ -2499,7 +2462,7 @@ var DashbordComponent = function DashbordComponent() {
   }, "It also visualize data to generate analysis for business reports and accurate decisions."), /*#__PURE__*/external_react_default().createElement(Button_Button, {
     NavLink: true,
     to: "/demo"
-  }, "Try demo")))));
+  }, "Try demo"))));
 };
 
 var Dashbord_Dashbord = (0,root_namespaceObject.hot)(DashbordComponent);
@@ -7443,7 +7406,6 @@ var Navigation = {
 
 
 
-
 external_gsap_default().registerPlugin((ScrollTrigger_default()), SplitText);
 core_class.use([navigation]);
 
@@ -7479,9 +7441,7 @@ var TypesComponent = function TypesComponent() {
   }, /*#__PURE__*/external_react_default().createElement("h2", {
     className: [(Types_default()).heading, 'site-second-heading'].join(' '),
     ref: Heading
-  }, "It can be used for any types of farms and\xA0productions"), /*#__PURE__*/external_react_default().createElement(LazyLoadComponent_LazyLoadComponentWrapper, {
-    threshold: "1000"
-  }, /*#__PURE__*/external_react_default().createElement(FadeIn_FadeIn, null, /*#__PURE__*/external_react_default().createElement("div", {
+  }, "It can be used for any types of farms and\xA0productions"), /*#__PURE__*/external_react_default().createElement(FadeIn_FadeIn, null, /*#__PURE__*/external_react_default().createElement("div", {
     className: (Types_default()).sliderContainer
   }, /*#__PURE__*/external_react_default().createElement("div", {
     className: (Types_default()).sliderContainerBlock
@@ -7533,7 +7493,7 @@ var TypesComponent = function TypesComponent() {
     })), /*#__PURE__*/external_react_default().createElement("span", {
       className: (Types_default()).itemCaption
     }, item.attributes.Caption)));
-  })))))));
+  }))))));
 };
 
 var Types_Types = (0,root_namespaceObject.hot)(TypesComponent);
@@ -7765,6 +7725,36 @@ var Autoplay = {
     }
   }
 });
+;// CONCATENATED MODULE: external "react-lazy-load-image-component"
+const external_react_lazy_load_image_component_namespaceObject = require("react-lazy-load-image-component");
+;// CONCATENATED MODULE: external "use-ssr"
+const external_use_ssr_namespaceObject = require("use-ssr");
+;// CONCATENATED MODULE: ./src/shared/UI/LazyLoadComponent/LazyLoadComponentWrapper.jsx
+var LazyLoadComponentWrapper_excluded = (/* unused pure expression or super */ null && (["children"]));
+
+function LazyLoadComponentWrapper_extends() { LazyLoadComponentWrapper_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return LazyLoadComponentWrapper_extends.apply(this, arguments); }
+
+function LazyLoadComponentWrapper_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = LazyLoadComponentWrapper_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function LazyLoadComponentWrapper_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+
+var LazyLoadComponentWrapper = function LazyLoadComponentWrapper(_ref) {
+  var children = _ref.children,
+      props = LazyLoadComponentWrapper_objectWithoutProperties(_ref, LazyLoadComponentWrapper_excluded);
+
+  var _useSSR = useSSR(),
+      isServer = _useSSR.isServer;
+
+  return /*#__PURE__*/React.createElement(LazyLoadComponent, LazyLoadComponentWrapper_extends({}, props, {
+    visibleByDefault: isServer
+  }), children);
+};
+
+/* harmony default export */ const LazyLoadComponent_LazyLoadComponentWrapper = ((/* unused pure expression or super */ null && (LazyLoadComponentWrapper)));
 ;// CONCATENATED MODULE: ./src/shared/pages/sections/Integrations/Integrations.jsx
 function Integrations_typeof(obj) { "@babel/helpers - typeof"; return Integrations_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, Integrations_typeof(obj); }
 
@@ -7844,9 +7834,7 @@ var IntegrationsComponent = function IntegrationsComponent() {
   (0,external_react_namespaceObject.useEffect)(function () {
     fetchSourses();
   }, [setSoursesFirst, setSoursesSecond]);
-  return /*#__PURE__*/external_react_default().createElement(LazyLoadComponent_LazyLoadComponentWrapper, {
-    threshold: "1000"
-  }, /*#__PURE__*/external_react_default().createElement("section", {
+  return /*#__PURE__*/external_react_default().createElement("section", {
     className: (Integrations_default()).section
   }, /*#__PURE__*/external_react_default().createElement("div", {
     className: (Integrations_default()).container
@@ -7901,7 +7889,7 @@ var IntegrationsComponent = function IntegrationsComponent() {
       alt: item.attributes.caption,
       className: (Integrations_default()).sliderImg
     }));
-  }))));
+  })));
 };
 
 var Integrations_Integrations = (0,root_namespaceObject.hot)(IntegrationsComponent);

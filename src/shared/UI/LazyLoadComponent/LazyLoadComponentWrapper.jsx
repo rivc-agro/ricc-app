@@ -1,9 +1,10 @@
 import React from 'react'
-import { LazyLoadComponent, trackWindowScroll } from 'react-lazy-load-image-component'
+import { LazyLoadComponent } from 'react-lazy-load-image-component'
 import useSSR from 'use-ssr';
 
 const LazyLoadComponentWrapper = ({children, ...props }) => {
     const { isServer } = useSSR();
+
     return (
         <LazyLoadComponent
             {...props}
@@ -14,4 +15,4 @@ const LazyLoadComponentWrapper = ({children, ...props }) => {
     )
 }
 
-export default trackWindowScroll(LazyLoadComponentWrapper) 
+export default LazyLoadComponentWrapper; 
