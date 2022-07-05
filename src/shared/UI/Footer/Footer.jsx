@@ -35,6 +35,9 @@ const FooterComponent = () => {
                                         <span className={styles.smallLegend}>
                                             Legal representative of RICC in UAE
                                         </span>
+                                        <span className={styles.smallSubLegend}>
+                                            DANIT LLC
+                                        </span>
                                         <a href="mailto:info@danit.ae" className={styles.link}>
                                             info@danit.ae
                                         </a>

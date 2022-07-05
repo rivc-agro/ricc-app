@@ -20,6 +20,32 @@
     position: fixed;
     background: linear-gradient(180deg, #06112E -68.67%, rgba(6, 17, 46, 0) 90.67%);
     animation: fromUp 600ms ease-in-out;
+
+    @include mq(sm) {
+        background-color: #06112E;
+        height: 5.5rem;
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+
+        .burgerBtn {
+            height: 3rem;
+        }
+    
+        .btns {
+            width: auto;
+            order: 2;
+        }
+    
+        .logo {
+            order: 1;
+            margin-right: 2.8rem;
+        }
+
+        .burgerBtn {
+            order: 3;
+        }
+    }
 }
 
 @keyframes fromUp {
@@ -35,6 +61,11 @@
 .container {
     display: flex;
     align-items: center;
+
+    @include mq(sm) {
+        flex-wrap: wrap;
+        gap: 2.3rem 0;
+    }
 }
 
 .logo {
@@ -45,6 +76,11 @@
     margin-left: auto;
     display: flex;
     align-items: center;
+
+    @include mq(sm) {
+        margin-left: 0;
+        width: 100%;
+    }
 }
 
 .btnItem {
@@ -86,5 +122,27 @@
 
     &:hover {
         background-color: #1750E1;
+    }
+}
+
+.burgerBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    gap: 0.6rem;
+    margin-left: auto;
+
+    span {
+        display: block;
+        width: 2.4rem;
+        height: 0.1rem;
+        background-color: var(--color-white);
+    }
+
+    @include mq(sm, min) {
+        display: none;
     }
 }

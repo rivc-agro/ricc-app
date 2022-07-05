@@ -9,6 +9,11 @@ const useScrollPosition = () => {
         const updatePosition = () => {
             const scrollPosition = window.pageYOffset;
 
+            if (scrollPosition === 0) {
+                setScrollPosition(false);
+                return;
+            }
+
             if (scrollPosition > lastScrollTop) {
                 setScrollPosition(false);
             } else {

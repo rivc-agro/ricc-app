@@ -32,6 +32,9 @@ const HeaderComponent = () => {
                 <Link className={[styles.logo, 'logo'].join(' ')} to='/'>
                     <Logo />
                 </Link>
+                <button className={styles.burgerBtn}>
+                    <span></span><span></span><span></span>
+                </button>
                 <ul className={styles.btns}>
                     {pathname !== '/'
                         ?
