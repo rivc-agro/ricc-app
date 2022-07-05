@@ -237,7 +237,12 @@ module.exports = {
 	"videoBgLine2": "Dashbord-videoBgLine2--3QSB1",
 	"videoBgLine3": "Dashbord-videoBgLine3--30cow",
 	"rotatingBack": "Dashbord-rotatingBack--2Mu-e",
-	"videoBgLine4": "Dashbord-videoBgLine4--2SI9h"
+	"videoBgLine4": "Dashbord-videoBgLine4--2SI9h",
+	"modal": "Dashbord-modal--1Ycoi",
+	"isAicive": "Dashbord-isAicive--SnUqO",
+	"modalContent": "Dashbord-modalContent--1CJe4",
+	"modalCLoseBtn": "Dashbord-modalCLoseBtn--OMucw",
+	"iframe": "Dashbord-iframe--3Lf9D"
 };
 
 
@@ -2325,6 +2330,58 @@ var StrapiAPI = /*#__PURE__*/function () {
 }();
 
 
+;// CONCATENATED MODULE: ./src/hooks/useScrollBlock.js
+
+var safeDocument = typeof document !== 'undefined' ? document : {};
+/**
+ * Usage:
+ * const [blockScroll, allowScroll] = useScrollBlock();
+ */
+
+/* harmony default export */ const useScrollBlock = (function () {
+  var scrollBlocked = (0,external_react_namespaceObject.useRef)();
+  var html = safeDocument.documentElement;
+  var body = safeDocument.body;
+
+  var blockScroll = function blockScroll() {
+    if (!body || !body.style || scrollBlocked.current) return;
+    var scrollBarWidth = window.innerWidth - html.clientWidth;
+    var bodyPaddingRight = parseInt(window.getComputedStyle(body).getPropertyValue("padding-right")) || 0;
+    /**
+     * 1. Fixes a bug in iOS and desktop Safari whereby setting
+     *    `overflow: hidden` on the html/body does not prevent scrolling.
+     * 2. Fixes a bug in desktop Safari where `overflowY` does not prevent
+     *    scroll if an `overflow-x` style is also applied to the body.
+     */
+
+    html.style.position = 'relative';
+    /* [1] */
+
+    html.style.overflow = 'hidden';
+    /* [2] */
+
+    body.style.position = 'relative';
+    /* [1] */
+
+    body.style.overflow = 'hidden';
+    /* [2] */
+
+    body.style.paddingRight = "".concat(bodyPaddingRight + scrollBarWidth, "px");
+    scrollBlocked.current = true;
+  };
+
+  var allowScroll = function allowScroll() {
+    if (!body || !body.style || !scrollBlocked.current) return;
+    html.style.position = '';
+    html.style.overflow = '';
+    body.style.position = '';
+    body.style.overflow = '';
+    body.style.paddingRight = '';
+    scrollBlocked.current = false;
+  };
+
+  return [blockScroll, allowScroll];
+});
 ;// CONCATENATED MODULE: ./src/shared/pages/sections/Dashbord/Dashbord.jsx
 function Dashbord_typeof(obj) { "@babel/helpers - typeof"; return Dashbord_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, Dashbord_typeof(obj); }
 
@@ -2358,6 +2415,7 @@ function Dashbord_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var DashbordComponent = function DashbordComponent() {
   var _useState = (0,external_react_namespaceObject.useState)(null),
       _useState2 = Dashbord_slicedToArray(_useState, 2),
@@ -2368,6 +2426,16 @@ var DashbordComponent = function DashbordComponent() {
       _useState4 = Dashbord_slicedToArray(_useState3, 2),
       isLoading = _useState4[0],
       setisLoading = _useState4[1];
+
+  var _useState5 = (0,external_react_namespaceObject.useState)(false),
+      _useState6 = Dashbord_slicedToArray(_useState5, 2),
+      modal = _useState6[0],
+      setModal = _useState6[1];
+
+  var _useScrollBlock = useScrollBlock(),
+      _useScrollBlock2 = Dashbord_slicedToArray(_useScrollBlock, 2),
+      blockScroll = _useScrollBlock2[0],
+      allowScroll = _useScrollBlock2[1];
 
   function fetchDashbord() {
     return _fetchDashbord.apply(this, arguments);
@@ -2399,6 +2467,24 @@ var DashbordComponent = function DashbordComponent() {
   }
 
   ;
+
+  var openModal = function openModal() {
+    setModal(true);
+    blockScroll();
+  };
+
+  var closeModal = function closeModal() {
+    setModal(false);
+    allowScroll();
+  }; // const opts = {
+  //   height: '100%',
+  //   width: '100%'
+  // };
+  // const onPlayerReady = (event) => {
+  //   event.target.pauseVideo();
+  // }
+
+
   (0,external_react_namespaceObject.useEffect)(function () {
     fetchDashbord();
     setisLoading(false);
@@ -2448,6 +2534,7 @@ var DashbordComponent = function DashbordComponent() {
   }, "how BI works"), /*#__PURE__*/external_react_default().createElement("span", {
     className: (Dashbord_default()).howItWorksSmallHeading
   }, "video about RICC"), /*#__PURE__*/external_react_default().createElement("button", {
+    onClick: openModal,
     className: (Dashbord_default()).howItWorksVideoBtn
   }, /*#__PURE__*/external_react_default().createElement(PlayBtn, {
     className: (Dashbord_default()).howItWorksVideoBtnIcon
@@ -2462,7 +2549,14 @@ var DashbordComponent = function DashbordComponent() {
   }, "It also visualize data to generate analysis for business reports and accurate decisions."), /*#__PURE__*/external_react_default().createElement(Button_Button, {
     NavLink: true,
     to: "/demo"
-  }, "Try demo"))));
+  }, "Try demo"))), /*#__PURE__*/external_react_default().createElement("div", {
+    className: [(Dashbord_default()).modal, modal ? (Dashbord_default()).isAicive : null].join(' ')
+  }, /*#__PURE__*/external_react_default().createElement("div", {
+    className: (Dashbord_default()).modalContent
+  }, /*#__PURE__*/external_react_default().createElement("button", {
+    onClick: closeModal,
+    className: (Dashbord_default()).modalCLoseBtn
+  }, /*#__PURE__*/external_react_default().createElement("span", null), /*#__PURE__*/external_react_default().createElement("span", null)))));
 };
 
 var Dashbord_Dashbord = (0,root_namespaceObject.hot)(DashbordComponent);

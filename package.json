@@ -82,6 +82,7 @@
     "react-lazy-load-image-component": "^1.5.4",
     "react-router-dom": "^6.3.0",
     "react-router-hash-link": "^2.4.3",
+    "react-youtube": "^9.0.3",
     "swiper": "^6.8.4",
     "use-ssr": "^1.0.24"
   }

@@ -9,16 +9,38 @@ import { PlayBtn } from '../../../UI/Icons/PlayBtn';
 import SpinnerPreloader from '../../../UI/Preloader/SpinnerPreloader';
 import StrapiAPI from '../../../../API/StrapiAPI';
 import { server } from '../../../../data/data';
+import useScrollBlock from '../../../../hooks/useScrollBlock';
 
 const DashbordComponent = () => {
   const [dashboardImage, setdashboardImage] = useState(null);
   const [isLoading, setisLoading] = useState(true);
+  const [modal, setModal] = useState(false);
+  const [blockScroll, allowScroll] = useScrollBlock();
 
   async function fetchDashbord() {
     const resp = await StrapiAPI.getDashboard();
     const img = resp.data[0].attributes.DashbordImage.data.attributes.url;
     setdashboardImage(img)
   };
+
+  const openModal = () => {
+    setModal(true);
+    blockScroll();
+  };
+
+  const closeModal = () => {
+    setModal(false);
+    allowScroll();
+  };
+
+  // const opts = {
+  //   height: '100%',
+  //   width: '100%'
+  // };
+
+  // const onPlayerReady = (event) => {
+  //   event.target.pauseVideo();
+  // }
 
   useEffect(() => {
     fetchDashbord();
@@ -60,7 +82,7 @@ const DashbordComponent = () => {
             <span className={styles.howItWorksSmallHeading}>
               video about RICC
             </span>
-            <button className={styles.howItWorksVideoBtn}>
+            <button onClick={openModal} className={styles.howItWorksVideoBtn}>
               <PlayBtn className={styles.howItWorksVideoBtnIcon} />
             </button>
             <span className={styles.howItWorkscaption}>
@@ -78,6 +100,21 @@ const DashbordComponent = () => {
           <Button NavLink to='/demo'>
             Try demo
           </Button>
+        </div>
+      </div>
+      <div className={[
+        styles.modal,
+        modal ? styles.isAicive : null].join(' ')}>
+        <div className={styles.modalContent}>
+          <button onClick={closeModal} className={styles.modalCLoseBtn}>
+            <span></span><span></span>
+          </button>
+          {/* <YouTube
+            className={styles.iframe}
+            videoId="2g811Eo7K8U"
+            opts={opts}
+            onReady={onPlayerReady}
+          /> */}
         </div>
       </div>
     </section>
