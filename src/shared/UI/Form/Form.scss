@@ -4,7 +4,15 @@
 .form {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 66.4rem;
+
+    @include mq(md) {
+        height: 59.6rem;
+    }
+
+    @include mq(sm) {
+        height: 48.6rem;
+    }
 }
 
 .container {
@@ -98,4 +106,49 @@
         color: rgba(161, 179, 227, 0.5);
         max-width: 100%;
     }
+}
+
+.message {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mq(md) {
+        padding-top: 5rem;
+    }
+
+    @include mq(sm) {
+        padding-top: 4rem;
+    }
+}
+
+.messageHeading {
+    font: var(--font-heading-h1);
+    margin-bottom: 3.6rem;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    @include mq(sm) {
+        font: var(--font-heading-h2);
+        font-weight: 300;
+    }
+}
+
+.messageText {
+    font: 300 2.4rem/3.1rem var(--main-ff);
+
+    @include mq(sm) {
+        font: var(--font-body);
+        font-weight: 300;
+    }
+}
+
+.messageBtn {
+    text-transform: uppercase;
+    font: var(--font-btn-m);
+    letter-spacing: 0.08em;
+    color: rgba($color: #fff, $alpha: 0.4);
+    margin-top: auto;
+    align-self: flex-end;
 }

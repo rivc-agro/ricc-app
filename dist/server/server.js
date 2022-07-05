@@ -84,7 +84,11 @@ module.exports = {
 	"label": "Form-label--1FYyx",
 	"input": "Form-input--3GzqX",
 	"btnWrapper": "Form-btnWrapper--2dFzV",
-	"agreement": "Form-agreement--1Eu5L"
+	"agreement": "Form-agreement--1Eu5L",
+	"message": "Form-message--2D5Ts",
+	"messageHeading": "Form-messageHeading--1a5Sv",
+	"messageText": "Form-messageText--38kMd",
+	"messageBtn": "Form-messageBtn--3hNcT"
 };
 
 
@@ -837,6 +841,18 @@ const external_react_hook_form_namespaceObject = require("react-hook-form");
 ;// CONCATENATED MODULE: ./src/shared/UI/Form/Form.jsx
 function Form_extends() { Form_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return Form_extends.apply(this, arguments); }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -855,8 +871,13 @@ var FormComponent = function FormComponent() {
       handleSubmit = _useForm.handleSubmit,
       reset = _useForm.reset;
 
+  var _useState = (0,external_react_namespaceObject.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      message = _useState2[0],
+      setMessage = _useState2[1];
+
   var onSubmit = function onSubmit(data) {
-    console.log(data);
+    setMessage(true);
     reset();
   };
 
@@ -866,6 +887,19 @@ var FormComponent = function FormComponent() {
     className: (Form_default()).form
   }, /*#__PURE__*/external_react_default().createElement("div", {
     className: (Form_default()).container
+  }, message ? /*#__PURE__*/external_react_default().createElement("div", {
+    className: (Form_default()).message
+  }, /*#__PURE__*/external_react_default().createElement("h4", {
+    className: (Form_default()).messageHeading
+  }, "thanks for the\xA0request"), /*#__PURE__*/external_react_default().createElement("p", {
+    className: (Form_default()).messageText
+  }, "We will contact you as soon as possible"), /*#__PURE__*/external_react_default().createElement("button", {
+    onClick: function onClick() {
+      setMessage(false);
+    },
+    className: (Form_default()).messageBtn
+  }, "New request")) : /*#__PURE__*/external_react_default().createElement("div", {
+    className: (Form_default()).formInner
   }, /*#__PURE__*/external_react_default().createElement("label", {
     className: (Form_default()).label
   }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('name', {
@@ -919,7 +953,7 @@ var FormComponent = function FormComponent() {
     className: (Form_default()).agreement
   }, "By clicking the Send Request button you agree to our ", /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Link, {
     to: "/privacy"
-  }, "Privacy Policy"), " terms"))));
+  }, "Privacy Policy"), " terms")))));
 };
 
 var Form_Form = (0,root_namespaceObject.hot)(FormComponent);
@@ -1072,17 +1106,17 @@ var Logo_Logo = (0,root_namespaceObject.hot)(LogoComponent);
 ;// CONCATENATED MODULE: external "react-router-hash-link"
 const external_react_router_hash_link_namespaceObject = require("react-router-hash-link");
 ;// CONCATENATED MODULE: ./src/hooks/useScrollPosition.js
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function useScrollPosition_slicedToArray(arr, i) { return useScrollPosition_arrayWithHoles(arr) || useScrollPosition_iterableToArrayLimit(arr, i) || useScrollPosition_unsupportedIterableToArray(arr, i) || useScrollPosition_nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function useScrollPosition_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function useScrollPosition_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return useScrollPosition_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return useScrollPosition_arrayLikeToArray(o, minLen); }
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function useScrollPosition_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function useScrollPosition_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+function useScrollPosition_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -1090,7 +1124,7 @@ var useScrollPosition = function useScrollPosition() {
   var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? external_react_namespaceObject.useLayoutEffect : external_react_namespaceObject.useEffect;
 
   var _useState = (0,external_react_namespaceObject.useState)(false),
-      _useState2 = _slicedToArray(_useState, 2),
+      _useState2 = useScrollPosition_slicedToArray(_useState, 2),
       scrollPosition = _useState2[0],
       setScrollPosition = _useState2[1];
 
