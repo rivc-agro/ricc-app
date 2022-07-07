@@ -2,13 +2,13 @@ import { hot } from 'react-hot-loader/root';
 import React, { useLayoutEffect, useEffect, useRef } from 'react';
 import styles from './Footer.scss';
 import { Form } from '../Form/Form';
-import MarkWeber from '../../../assets/img/MarkWeber.svg';
 import sphereVideo from '../../../assets/img/sphere5.mp4';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import SplitText from '../../../assets/js/gsap-bonus/SplitText';
 import Social from '../Social/Social';
+import MarkWeber from '../Icons/MarkWeber';
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -107,9 +107,9 @@ const FooterComponent = () => {
                             Privacy Policy
                         </Link>
 
-                        <a href="/" className={styles.copyrightItem}>
+                        <a href="/" className={styles.copyrightItem} target="_blank">
                             Made by
-                            <img src={MarkWeber} alt='Website made by MarkWeber company' className={styles.copyrightImage} />
+                            <MarkWeber className={styles.copyrightImage} />
                         </a>
                     </div>
                 </div>

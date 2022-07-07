@@ -55,4 +55,13 @@ export default class StrapiAPI {
         })
         return response.data;
     }
+
+    static async getSocials() {
+        const response = await axios.get(`${server}/api/socials`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        return response.data;
+    }
 }

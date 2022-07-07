@@ -7,6 +7,7 @@ import whyBgLayer from '../../../../assets/img/whyBgLayer.png'
 import whyBgLayerWebp from '../../../../assets/img/whyBgLayer.webp'
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import UAE from '../../../../assets/files/UAE.pdf'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,10 +84,10 @@ const WhyUsComponent = () => {
             </li>
           </ul>
           <div className={styles.btns}>
-            <Button>
+            <Button hashLink to="#contactUs">
               contACT us
             </Button>
-            <Button modBgImg>
+            <Button modBgImg SimpleLink to={UAE} target="_blank" >
               Know more about our solution
             </Button>
           </div>

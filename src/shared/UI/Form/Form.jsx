@@ -29,7 +29,7 @@ const FormComponent = () => {
               <p className={styles.messageText}>
                 We will contact you as soon as possible
               </p>
-              <button onClick={() => {setMessage(false)}} className={styles.messageBtn}>
+              <button onClick={() => { setMessage(false) }} className={styles.messageBtn}>
                 New request
               </button>
             </div>
@@ -54,8 +54,10 @@ const FormComponent = () => {
               </label>
               <label className={styles.label}>
                 <input
-                  {...register('phone', { required: true })}
-                  type="tel"
+                  {...register('phone', {
+                    required: true,
+                  })}
+                  type="number"
                   className={styles.input}
                   placeholder='Phone'
                   name='phone'

@@ -97,6 +97,14 @@ module.exports = {
                 options: {
                     name: '[name].[ext]',
                 }
+            },
+            {
+                // files
+                test: /\.(pdf|doc)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                }
             }
         ]
     },

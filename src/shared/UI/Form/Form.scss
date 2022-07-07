@@ -46,7 +46,7 @@
     span {
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 5px;
         font: var(--font-btn-s);
     }
 
@@ -61,6 +61,13 @@
     letter-spacing: 0.03em;
     font: 400 2rem/110% var(--main-ff);
     color: var(--color-white);
+
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+        -moz-appearance: textfield;
+    }
 
     @include placeholder {
         letter-spacing: 0.03em;

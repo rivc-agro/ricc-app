@@ -10,6 +10,7 @@ import gsap from 'gsap';
 import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
 import { Link } from 'react-router-dom';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import UAE from '../../../../assets/files/UAE.pdf';
 
 const introComponent = () => {
     gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -130,11 +131,11 @@ const introComponent = () => {
                                 <span className={styles.btnDemoSmallText}>try the demo now</span>
                                 <span className={styles.btnDemoText}>Try demo</span>
                             </Link>
-                            <button className={[styles.btnDemo, styles.modMore].join(' ')}>
+                            <a href={UAE} target="_blank" className={[styles.btnDemo, styles.modMore].join(' ')}>
                                 <IconPolygons width="181" height="148" className={styles.btnDemoImg} />
                                 <ArrowRight width="19" height="8" className={['icon', 'icon-arrow', styles.btnDemoIcon].join(' ')} />
                                 <span className={styles.btnDemoText}>Know more about our solution</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
