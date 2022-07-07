@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import React, { useEffect, useLayoutEffect, useRef } from 'react'
 import styles from './WhyUs.scss';
-import logo from '../../../../assets/img/ricc-logo-gradient.svg'
+import logo from '../../../../assets/img/ricc-why.png'
 import { Button } from '../../../UI/Button/Button';
 import whyBgLayer from '../../../../assets/img/whyBgLayer.png'
 import whyBgLayerWebp from '../../../../assets/img/whyBgLayer.webp'

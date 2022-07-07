@@ -1,14 +1,12 @@
 import { hot } from 'react-hot-loader/root';
 import React, { useState, useEffect } from 'react'
 import styles from './Integrations.scss';
-import logoCompany from '../../../../assets/img/logoCompany.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, {
     Autoplay
 } from "swiper";
 import { server } from '../../../../data/data';
 import StrapiAPI from '../../../../API/StrapiAPI';
-import LazyLoadComponentWrapper from '../../../UI/LazyLoadComponent/LazyLoadComponentWrapper';
 
 const IntegrationsComponent = () => {
     SwiperCore.use([

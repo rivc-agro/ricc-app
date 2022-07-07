@@ -1,21 +1,50 @@
 import { hot } from 'react-hot-loader/root';
-import React from 'react';
+import React, { useLayoutEffect, useEffect, useRef } from 'react';
 import styles from './Footer.scss';
-import WhatsUp from '../../UI/Icons/WhatsUp';
-import LinkendIn from '../../UI/Icons/LinkendIn';
-import Facebook from '../../UI/Icons/Facebook';
 import { Form } from '../Form/Form';
 import MarkWeber from '../../../assets/img/MarkWeber.svg';
 import sphereVideo from '../../../assets/img/sphere5.mp4';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import SplitText from '../../../assets/js/gsap-bonus/SplitText';
+import Social from '../Social/Social';
+
+gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const FooterComponent = () => {
+    const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+    const headingText = useRef();
+
+    useIsomorphicLayoutEffect(() => {
+        const splitedHeadingText1 = new SplitText(headingText.current, {
+            type: 'lines, chars',
+            linesClass: "line"
+        });
+
+        gsap.set(splitedHeadingText1.lines, {
+            overflow: 'hidden',
+        });
+
+        gsap.fromTo(splitedHeadingText1.chars, {
+            yPercent: 100
+        }, {
+            scrollTrigger: {
+                trigger: headingText.current
+            },
+            yPercent: 0,
+            ease: 'power3.out',
+            duration: 0.9,
+            delay: 0.3
+        });
+    }, []);
+
     return (
         <footer className={styles.footer} id="contactUs">
             <div className="site-container grid-container">
                 <div className="grid-container__block"></div>
                 <div className="grid-container__block">
-                    <h2 className={styles.heading}>
+                    <h2 ref={headingText} className={styles.heading}>
                         Contact us
                     </h2>
                     <div className={styles.container}>
@@ -61,24 +90,7 @@ const FooterComponent = () => {
                                     <span className={styles.smallLegend}>
                                         socials
                                     </span>
-                                    <ul className={styles.socialList}>
-                                        <li className={styles.socialItem}>
-                                            <a href="/" className={styles.socialLink}>
-                                                <WhatsUp
-                                                    width='32'
-                                                    height='32'
-                                                    className={styles.socialLinkIcon} />
-                                            </a>
-                                        </li>
-                                        <li className={styles.socialItem}>
-                                            <a href="/" className={styles.socialLink}>
-                                                <LinkendIn
-                                                    width='32'
-                                                    height='32'
-                                                    className={styles.socialLinkIcon} />
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <Social />
                                 </li>
                             </ul>
                         </div>

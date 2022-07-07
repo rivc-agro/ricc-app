@@ -1,11 +1,10 @@
 import { hot } from 'react-hot-loader/root';
-import React, { useState, useContext, useEffect, useRef, useLayoutEffect } from 'react';
+import React, {useContext, useEffect, useRef, useLayoutEffect } from 'react';
 import styles from './intro.scss';
 import sphere from '../../../../assets/img/sphere5.mp4';
 import ArrowRight from '../../../UI/Icons/ArrowRight';
 import IconPolygons from '../../../UI/Icons/IconPolygons';
 import BtnImg from '../../../../assets/img/intro-btn-tablet2.png';
-import circle from '../../../../assets/img/circle.png';
 import { AppContext } from '../../../../context';
 import gsap from 'gsap';
 import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';

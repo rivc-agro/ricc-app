@@ -169,9 +169,25 @@
     background-size: cover;
     overflow: hidden;
 
+    &:not(.modMore)::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #2966FF, $alpha: 0.4);
+        opacity: 0;
+        transition: opacity 300ms;
+        content: "";
+    }
+
     &:hover {
         .btnDemoImg {
             transform: scale(1.1);
+        }
+
+        &::before {
+            opacity: 1;
         }
     }
 
@@ -188,10 +204,12 @@
 
             .btnDemoImg {
                 transform: scale(1);
+                color: var(--color-white);
             }
         }
 
         .btnDemoImg {
+            color: #33549F;
             height: auto;
             right: 0;
 
@@ -232,7 +250,7 @@
     height: 100%;
     width: auto;
     object-fit: cover;
-    transition: transform 300ms;
+    transition: transform 300ms, color 300ms;
 
     @include mq(custom, max, 1280) {
         right: -2.3rem;
@@ -245,6 +263,8 @@
 }
 
 .btnDemoSmallText {
+    position: relative;
+    z-index: 3;
     display: block;
     font: 400 1rem/1.2rem var(--main-ff);
     letter-spacing: 0.17em;
@@ -259,6 +279,8 @@
 }
 
 .btnDemoText {
+    position: relative;
+    z-index: 3;
     display: block;
     margin-top: auto;
     letter-spacing: 0.09em;

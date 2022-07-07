@@ -1,7 +1,6 @@
 import { hot } from 'react-hot-loader/root';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import styles from './Dashbord.scss';
-import dashbordImg from '../../../../assets/img/dashboard.jpg';
 import { Button } from '../../../UI/Button/Button';
 import whyBg from '../../../../assets/img/whyBg.png';
 import whyBgWebp from '../../../../assets/img/whyBg.webp';
@@ -10,12 +9,19 @@ import SpinnerPreloader from '../../../UI/Preloader/SpinnerPreloader';
 import StrapiAPI from '../../../../API/StrapiAPI';
 import { server } from '../../../../data/data';
 import useScrollBlock from '../../../../hooks/useScrollBlock';
+import gsap from 'gsap';
+import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
+gsap.registerPlugin(SplitText, ScrollTrigger);
 const DashbordComponent = () => {
+  const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
   const [dashboardImage, setdashboardImage] = useState(null);
   const [isLoading, setisLoading] = useState(true);
   const [modal, setModal] = useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
+  const videoPlayerHeading = useRef();
+  const videoPlayerSubHeading = useRef();
 
   async function fetchDashbord() {
     const resp = await StrapiAPI.getDashboard();
@@ -33,23 +39,54 @@ const DashbordComponent = () => {
     allowScroll();
   };
 
-  // const opts = {
-  //   height: '100%',
-  //   width: '100%'
-  // };
-
-  // const onPlayerReady = (event) => {
-  //   event.target.pauseVideo();
-  // }
-
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     fetchDashbord();
     setisLoading(false);
-  }, [setdashboardImage]);
 
-  if (isLoading) {
-    return <SpinnerPreloader />
-  }
+    const splitedHeading = new SplitText(videoPlayerHeading.current, {
+      type: 'lines, chars',
+      linesClass: "line"
+    });
+
+    const splitedSubHeading = new SplitText(videoPlayerSubHeading.current, {
+      type: 'lines, chars',
+      linesClass: "line"
+    });
+
+    ScrollTrigger.refresh();
+
+    gsap.set(splitedHeading.lines, {
+      overflow: 'hidden',
+    });
+
+    gsap.set(splitedSubHeading.lines, {
+      overflow: 'hidden',
+    });
+
+    gsap.fromTo(splitedHeading.chars, {
+      yPercent: 100
+    }, {
+      scrollTrigger: {
+        trigger: videoPlayerHeading.current
+      },
+      yPercent: 0,
+      ease: 'power3.out',
+      duration: 0.9,
+      delay: 0.3
+    });
+
+    gsap.fromTo(splitedSubHeading.chars, {
+      yPercent: 100
+    }, {
+      scrollTrigger: {
+        trigger: videoPlayerSubHeading.current
+      },
+      yPercent: 0,
+      ease: 'power3.out',
+      duration: 0.9,
+      delay: 0.3
+    });
+  }, [setdashboardImage]);
 
   return (
     <section className={styles.section}>
@@ -65,6 +102,8 @@ const DashbordComponent = () => {
         <div className={styles.containerBLock}>
           <img
             src={[server, dashboardImage].join('')}
+            height="631"
+            width="1165"
             alt='Create your own dashboard and report'
             className={styles.image} />
         </div>
@@ -76,10 +115,10 @@ const DashbordComponent = () => {
             <div className={[styles.videoBgLine, styles.videoBgLine2].join(' ')}></div>
             <div className={[styles.videoBgLine, styles.videoBgLine3].join(' ')}></div>
             <div className={[styles.videoBgLine, styles.videoBgLine4].join(' ')}></div>
-            <span className={styles.howItWorksheading}>
+            <span className={styles.howItWorksheading} ref={videoPlayerHeading}>
               how BI works
             </span>
-            <span className={styles.howItWorksSmallHeading}>
+            <span ref={videoPlayerSubHeading} className={styles.howItWorksSmallHeading}>
               video about RICC
             </span>
             <button onClick={openModal} className={styles.howItWorksVideoBtn}>
@@ -109,12 +148,6 @@ const DashbordComponent = () => {
           <button onClick={closeModal} className={styles.modalCLoseBtn}>
             <span></span><span></span>
           </button>
-          {/* <YouTube
-            className={styles.iframe}
-            videoId="2g811Eo7K8U"
-            opts={opts}
-            onReady={onPlayerReady}
-          /> */}
         </div>
       </div>
     </section>

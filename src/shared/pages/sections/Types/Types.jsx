@@ -1,5 +1,5 @@
 import { hot } from 'react-hot-loader/root';
-import React, { useState, useEffect, useContext, useRef, useLayoutEffect } from 'react'
+import React, { useEffect, useContext, useRef, useLayoutEffect } from 'react'
 import SliderNav from '../../../UI/SlideNav/SliderNav';
 import styles from './Types.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';

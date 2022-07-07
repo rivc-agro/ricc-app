@@ -76,6 +76,7 @@
     "helmet": "^5.1.0",
     "nodemon": "^2.0.16",
     "react": "^18.1.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.1.0",
     "react-hook-form": "^7.32.2",
     "react-input-mask": "^2.0.4",
