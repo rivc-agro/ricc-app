@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Footer } from '../../UI/Footer/Footer'
 import { Header } from '../../UI/Header/Header'
 import styles from './Demo.scss';
 import Laptop from '../../../assets/img/Device.png';
 import { Button } from '../../UI/Button/Button';
+import useScrollBlock from '../../../hooks/useScrollBlock';
+import Modal from '../../UI/Modal/Modal';
 
 const Demo = () => {
+    const [modal, setModal] = useState(false);
+    const [blockScroll, allowScroll] = useScrollBlock();
+
+    const openModal = () => {
+        setModal(true);
+        blockScroll();
+    };
+
+    const closeModal = (val) => {
+        setModal(val);
+        allowScroll();
+    };
+
     return (
         <div className="page-wrapper">
             <Header />
@@ -25,13 +40,19 @@ const Demo = () => {
                             <p className={styles.DemoText}>
                                 Try our product and see how it can help you to improve farming and production process.
                             </p>
-                            <Button cls={styles.DemoBtn}>
+                            <Button onClick={openModal} cls={styles.DemoBtn}>
                                 Try to analyze data with our product
                             </Button>
                         </div>
                     </div>
                 </div>
             </main>
+            <Modal openModal={modal} close={closeModal}>
+                <p className={styles.modalText}>
+                    Demo is under development.
+                    <br /> Please come back later.
+                </p>
+            </Modal>
             <Footer />
         </div>
     )

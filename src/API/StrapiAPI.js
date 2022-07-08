@@ -64,4 +64,13 @@ export default class StrapiAPI {
         })
         return response.data;
     }
+
+    static async getWorks() {
+        const response = await axios.get(`${server}/api/how-we-works`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        return response.data;
+    }
 }

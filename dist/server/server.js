@@ -133,6 +133,20 @@ module.exports = {
 
 /***/ }),
 
+/***/ 448:
+/***/ ((module) => {
+
+// Exports
+module.exports = {
+	"modal": "Modal-modal--Qgi9i",
+	"isAicive": "Modal-isAicive--Ptzyy",
+	"modalContent": "Modal-modalContent--3z_U4",
+	"modalCLoseBtn": "Modal-modalCLoseBtn--fhdGx"
+};
+
+
+/***/ }),
+
 /***/ 879:
 /***/ ((module) => {
 
@@ -194,7 +208,8 @@ module.exports = {
 	"DemoImage": "Demo-DemoImage--2gDBW",
 	"DemoHeading": "Demo-DemoHeading--2sWua",
 	"DemoText": "Demo-DemoText--2m0u_",
-	"DemoContentWrapper": "Demo-DemoContentWrapper--3KHvX"
+	"DemoContentWrapper": "Demo-DemoContentWrapper--3KHvX",
+	"modalText": "Demo-modalText--1jdXP"
 };
 
 
@@ -274,12 +289,7 @@ module.exports = {
 	"videoBgLine2": "Dashbord-videoBgLine2--3QSB1",
 	"videoBgLine3": "Dashbord-videoBgLine3--30cow",
 	"rotatingBack": "Dashbord-rotatingBack--2Mu-e",
-	"videoBgLine4": "Dashbord-videoBgLine4--2SI9h",
-	"modal": "Dashbord-modal--1Ycoi",
-	"isAicive": "Dashbord-isAicive--SnUqO",
-	"modalContent": "Dashbord-modalContent--1CJe4",
-	"modalCLoseBtn": "Dashbord-modalCLoseBtn--OMucw",
-	"iframe": "Dashbord-iframe--3Lf9D"
+	"videoBgLine4": "Dashbord-videoBgLine4--2SI9h"
 };
 
 
@@ -646,6 +656,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "page-bg.png");
 
+/***/ }),
+
+/***/ 986:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("body-parser");
+
 /***/ })
 
 /******/ 	});
@@ -835,6 +853,9 @@ var ButtonComponent = function ButtonComponent(_ref) {
 var Button_Button = (0,root_namespaceObject.hot)(ButtonComponent);
 ;// CONCATENATED MODULE: external "react-hook-form"
 const external_react_hook_form_namespaceObject = require("react-hook-form");
+;// CONCATENATED MODULE: external "axios"
+const external_axios_namespaceObject = require("axios");
+var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_namespaceObject);
 ;// CONCATENATED MODULE: ./src/shared/UI/Form/Form.jsx
 function Form_extends() { Form_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return Form_extends.apply(this, arguments); }
 
@@ -857,8 +878,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var FormComponent = function FormComponent() {
-  var _errors$name, _errors$phone, _errors$email;
+  var _errors$NAME, _errors$PHONE, _errors$EMAIL;
 
   var _useForm = (0,external_react_hook_form_namespaceObject.useForm)({
     mode: "onBlur"
@@ -874,12 +896,38 @@ var FormComponent = function FormComponent() {
       setMessage = _useState2[1];
 
   var onSubmit = function onSubmit(data) {
-    setMessage(true);
-    reset();
+    var PHONE = data.PHONE;
+    var EMAIL = data.EMAIL;
+    var formData = {
+      'fields': {
+        'TITLE': "Форма с Дубайского лендинга ricc-it.com",
+        'NAME': data.NAME,
+        'PHONE': {
+          'n0': {
+            'VALUE': PHONE,
+            'VALUE_TYPE': 'WORK'
+          }
+        },
+        'EMAIL': {
+          'n0': {
+            'VALUE': EMAIL,
+            'VALUE_TYPE': 'WORK'
+          }
+        },
+        'params': {
+          'REGISTER_SONET_EVENT': 'Y'
+        }
+      }
+    };
+    external_axios_default().post('/send', formData).then(function (e) {
+      setMessage(true);
+      reset();
+    }).catch(function (error) {
+      console.log(error);
+    });
   };
 
   return /*#__PURE__*/external_react_default().createElement("form", {
-    action: "/",
     onSubmit: handleSubmit(onSubmit),
     className: (Form_default()).form
   }, /*#__PURE__*/external_react_default().createElement("div", {
@@ -899,37 +947,37 @@ var FormComponent = function FormComponent() {
     className: (Form_default()).formInner
   }, /*#__PURE__*/external_react_default().createElement("label", {
     className: (Form_default()).label
-  }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('name', {
+  }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('NAME', {
     required: true
   }), {
     type: "text",
     className: (Form_default()).input,
     placeholder: "Name",
-    name: "name"
-  })), ((_errors$name = errors.name) === null || _errors$name === void 0 ? void 0 : _errors$name.type) === 'required' && /*#__PURE__*/external_react_default().createElement("span", {
+    name: "NAME"
+  })), ((_errors$NAME = errors.NAME) === null || _errors$NAME === void 0 ? void 0 : _errors$NAME.type) === 'required' && /*#__PURE__*/external_react_default().createElement("span", {
     className: "error"
   }, "Name is required")), /*#__PURE__*/external_react_default().createElement("label", {
     className: (Form_default()).label
-  }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('company-name'), {
+  }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('COMPANY'), {
     type: "text",
     className: (Form_default()).input,
     placeholder: "Company",
-    name: "company-name"
+    name: "COMPANY"
   }))), /*#__PURE__*/external_react_default().createElement("label", {
     className: (Form_default()).label
-  }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('phone', {
+  }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('PHONE', {
     required: true
   }), {
     type: "number",
     className: (Form_default()).input,
     placeholder: "Phone",
-    name: "phone",
+    name: "PHONE",
     mask: "999.999.999-99"
-  })), ((_errors$phone = errors.phone) === null || _errors$phone === void 0 ? void 0 : _errors$phone.type) === 'required' && /*#__PURE__*/external_react_default().createElement("span", {
+  })), ((_errors$PHONE = errors.PHONE) === null || _errors$PHONE === void 0 ? void 0 : _errors$PHONE.type) === 'required' && /*#__PURE__*/external_react_default().createElement("span", {
     className: "error"
   }, "Phone is required")), /*#__PURE__*/external_react_default().createElement("label", {
     className: (Form_default()).label
-  }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('email', {
+  }, /*#__PURE__*/external_react_default().createElement("input", Form_extends({}, register('EMAIL', {
     required: "Email is required",
     pattern: {
       value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -939,10 +987,10 @@ var FormComponent = function FormComponent() {
     type: "text",
     className: (Form_default()).input,
     placeholder: "E-mail",
-    name: "email"
-  })), (errors === null || errors === void 0 ? void 0 : errors.email) && /*#__PURE__*/external_react_default().createElement("span", {
+    name: "EMAIL"
+  })), (errors === null || errors === void 0 ? void 0 : errors.EMAIL) && /*#__PURE__*/external_react_default().createElement("span", {
     className: "error"
-  }, (errors === null || errors === void 0 ? void 0 : (_errors$email = errors.email) === null || _errors$email === void 0 ? void 0 : _errors$email.message) || 'Error!')), /*#__PURE__*/external_react_default().createElement("div", {
+  }, (errors === null || errors === void 0 ? void 0 : (_errors$EMAIL = errors.EMAIL) === null || _errors$EMAIL === void 0 ? void 0 : _errors$EMAIL.message) || 'Error!')), /*#__PURE__*/external_react_default().createElement("div", {
     className: (Form_default()).btnWrapper
   }, /*#__PURE__*/external_react_default().createElement(Button_Button, {
     modWhite: true
@@ -1716,9 +1764,6 @@ var LinkendIn = function LinkendIn(_ref) {
 };
 
 /* harmony default export */ const Icons_LinkendIn = (LinkendIn);
-;// CONCATENATED MODULE: external "axios"
-const external_axios_namespaceObject = require("axios");
-var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_namespaceObject);
 ;// CONCATENATED MODULE: ./src/data/data.js
 var server = 'https://admin.ricc-it.com';
 var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU1OTkyNDIwLCJleHAiOjE2NTg1ODQ0MjB9.AQmvMEGMOTRksEgZ5k4Eo90eB9_f3Ddifz6P7SzY2_g';
@@ -1984,6 +2029,40 @@ var StrapiAPI = /*#__PURE__*/function () {
 
       return getSocials;
     }()
+  }, {
+    key: "getWorks",
+    value: function () {
+      var _getWorks = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8() {
+        var response;
+        return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                _context8.next = 2;
+                return external_axios_default().get("".concat(server, "/api/how-we-works"), {
+                  headers: {
+                    Authorization: "Bearer ".concat(token)
+                  }
+                });
+
+              case 2:
+                response = _context8.sent;
+                return _context8.abrupt("return", response.data);
+
+              case 4:
+              case "end":
+                return _context8.stop();
+            }
+          }
+        }, _callee8);
+      }));
+
+      function getWorks() {
+        return _getWorks.apply(this, arguments);
+      }
+
+      return getWorks;
+    }()
   }]);
 
   return StrapiAPI;
@@ -2167,7 +2246,11 @@ var MarkWeber = function MarkWeber(_ref) {
 };
 
 /* harmony default export */ const Icons_MarkWeber = (MarkWeber);
+;// CONCATENATED MODULE: ./src/context/index.js
+
+var AppContext = /*#__PURE__*/(0,external_react_namespaceObject.createContext)(null);
 ;// CONCATENATED MODULE: ./src/shared/UI/Footer/Footer.jsx
+
 
 
 
@@ -2182,6 +2265,10 @@ var MarkWeber = function MarkWeber(_ref) {
 external_gsap_default().registerPlugin(SplitText, (ScrollTrigger_default()));
 
 var FooterComponent = function FooterComponent() {
+  var _useContext = (0,external_react_namespaceObject.useContext)(AppContext),
+      APIdata = _useContext.APIdata,
+      setAPIdata = _useContext.setAPIdata;
+
   var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? external_react_namespaceObject.useLayoutEffect : external_react_namespaceObject.useEffect;
   var headingText = (0,external_react_namespaceObject.useRef)();
   useIsomorphicLayoutEffect(function () {
@@ -2223,9 +2310,9 @@ var FooterComponent = function FooterComponent() {
   }, /*#__PURE__*/external_react_default().createElement("span", {
     className: (Footer_default()).legend
   }, "Want to know more about BI in\xA0agriculture?"), /*#__PURE__*/external_react_default().createElement("a", {
-    href: "mailto:info@ricc-it.com",
+    href: "mailto:" + APIdata.infoEmail,
     className: (Footer_default()).link
-  }, "info@ricc-it.com"), /*#__PURE__*/external_react_default().createElement("ul", {
+  }, APIdata.infoEmail), /*#__PURE__*/external_react_default().createElement("ul", {
     className: (Footer_default()).infoList
   }, /*#__PURE__*/external_react_default().createElement("li", {
     className: (Footer_default()).infoItem
@@ -2234,26 +2321,26 @@ var FooterComponent = function FooterComponent() {
   }, "Legal representative of RICC in UAE"), /*#__PURE__*/external_react_default().createElement("span", {
     className: (Footer_default()).smallSubLegend
   }, "DANIT LLC"), /*#__PURE__*/external_react_default().createElement("a", {
-    href: "mailto:info@danit.ae",
+    href: "mailto:" + APIdata.represnative,
     className: (Footer_default()).link
-  }, "info@danit.ae")), /*#__PURE__*/external_react_default().createElement("li", {
+  }, APIdata.represnative)), /*#__PURE__*/external_react_default().createElement("li", {
     className: (Footer_default()).infoItem
   }, /*#__PURE__*/external_react_default().createElement("span", {
     className: (Footer_default()).smallLegend
   }, "Contact support"), /*#__PURE__*/external_react_default().createElement("a", {
-    href: "mailto:support@ricc-it.com",
+    href: "mailto:" + APIdata.supportEmai,
     className: (Footer_default()).link
-  }, "support@ricc-it.com")), /*#__PURE__*/external_react_default().createElement("li", {
+  }, APIdata.supportEmail)), /*#__PURE__*/external_react_default().createElement("li", {
     className: (Footer_default()).infoItem
   }, /*#__PURE__*/external_react_default().createElement("span", {
     className: (Footer_default()).smallLegend
   }, "Contact sales"), /*#__PURE__*/external_react_default().createElement("a", {
     href: "mailto:sales@ricc-it.com",
     className: (Footer_default()).link
-  }, "sales@ricc-it.com"), /*#__PURE__*/external_react_default().createElement("a", {
-    href: "tel:+79274003468",
+  }, APIdata.salesEmail), /*#__PURE__*/external_react_default().createElement("a", {
+    href: "tel:" + APIdata.salesPhone,
     className: (Footer_default()).link
-  }, "+7 927 400 3468")), /*#__PURE__*/external_react_default().createElement("li", {
+  }, APIdata.salesPhone)), /*#__PURE__*/external_react_default().createElement("li", {
     className: (Footer_default()).infoItem
   }, /*#__PURE__*/external_react_default().createElement("span", {
     className: (Footer_default()).smallLegend
@@ -2275,7 +2362,7 @@ var FooterComponent = function FooterComponent() {
     href: "/",
     className: (Footer_default()).copyrightItem
   }, "Privacy Policy"), /*#__PURE__*/external_react_default().createElement("a", {
-    href: "/",
+    href: "https://markweber.ru/",
     className: (Footer_default()).copyrightItem,
     target: "_blank"
   }, "Made by", /*#__PURE__*/external_react_default().createElement(Icons_MarkWeber, {
@@ -2287,9 +2374,6 @@ var Footer_Footer = (0,root_namespaceObject.hot)(FooterComponent);
 // EXTERNAL MODULE: ./src/shared/UI/Header/Header.scss
 var Header = __webpack_require__(970);
 var Header_default = /*#__PURE__*/__webpack_require__.n(Header);
-;// CONCATENATED MODULE: ./src/context/index.js
-
-var AppContext = /*#__PURE__*/(0,external_react_namespaceObject.createContext)(null);
 ;// CONCATENATED MODULE: ./src/shared/UI/Logo/Logo.jsx
 
 
@@ -2766,6 +2850,57 @@ var safeDocument = typeof document !== 'undefined' ? document : {};
 
   return [blockScroll, allowScroll];
 });
+// EXTERNAL MODULE: ./src/shared/UI/Modal/Modal.scss
+var Modal_Modal = __webpack_require__(448);
+var Modal_default = /*#__PURE__*/__webpack_require__.n(Modal_Modal);
+;// CONCATENATED MODULE: ./src/shared/UI/Modal/Modal.jsx
+var Modal_excluded = ["children"];
+
+function Modal_slicedToArray(arr, i) { return Modal_arrayWithHoles(arr) || Modal_iterableToArrayLimit(arr, i) || Modal_unsupportedIterableToArray(arr, i) || Modal_nonIterableRest(); }
+
+function Modal_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function Modal_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return Modal_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Modal_arrayLikeToArray(o, minLen); }
+
+function Modal_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function Modal_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function Modal_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function Modal_objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = Modal_objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function Modal_objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+var Modal = function Modal(_ref) {
+  var children = _ref.children,
+      props = Modal_objectWithoutProperties(_ref, Modal_excluded);
+
+  var _useState = (0,external_react_namespaceObject.useState)(),
+      _useState2 = Modal_slicedToArray(_useState, 2),
+      isModal = _useState2[0],
+      setModal = _useState2[1];
+
+  if (!props.openModal) {
+    return null;
+  }
+
+  return /*#__PURE__*/external_react_default().createElement("div", {
+    className: [(Modal_default()).modal, props.openModal ? (Modal_default()).isAicive : null].join(' ')
+  }, /*#__PURE__*/external_react_default().createElement("div", {
+    className: (Modal_default()).modalContent
+  }, /*#__PURE__*/external_react_default().createElement("button", {
+    onClick: function onClick() {
+      props.close(false);
+    },
+    className: (Modal_default()).modalCLoseBtn
+  }, /*#__PURE__*/external_react_default().createElement("span", null), /*#__PURE__*/external_react_default().createElement("span", null)), children));
+};
+
+/* harmony default export */ const UI_Modal_Modal = (Modal);
 ;// CONCATENATED MODULE: ./src/shared/pages/sections/Dashbord/Dashbord.jsx
 function Dashbord_typeof(obj) { "@babel/helpers - typeof"; return Dashbord_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, Dashbord_typeof(obj); }
 
@@ -2786,6 +2921,7 @@ function Dashbord_arrayLikeToArray(arr, len) { if (len == null || len > arr.leng
 function Dashbord_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function Dashbord_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -2865,14 +3001,16 @@ var DashbordComponent = function DashbordComponent() {
     blockScroll();
   };
 
-  var closeModal = function closeModal() {
-    setModal(false);
+  var closeModal = function closeModal(val) {
+    setModal(val);
     allowScroll();
   };
 
   useIsomorphicLayoutEffect(function () {
     fetchDashbord();
     setisLoading(false);
+  }, []);
+  useIsomorphicLayoutEffect(function () {
     var splitedHeading = new SplitText(videoPlayerHeading.current, {
       type: 'lines, chars',
       linesClass: "line"
@@ -2910,7 +3048,7 @@ var DashbordComponent = function DashbordComponent() {
       duration: 0.9,
       delay: 0.3
     });
-  }, [setdashboardImage]);
+  }, []);
   return /*#__PURE__*/external_react_default().createElement("section", {
     className: (Dashbord_default()).section
   }, /*#__PURE__*/external_react_default().createElement("picture", null, /*#__PURE__*/external_react_default().createElement("source", {
@@ -2970,14 +3108,10 @@ var DashbordComponent = function DashbordComponent() {
   }, "It also visualize data to generate analysis for business reports and accurate decisions."), /*#__PURE__*/external_react_default().createElement(Button_Button, {
     NavLink: true,
     to: "/demo"
-  }, "Try demo"))), /*#__PURE__*/external_react_default().createElement("div", {
-    className: [(Dashbord_default()).modal, modal ? (Dashbord_default()).isAicive : null].join(' ')
-  }, /*#__PURE__*/external_react_default().createElement("div", {
-    className: (Dashbord_default()).modalContent
-  }, /*#__PURE__*/external_react_default().createElement("button", {
-    onClick: closeModal,
-    className: (Dashbord_default()).modalCLoseBtn
-  }, /*#__PURE__*/external_react_default().createElement("span", null), /*#__PURE__*/external_react_default().createElement("span", null)))));
+  }, "Try demo"))), /*#__PURE__*/external_react_default().createElement(UI_Modal_Modal, {
+    openModal: modal,
+    close: closeModal
+  }));
 };
 
 var Dashbord_Dashbord = (0,root_namespaceObject.hot)(DashbordComponent);
@@ -8486,51 +8620,139 @@ var WeWork_default = /*#__PURE__*/__webpack_require__.n(WeWork);
 ;// CONCATENATED MODULE: ./src/assets/img/bgItemFeats.png
 /* harmony default export */ const bgItemFeats = (__webpack_require__.p + "bgItemFeats.png");
 ;// CONCATENATED MODULE: ./src/shared/pages/sections/WeWork/WeWork.jsx
+function WeWork_typeof(obj) { "@babel/helpers - typeof"; return WeWork_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, WeWork_typeof(obj); }
+
+function WeWork_regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ WeWork_regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == WeWork_typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator.return && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, catch: function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = WeWork_unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function WeWork_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function WeWork_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { WeWork_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { WeWork_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function WeWork_slicedToArray(arr, i) { return WeWork_arrayWithHoles(arr) || WeWork_iterableToArrayLimit(arr, i) || WeWork_unsupportedIterableToArray(arr, i) || WeWork_nonIterableRest(); }
+
+function WeWork_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function WeWork_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return WeWork_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return WeWork_arrayLikeToArray(o, minLen); }
+
+function WeWork_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function WeWork_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function WeWork_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
 
 
 var WeWorkComponent = function WeWorkComponent() {
-  var data1 = [{
-    id: 0,
-    name: 'Selection of needs for analysis'
-  }, {
-    id: 1,
-    name: 'Сompany audit to get full insight'
-  }, {
-    id: 2,
-    name: 'Creating of customized solution'
-  }];
-  var data2 = [{
-    id: 0,
-    name: 'BI-system implementation'
-  }, {
-    id: 1,
-    name: 'BI-system training'
-  }, {
-    id: 2,
-    name: 'Technical support'
-  }];
-  var mobileData = [{
-    id: 0,
-    name: 'Selection of needs for analysis'
-  }, {
-    id: 1,
-    name: 'Сompany audit to get full insight'
-  }, {
-    id: 2,
-    name: 'Creating of customized solution'
-  }, {
-    id: 3,
-    name: 'BI-system implementation'
-  }, {
-    id: 4,
-    name: 'BI-system training'
-  }, {
-    id: 5,
-    name: 'Technical support'
-  }];
+  var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? external_react_namespaceObject.useLayoutEffect : external_react_namespaceObject.useEffect;
+
+  var _useState = (0,external_react_namespaceObject.useState)([]),
+      _useState2 = WeWork_slicedToArray(_useState, 2),
+      works = _useState2[0],
+      setWorks = _useState2[1];
+
+  var _useState3 = (0,external_react_namespaceObject.useState)([]),
+      _useState4 = WeWork_slicedToArray(_useState3, 2),
+      data1 = _useState4[0],
+      setData1 = _useState4[1];
+
+  var _useState5 = (0,external_react_namespaceObject.useState)([]),
+      _useState6 = WeWork_slicedToArray(_useState5, 2),
+      data2 = _useState6[0],
+      setData2 = _useState6[1];
+
+  function fetchWorks() {
+    return _fetchWorks.apply(this, arguments);
+  }
+
+  function _fetchWorks() {
+    _fetchWorks = WeWork_asyncToGenerator( /*#__PURE__*/WeWork_regeneratorRuntime().mark(function _callee() {
+      var resp, works, worksArr, _iterator2, _step2, _step2$value, index, text;
+
+      return WeWork_regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return StrapiAPI.getWorks();
+
+            case 2:
+              resp = _context.sent;
+              works = resp.data;
+              worksArr = [];
+              _iterator2 = _createForOfIteratorHelper(works.entries());
+
+              try {
+                for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                  _step2$value = WeWork_slicedToArray(_step2.value, 2), index = _step2$value[0], text = _step2$value[1];
+                  worksArr.push({
+                    id: index,
+                    text: text.attributes.Text
+                  });
+                }
+              } catch (err) {
+                _iterator2.e(err);
+              } finally {
+                _iterator2.f();
+              }
+
+              ;
+              setWorks(worksArr);
+
+            case 9:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _fetchWorks.apply(this, arguments);
+  }
+
+  ;
+  useIsomorphicLayoutEffect(function () {
+    fetchWorks();
+  }, []);
+  useIsomorphicLayoutEffect(function () {
+    var data1Arr = [];
+    var data2Arr = [];
+
+    var _iterator = _createForOfIteratorHelper(works.entries()),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var _step$value = WeWork_slicedToArray(_step.value, 2),
+            index = _step$value[0],
+            item = _step$value[1];
+
+        if (index <= 2) {
+          data1Arr.push({
+            id: item.id,
+            text: item.text
+          });
+        } else {
+          data2Arr.push({
+            id: item.id,
+            text: item.text
+          });
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    ;
+    setData1(data1Arr);
+    setData2(data2Arr);
+  }, [works]);
   return /*#__PURE__*/external_react_default().createElement("section", {
     className: (WeWork_default()).section
   }, /*#__PURE__*/external_react_default().createElement("h2", {
@@ -8539,19 +8761,19 @@ var WeWorkComponent = function WeWorkComponent() {
     className: (WeWork_default()).mobileContainer
   }, /*#__PURE__*/external_react_default().createElement("ul", {
     className: (WeWork_default()).list
-  }, mobileData.map(function (_ref) {
+  }, works.map(function (_ref) {
     var id = _ref.id,
-        name = _ref.name;
+        text = _ref.text;
     return /*#__PURE__*/external_react_default().createElement("li", {
       key: id,
       className: (WeWork_default()).item
     }, /*#__PURE__*/external_react_default().createElement("img", {
       src: bgItemFeats,
-      alt: name,
+      alt: text,
       className: (WeWork_default()).itemBg
     }), /*#__PURE__*/external_react_default().createElement("p", {
       className: (WeWork_default()).itemText
-    }, name));
+    }, text));
   }))), /*#__PURE__*/external_react_default().createElement("div", {
     className: (WeWork_default()).descktopContainer
   }, /*#__PURE__*/external_react_default().createElement("div", {
@@ -8562,17 +8784,17 @@ var WeWorkComponent = function WeWorkComponent() {
     className: (WeWork_default()).list
   }, data1.map(function (_ref2) {
     var id = _ref2.id,
-        name = _ref2.name;
+        text = _ref2.text;
     return /*#__PURE__*/external_react_default().createElement("li", {
       key: id,
       className: (WeWork_default()).item
     }, /*#__PURE__*/external_react_default().createElement("img", {
       src: bgItemFeats,
-      alt: name,
+      alt: text,
       className: (WeWork_default()).itemBg
     }), /*#__PURE__*/external_react_default().createElement("p", {
       className: (WeWork_default()).itemText
-    }, name));
+    }, text));
   }))), /*#__PURE__*/external_react_default().createElement("div", {
     className: (WeWork_default()).containerTopBlock
   })), /*#__PURE__*/external_react_default().createElement("div", {
@@ -8585,17 +8807,17 @@ var WeWorkComponent = function WeWorkComponent() {
     className: [(WeWork_default()).list, (WeWork_default()).startWith4].join(' ')
   }, data2.map(function (_ref3) {
     var id = _ref3.id,
-        name = _ref3.name;
+        text = _ref3.text;
     return /*#__PURE__*/external_react_default().createElement("li", {
       key: id,
       className: (WeWork_default()).item
     }, /*#__PURE__*/external_react_default().createElement("img", {
       src: bgItemFeats,
-      alt: name,
+      alt: text,
       className: (WeWork_default()).itemBg
     }), /*#__PURE__*/external_react_default().createElement("p", {
       className: (WeWork_default()).itemText
-    }, name));
+    }, text));
   }))))));
 };
 
@@ -8633,6 +8855,20 @@ var Demo_default = /*#__PURE__*/__webpack_require__.n(Demo_Demo);
 ;// CONCATENATED MODULE: ./src/assets/img/Device.png
 /* harmony default export */ const Device = (__webpack_require__.p + "Device.png");
 ;// CONCATENATED MODULE: ./src/shared/pages/Demo/Demo.jsx
+function Demo_slicedToArray(arr, i) { return Demo_arrayWithHoles(arr) || Demo_iterableToArrayLimit(arr, i) || Demo_unsupportedIterableToArray(arr, i) || Demo_nonIterableRest(); }
+
+function Demo_nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function Demo_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return Demo_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Demo_arrayLikeToArray(o, minLen); }
+
+function Demo_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function Demo_iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function Demo_arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
 
 
 
@@ -8641,6 +8877,26 @@ var Demo_default = /*#__PURE__*/__webpack_require__.n(Demo_Demo);
 
 
 var Demo = function Demo() {
+  var _useState = (0,external_react_namespaceObject.useState)(false),
+      _useState2 = Demo_slicedToArray(_useState, 2),
+      modal = _useState2[0],
+      setModal = _useState2[1];
+
+  var _useScrollBlock = useScrollBlock(),
+      _useScrollBlock2 = Demo_slicedToArray(_useScrollBlock, 2),
+      blockScroll = _useScrollBlock2[0],
+      allowScroll = _useScrollBlock2[1];
+
+  var openModal = function openModal() {
+    setModal(true);
+    blockScroll();
+  };
+
+  var closeModal = function closeModal(val) {
+    setModal(val);
+    allowScroll();
+  };
+
   return /*#__PURE__*/external_react_default().createElement("div", {
     className: "page-wrapper"
   }, /*#__PURE__*/external_react_default().createElement(Header_Header, null), /*#__PURE__*/external_react_default().createElement("main", {
@@ -8662,8 +8918,14 @@ var Demo = function Demo() {
   }, "Product demo"), /*#__PURE__*/external_react_default().createElement("p", {
     className: (Demo_default()).DemoText
   }, "Try our product and see how it can help you to improve farming and production process."), /*#__PURE__*/external_react_default().createElement(Button_Button, {
+    onClick: openModal,
     cls: (Demo_default()).DemoBtn
-  }, "Try to analyze data with our product"))))), /*#__PURE__*/external_react_default().createElement(Footer_Footer, null));
+  }, "Try to analyze data with our product"))))), /*#__PURE__*/external_react_default().createElement(UI_Modal_Modal, {
+    openModal: modal,
+    close: closeModal
+  }, /*#__PURE__*/external_react_default().createElement("p", {
+    className: (Demo_default()).modalText
+  }, "Demo is under development.", /*#__PURE__*/external_react_default().createElement("br", null), " Please come back later.")), /*#__PURE__*/external_react_default().createElement(Footer_Footer, null));
 };
 
 /* harmony default export */ const pages_Demo_Demo = (Demo);
@@ -8898,6 +9160,10 @@ var external_helmet_default = /*#__PURE__*/__webpack_require__.n(external_helmet
 
 
 
+
+
+var bodyParser = __webpack_require__(986);
+
 var app = external_express_default()();
 app.use(external_compression_default()());
 app.use(external_helmet_default()({
@@ -8905,6 +9171,18 @@ app.use(external_helmet_default()({
   crossOriginEmbedderPolicy: false
 }));
 var data = {};
+app.use('/send', bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+app.post('/send', function (req, res, next) {
+  if (!req.body) return res.sendStatus(400);
+  external_axios_default().post('https://ricc-it.bitrix24.ru/rest/1/kk9l491xxvs8d6t8/crm.lead.add.json', req.body).then(function (e) {
+    res.send(e);
+  }).catch(function (error) {
+    res.send(error);
+  });
+});
 app.use('/static/', external_express_default()["static"]('./dist/client'));
 StrapiAPI.getLogo().then(function (resp) {
   data.logo = resp.data[0].attributes.logo.data.attributes.url;
@@ -8912,6 +9190,7 @@ StrapiAPI.getLogo().then(function (resp) {
   data.supportEmail = resp.data[0].attributes.supportEmail;
   data.salesEmail = resp.data[0].attributes.salesEmail;
   data.salesPhone = resp.data[0].attributes.salesPhone;
+  data.represnative = resp.data[0].attributes.legalRepresentative;
 });
 StrapiAPI.getIntro().then(function (resp) {
   data.heading = resp.data[0].attributes.heading;

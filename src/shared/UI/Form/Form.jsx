@@ -4,6 +4,7 @@ import styles from './Form.scss';
 import { Button } from '../Button/Button';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 const FormComponent = () => {
   const { register, formState: { errors }, handleSubmit, reset, } = useForm({
@@ -12,13 +13,41 @@ const FormComponent = () => {
   const [message, setMessage] = useState(false);
 
   const onSubmit = data => {
-    setMessage(true);
+    const PHONE = data.PHONE;
+    const EMAIL = data.EMAIL;
 
-    reset();
+    const formData = {
+      'fields': {
+        'TITLE': "Форма с Дубайского лендинга ricc-it.com",
+        'NAME': data.NAME,
+        'PHONE': {
+          'n0': {
+            'VALUE': PHONE,
+            'VALUE_TYPE': 'WORK',
+          }
+        },
+        'EMAIL': {
+          'n0': {
+            'VALUE': EMAIL,
+            'VALUE_TYPE': 'WORK',
+          }
+        },
+        'params': { 'REGISTER_SONET_EVENT': 'Y' }
+      }
+    };
+
+    axios.post('/send', formData)
+    .then((e) => {
+      setMessage(true);
+      reset();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 
   return (
-    <form action="/" onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <div className={styles.container}>
         {
           message ?
@@ -37,37 +66,37 @@ const FormComponent = () => {
             <div className={styles.formInner}>
               <label className={styles.label}>
                 <input
-                  {...register('name', { required: true })}
+                  {...register('NAME', { required: true })}
                   type="text"
                   className={styles.input}
                   placeholder='Name'
-                  name='name' />
-                {errors.name?.type === 'required' && <span className='error'>Name is required</span>}
+                  name='NAME' />
+                {errors.NAME?.type === 'required' && <span className='error'>Name is required</span>}
               </label>
               <label className={styles.label}>
                 <input
-                  {...register('company-name')}
+                  {...register('COMPANY')}
                   type="text"
                   className={styles.input}
                   placeholder='Company'
-                  name='company-name' />
+                  name='COMPANY' />
               </label>
               <label className={styles.label}>
                 <input
-                  {...register('phone', {
+                  {...register('PHONE', {
                     required: true,
                   })}
                   type="number"
                   className={styles.input}
                   placeholder='Phone'
-                  name='phone'
+                  name='PHONE'
                   mask="999.999.999-99"
                 />
-                {errors.phone?.type === 'required' && <span className='error'>Phone is required</span>}
+                {errors.PHONE?.type === 'required' && <span className='error'>Phone is required</span>}
               </label>
               <label className={styles.label}>
                 <input
-                  {...register('email', {
+                  {...register('EMAIL', {
                     required: "Email is required",
                     pattern: {
                       value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -77,8 +106,8 @@ const FormComponent = () => {
                   type="text"
                   className={styles.input}
                   placeholder='E-mail'
-                  name='email' />
-                {errors?.email && <span className='error'>{errors?.email?.message || 'Error!'}</span>}
+                  name='EMAIL' />
+                {errors?.EMAIL && <span className='error'>{errors?.EMAIL?.message || 'Error!'}</span>}
               </label>
               <div className={styles.btnWrapper}>
                 <Button modWhite>

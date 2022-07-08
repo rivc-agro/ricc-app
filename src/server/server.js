@@ -8,6 +8,8 @@ import App from '../shared/App';
 import StrapiAPI from '../API/StrapiAPI';
 import compression from 'compression';
 import helmet from 'helmet';
+import axios from 'axios';
+const bodyParser = require('body-parser')
 
 const app = express();
 app.use(compression());
@@ -16,6 +18,26 @@ app.use(helmet({
     crossOriginEmbedderPolicy: false,
 }));
 let data = {};
+
+
+app.use('/send', bodyParser.urlencoded({
+    extended: true,
+}));
+app.use(bodyParser.json());
+
+app.post('/send', (req, res, next) => {
+    if (!req.body) return res.sendStatus(400)
+
+    axios.post('https://ricc-it.bitrix24.ru/rest/1/kk9l491xxvs8d6t8/crm.lead.add.json',
+        req.body
+    )
+        .then((e) => {
+            res.send(e);
+        })
+        .catch((error) => {
+            res.send(error);
+        });
+});
 
 app.use('/static/', express.static('./dist/client'));
 
@@ -26,6 +48,7 @@ StrapiAPI.getLogo()
         data.supportEmail = resp.data[0].attributes.supportEmail;
         data.salesEmail = resp.data[0].attributes.salesEmail;
         data.salesPhone = resp.data[0].attributes.salesPhone;
+        data.represnative = resp.data[0].attributes.legalRepresentative
     });
 
 StrapiAPI.getIntro()

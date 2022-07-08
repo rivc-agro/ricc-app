@@ -158,4 +158,8 @@
     color: rgba($color: #fff, $alpha: 0.4);
     margin-top: auto;
     align-self: flex-end;
+
+    &:hover {
+        color: var(--color-white);
+    }
 }

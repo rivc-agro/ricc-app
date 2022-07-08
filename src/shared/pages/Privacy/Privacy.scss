@@ -1,8 +1,15 @@
+@import "../../../styles/helpers/media.scss";
+
 .section {
     padding-top: 6rem;
 
     h1 {
         font: var(--font-heading-h1);
         text-transform: uppercase;
+
+        @include mq(sm) {
+            font: var(--font-heading-h3);
+            font-weight: 300;
+        }
     }
 }

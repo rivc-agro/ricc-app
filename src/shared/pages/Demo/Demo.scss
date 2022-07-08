@@ -54,3 +54,17 @@
 .DemoContentWrapper {
     margin-top: 7rem;
 }
+
+.modalText {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font: var(--font-heading-h2);
+    font-weight: 300;
+
+    @include mq(sm) {
+        font: var(--font-heading-h4);
+    }
+}

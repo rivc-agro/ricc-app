@@ -1,64 +1,55 @@
 import { hot } from 'react-hot-loader/root';
-import React from 'react'
+import React, { useState, useLayoutEffect, useEffect } from 'react'
 import styles from './WeWork.scss';
 import bgItemFeats from '../../../../assets/img/bgItemFeats.png';
+import StrapiAPI from '../../../../API/StrapiAPI';
 
 const WeWorkComponent = () => {
-    const data1 = [
-        {
-            id: 0,
-            name: 'Selection of needs for analysis'
-        },
-        {
-            id: 1,
-            name: 'Сompany audit to get full insight'
-        },
-        {
-            id: 2,
-            name: 'Creating of customized solution'
-        }
-    ]
-    const data2 = [
-        {
-            id: 0,
-            name: 'BI-system implementation'
-        },
-        {
-            id: 1,
-            name: 'BI-system training'
-        },
-        {
-            id: 2,
-            name: 'Technical support'
-        }
-    ]
+    const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+    const [works, setWorks] = useState([]);
+    const [data1, setData1] = useState([]);
+    const [data2, setData2] = useState([]);
 
-    const mobileData = [
-        {
-            id: 0,
-            name: 'Selection of needs for analysis'
-        },
-        {
-            id: 1,
-            name: 'Сompany audit to get full insight'
-        },
-        {
-            id: 2,
-            name: 'Creating of customized solution'
-        },
-        {
-            id: 3,
-            name: 'BI-system implementation'
-        },
-        {
-            id: 4,
-            name: 'BI-system training'
-        },
-        {
-            id: 5,
-            name: 'Technical support'
-        }
-    ]
+    async function fetchWorks() {
+        const resp = await StrapiAPI.getWorks();
+        const works = resp.data;
+        const worksArr = [];
+
+        for (const [index, text] of works.entries()) {
+            worksArr.push({
+                id: index,
+                text: text.attributes.Text
+            });
+        };
+
+        setWorks(worksArr);
+    };
+
+    useIsomorphicLayoutEffect(() => {
+        fetchWorks();
+    }, []);
+
+    useIsomorphicLayoutEffect(() => {
+        const data1Arr = [];
+        const data2Arr = [];
+
+        for (const [index, item] of works.entries()) {
+            if (index <= 2) {
+                data1Arr.push({
+                    id: item.id,
+                    text: item.text
+                });
+            } else {
+                data2Arr.push({
+                    id: item.id,
+                    text: item.text
+                });
+            }
+        };
+
+        setData1(data1Arr);
+        setData2(data2Arr);
+    }, [works]);
 
     return (
         <section className={styles.section}>
@@ -68,11 +59,11 @@ const WeWorkComponent = () => {
             <div className={styles.mobileContainer}>
                 <ul className={styles.list}>
                     {
-                        mobileData.map(({ id, name }) =>
+                        works.map(({ id, text }) =>
                             <li key={id} className={styles.item}>
-                                <img src={bgItemFeats} alt={name} className={styles.itemBg} />
+                                <img src={bgItemFeats} alt={text} className={styles.itemBg} />
                                 <p className={styles.itemText}>
-                                    {name}
+                                    {text}
                                 </p>
                             </li>
                         )
@@ -84,11 +75,11 @@ const WeWorkComponent = () => {
                     <div className={styles.containerTopBlock}>
                         <ul className={styles.list}>
                             {
-                                data1.map(({ id, name }) =>
+                                data1.map(({ id, text }) =>
                                     <li key={id} className={styles.item}>
-                                        <img src={bgItemFeats} alt={name} className={styles.itemBg} />
+                                        <img src={bgItemFeats} alt={text} className={styles.itemBg} />
                                         <p className={styles.itemText}>
-                                            {name}
+                                            {text}
                                         </p>
                                     </li>
                                 )
@@ -104,11 +95,11 @@ const WeWorkComponent = () => {
                     <div className={styles.containerBottomBlock}>
                         <ul className={[styles.list, styles.startWith4].join(' ')}>
                             {
-                                data2.map(({ id, name }) =>
+                                data2.map(({ id, text }) =>
                                     <li key={id} className={styles.item}>
-                                        <img src={bgItemFeats} alt={name} className={styles.itemBg} />
+                                        <img src={bgItemFeats} alt={text} className={styles.itemBg} />
                                         <p className={styles.itemText}>
-                                            {name}
+                                            {text}
                                         </p>
                                     </li>
                                 )

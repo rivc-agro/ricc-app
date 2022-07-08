@@ -12,6 +12,7 @@ import useScrollBlock from '../../../../hooks/useScrollBlock';
 import gsap from 'gsap';
 import SplitText from '../../../../assets/js/gsap-bonus/SplitText.js';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Modal from '../../../UI/Modal/Modal';
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 const DashbordComponent = () => {
@@ -34,15 +35,17 @@ const DashbordComponent = () => {
     blockScroll();
   };
 
-  const closeModal = () => {
-    setModal(false);
+  const closeModal = (val) => {
+    setModal(val);
     allowScroll();
   };
 
   useIsomorphicLayoutEffect(() => {
     fetchDashbord();
     setisLoading(false);
+  }, []);
 
+  useIsomorphicLayoutEffect(() => {
     const splitedHeading = new SplitText(videoPlayerHeading.current, {
       type: 'lines, chars',
       linesClass: "line"
@@ -86,7 +89,7 @@ const DashbordComponent = () => {
       duration: 0.9,
       delay: 0.3
     });
-  }, [setdashboardImage]);
+  }, []);
 
   return (
     <section className={styles.section}>
@@ -141,15 +144,8 @@ const DashbordComponent = () => {
           </Button>
         </div>
       </div>
-      <div className={[
-        styles.modal,
-        modal ? styles.isAicive : null].join(' ')}>
-        <div className={styles.modalContent}>
-          <button onClick={closeModal} className={styles.modalCLoseBtn}>
-            <span></span><span></span>
-          </button>
-        </div>
-      </div>
+      <Modal openModal={modal} close={closeModal} >
+      </Modal>
     </section>
   )
 }

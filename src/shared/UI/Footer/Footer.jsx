@@ -1,5 +1,5 @@
 import { hot } from 'react-hot-loader/root';
-import React, { useLayoutEffect, useEffect, useRef } from 'react';
+import React, { useLayoutEffect, useEffect, useRef, useContext } from 'react';
 import styles from './Footer.scss';
 import { Form } from '../Form/Form';
 import sphereVideo from '../../../assets/img/sphere5.mp4';
@@ -9,10 +9,12 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import SplitText from '../../../assets/js/gsap-bonus/SplitText';
 import Social from '../Social/Social';
 import MarkWeber from '../Icons/MarkWeber';
+import { AppContext } from '../../../context';
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 const FooterComponent = () => {
+    const { APIdata, setAPIdata } = useContext(AppContext);
     const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
     const headingText = useRef();
 
@@ -52,8 +54,8 @@ const FooterComponent = () => {
                             <span className={styles.legend}>
                                 Want to know more about BI in&nbsp;agriculture?
                             </span>
-                            <a href="mailto:info@ricc-it.com" className={styles.link}>
-                                info@ricc-it.com
+                            <a href={"mailto:" + APIdata.infoEmail} className={styles.link}>
+                                {APIdata.infoEmail}
                             </a>
                             <ul className={styles.infoList}>
                                 <li className={styles.infoItem}>
@@ -63,16 +65,16 @@ const FooterComponent = () => {
                                     <span className={styles.smallSubLegend}>
                                         DANIT LLC
                                     </span>
-                                    <a href="mailto:info@danit.ae" className={styles.link}>
-                                        info@danit.ae
+                                    <a href={"mailto:" + APIdata.represnative} className={styles.link}>
+                                        {APIdata.represnative}
                                     </a>
                                 </li>
                                 <li className={styles.infoItem}>
                                     <span className={styles.smallLegend}>
                                         Contact support
                                     </span>
-                                    <a href="mailto:support@ricc-it.com" className={styles.link}>
-                                        support@ricc-it.com
+                                    <a href={"mailto:" + APIdata.supportEmai} className={styles.link}>
+                                        {APIdata.supportEmail}
                                     </a>
                                 </li>
                                 <li className={styles.infoItem}>
@@ -80,10 +82,10 @@ const FooterComponent = () => {
                                         Contact sales
                                     </span>
                                     <a href="mailto:sales@ricc-it.com" className={styles.link}>
-                                        sales@ricc-it.com
+                                        {APIdata.salesEmail}
                                     </a>
-                                    <a href="tel:+79274003468" className={styles.link}>
-                                        +7 927 400 3468
+                                    <a href={"tel:" + APIdata.salesPhone} className={styles.link}>
+                                        {APIdata.salesPhone}
                                     </a>
                                 </li>
                                 <li className={styles.infoItem}>
@@ -107,7 +109,7 @@ const FooterComponent = () => {
                             Privacy Policy
                         </Link>
 
-                        <a href="/" className={styles.copyrightItem} target="_blank">
+                        <a href="https://markweber.ru/" className={styles.copyrightItem} target="_blank">
                             Made by
                             <MarkWeber className={styles.copyrightImage} />
                         </a>
