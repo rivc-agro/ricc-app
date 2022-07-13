@@ -79,7 +79,7 @@ StrapiAPI.getBenefits()
     });
 
 app.get('*', (req, res) => {
-    const markup = ReactDom.renderToString(
+    const markup = ReactDom.renderToStaticMarkup(
         <StaticRouter location={req.url}>
             <App serverData={data} />
         </StaticRouter>

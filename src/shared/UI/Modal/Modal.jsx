@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './Modal.scss'
 
 const Modal = ({children, ...props}) => {
-    const [isModal, setModal] = useState();
 
     if (!props.openModal) {
         return null;

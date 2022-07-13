@@ -5,7 +5,7 @@ import styles from './Demo.scss';
 import Laptop from '../../../assets/img/Device.png';
 import { Button } from '../../UI/Button/Button';
 import useScrollBlock from '../../../hooks/useScrollBlock';
-import Modal from '../../UI/Modal/Modal';
+import { DemoWrapper } from './inner/DemoWrapper';
 
 const Demo = () => {
     const [modal, setModal] = useState(false);
@@ -47,12 +47,7 @@ const Demo = () => {
                     </div>
                 </div>
             </main>
-            <Modal openModal={modal} close={closeModal}>
-                <p className={styles.modalText}>
-                    Demo is under development.
-                    <br /> Please come back later.
-                </p>
-            </Modal>
+            <DemoWrapper openDemo={modal} close={closeModal} />
             <Footer />
         </div>
     )
