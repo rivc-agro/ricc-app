@@ -10,6 +10,36 @@
 
 .closeBtn {
     position: absolute;
+    top: 0;
+    right: -6rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 3rem;
+        height: 0.1rem;
+        background-color: var(--color-white);
+        transform: translate(-50%, -50%);
+        content: "";
+    }
+
+    &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    
+    &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+.backBtn {
+    position: absolute;
     bottom: 4rem;
     left: 4rem;
     z-index: 15;
@@ -139,7 +169,7 @@
 
         &::before {
             top: auto;
-            bottom: -1.7rem;
+            bottom: -1.5rem;
             border-width: 17px 20px 0 20px;
             border-color: var(--color-blue-demo) transparent transparent transparent;
         }
@@ -150,7 +180,7 @@
         &::before {
             top: 50%;
             left: auto;
-            right: -1.7rem;
+            right: -1.5rem;
             border-width: 20px 0 20px 17px;
             border-color: transparent transparent transparent var(--color-blue-demo);
             transform: translateY(-50%);
@@ -161,7 +191,7 @@
     &.arrowBottom {
         &::before {
             top: auto;
-            bottom: -1.7rem;
+            bottom: -1.5rem;
             border-width: 17px 20px 0 20px;
             border-color: var(--color-blue-demo) transparent transparent transparent;
         }
@@ -170,7 +200,7 @@
     &.arrowLeft {
         &::before {
             top: 50%;
-            left: -1.7rem;
+            left: -1.5rem;
             border-width: 20px 17px 20px 0;
             border-color: transparent var(--color-blue-demo) transparent transparent;
             transform: translateY(-50%);
@@ -180,7 +210,7 @@
 
     &::before {
         position: absolute;
-        top: -1.7rem;
+        top: -1.5rem;
         left: 50%;
         transform: translateX(-50%);
         margin-right: -50%;
@@ -196,6 +226,7 @@
     p {
         font: 500 2rem/2.4rem var(--main-ff);
         color: var(--color-white);
+        max-width: 66rem;
     }
 }
 

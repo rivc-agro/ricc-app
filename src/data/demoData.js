@@ -16,11 +16,11 @@ import mask14 from '../assets/img/demo/frame1-area13.svg';
 import mask15 from '../assets/img/demo/frame1-area14.svg';
 import mask16 from '../assets/img/demo/frame1-area15.svg';
 import mask17 from '../assets/img/demo/frame1-area16.svg';
-import mask18 from '../assets/img/demo/frame1-area17.svg';
-// import mask19 from '../assets/img/demo/frame1-area18.svg';
-// import mask20 from '../assets/img/demo/frame1-area19.svg';
-// import mask21 from '../assets/img/demo/frame1-area20.svg';
-// import mask22 from '../assets/img/demo/frame1-area21.svg';
+import mask18 from '../assets/img/demo/frame1-area17.svg'
+import mask19 from '../assets/img/demo/frame1-area18.svg';
+import mask20 from '../assets/img/demo/frame1-area19.svg';
+import mask21 from '../assets/img/demo/frame1-area20.svg';
+import mask22 from '../assets/img/demo/frame1-area21.svg';
 // import mask23 from '../assets/img/demo/frame1-area22.svg';
 // import mask24 from '../assets/img/demo/frame1-area23.svg';
 // import mask25 from '../assets/img/demo/frame1-area24.svg';
@@ -30,15 +30,19 @@ import mask18 from '../assets/img/demo/frame1-area17.svg';
 import Calendar from '../shared/UI/Icons/Calendar';
 import Tool from '../shared/UI/Icons/Tool';
 import Search from '../shared/UI/Icons/Search';
+import Thumb from '../shared/UI/Icons/Thumb';
 
+import frame1 from '../assets/img/demo/frame1.jpg';
 import frame2 from '../assets/img/demo/frame2.jpg';
 import frame3 from '../assets/img/demo/frame3.jpg';
+import frame4 from '../assets/img/demo/frame4.jpg';
+import frame5 from '../assets/img/demo/frame5.jpg';
 
 const demoData = [
     {
         key: 0,
         file: mask1,
-        text: "General information on the herd allows you to see a report on financial indicators for any period in order to track the current financial situation.",
+        text: "General\ninformation on the herd allows you to see a report on financial indicators for any period in order to track the current financial situation.",
         popupPosition: ['32%', '50%']
     },
     {
@@ -101,14 +105,15 @@ const demoData = [
         file: mask10,
         text: "Use these buttons to check more detailed information about your farm. It will lead you to other dashboard with more charts.",
         popupPosition: ['46%', '50%'],
-        isArrowBottom: true
+        isArrowBottom: true,
+        prevFrame: frame1,
     },
     {
         key: 10,
         file: mask11,
         text: "We need to see information about profit per cow.",
         popupPosition: ['53%', '39%'],
-        btnText: "Click here ↓",
+        btnText: "Click here",
         isArrowBottom: true,
         nextImage: frame2,
         nextStep: 10
@@ -170,13 +175,14 @@ const demoData = [
         isIcon: true,
         icon: <Search />,
         btnText: "Lets look",
-        isCentered: true
+        isCentered: true,
+        prevFrame: frame2,
     },
     {
         key: 19,
         file: mask17,
         text: "",
-        btnText: "Choose it",
+        btnText: "Choose me",
         popupPosition: ['15.1%', '74.7%'],
         smallPopup: true,
         nextStep: 19,
@@ -188,6 +194,68 @@ const demoData = [
         text: "Now we see information only on Holstein cows. Let's compare the most productive cow №45234 and the least productive cow №51571.",
         popupPosition: ['20.1%', '54.7%'],
         isArrowLeft: true,
+    },
+    {
+        key: 21,
+        file: mask19,
+        text: "",
+        btnText: "Choose cows",
+        popupPosition: ['35.1%', '74.7%'],
+        isArrowRight: true,
+        smallPopup: true,
+        nextStep: 21,
+        nextImage: frame4,
+    },
+    {
+        key: 22,
+        file: mask20,
+        text: "Profit of cow №51571 is too low in comparing with cow №45234. Something is wrong. We should check milking profile!",
+        popupPosition: ['20.1%', '54.7%'],
+        isArrowLeft: true,
+        prevFrame: frame4,
+    },
+    {
+        key: 23,
+        file: mask21,
+        text: "",
+        btnText: "Click Me",
+        popupPosition: ['72.1%', '82.7%'],
+        isArrowBottom: true,
+        smallPopup: true,
+        nextStep: 23,
+        nextImage: frame5,
+    },
+    {
+        key: 24,
+        file: "null",
+        text: "Look at the level of milk yield of cow  №51571. She is several times lower than cow №45234.",
+        popupPosition: ['46.1%', '52.7%'],
+        isArrowBottom: true,
+    },
+    {
+        key: 25,
+        file: "null",
+        text: "Given that this is her total level over 10 days, there is a high probability that she will no longer be able to achieve a high level of profitability.",
+        popupPosition: ['46.1%', '52.7%'],
+        isArrowBottom: true,
+    },
+    {
+        key: 26,
+        file: "null",
+        text: "It is worth thinking about her withdrawal from the dairy herd and replacement with another cow.",
+        popupPosition: ['46.1%', '52.7%'],
+        isArrowBottom: true,
+    },
+    {
+        key: 27,
+        file: mask7,
+        text: "Great job! Now we can compare cows and find the reasons for the low productivity of the herd.",
+        popupPosition: ['50%', '50%'],
+        isIcon: true,
+        icon: <Thumb />,
+        btnText: "Thank you!",
+        isCentered: true,
+        isLastSlide: true
     },
 ];
 

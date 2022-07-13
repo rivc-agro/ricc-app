@@ -6,11 +6,13 @@ import SpinnerPreloader from '../../../UI/Preloader/SpinnerPreloader';
 import useImageLoaded from '../../../../hooks/useImageLoaded';
 import demoData from '../../../../data/demoData';
 
-const DemoWrapperComponent = ({ ...props }) => {
+const DemoWrapperComponent = ({ callback, ...props }) => {
     const [ref, loaded, onLoad, setLoaded] = useImageLoaded();
     const [frameOne, setframeOne] = useState(false);
     const [image, setImage] = useState(frame1);
     const [mask, setMask] = useState(demoData[0]);
+    const DemoBtn = useRef();
+
 
     const handleNextBtn = () => {
         if (demoData[mask.nextStep]) {
@@ -24,9 +26,18 @@ const DemoWrapperComponent = ({ ...props }) => {
         if (demoData[mask.key + 1]) {
             setMask(demoData[mask.key + 1]);
         }
+
+        if (demoData[mask.key].isLastSlide) {
+            setframeOne(false);
+            setLoaded(false);
+            setMask(demoData[0]);
+            setImage(frame1);
+            props.close(false);
+            callback(true);
+        };
     };
 
-    const handleCloseBtn = () => {
+    const handCloseBtn = () => {
         setframeOne(false);
         setLoaded(false);
         setMask(demoData[0]);
@@ -34,11 +45,21 @@ const DemoWrapperComponent = ({ ...props }) => {
         props.close(false);
     };
 
+    const handleBackBtn = () => {
+        setMask(demoData[mask.key - 1]);
+
+        if (demoData[mask.key].key === 1) return;
+
+        if (demoData[mask.key - 2].prevFrame) {
+            setImage(demoData[mask.key - 2].prevFrame);
+        };
+    };
+
     useEffect(() => {
         if (props.openDemo && loaded) {
             const timer = setTimeout(() => {
                 setframeOne(true);
-            }, 2000);
+            }, 1200);
 
             return () => {
                 clearTimeout(timer);
@@ -51,13 +72,24 @@ const DemoWrapperComponent = ({ ...props }) => {
     }
     return (
         <div className={styles.wrapper}>
-            <button onClick={handleCloseBtn} className={styles.closeBtn} />
             <ul className={styles.list}>
                 <li className={styles.item}>
 
                     {!loaded && <SpinnerPreloader />}
 
                     <div className={styles.itemInner} style={{ "display": !loaded ? "none" : "block" }}>
+                        <button
+                            onClick={handCloseBtn}
+                            className={styles.closeBtn}
+                            title='Close Demo'
+                        />
+
+                        <button
+                            onClick={handleBackBtn}
+                            className={styles.backBtn}
+                            style={{ "display": demoData[mask.key].key === 0 ? "none" : "block" }}
+                            title='Back'
+                        />
 
                         <img
                             ref={ref}
