@@ -5,13 +5,21 @@ import frame1 from '../../../../assets/img/demo/frame1.jpg';
 import SpinnerPreloader from '../../../UI/Preloader/SpinnerPreloader';
 import useImageLoaded from '../../../../hooks/useImageLoaded';
 import demoData from '../../../../data/demoData';
+import Confetti from "react-confetti";
+import btn11 from '../../../../assets/img/demo/btn11.png';
+import gsap from 'gsap';
+
 
 const DemoWrapperComponent = ({ callback, ...props }) => {
     const [ref, loaded, onLoad, setLoaded] = useImageLoaded();
     const [frameOne, setframeOne] = useState(false);
     const [image, setImage] = useState(frame1);
     const [mask, setMask] = useState(demoData[0]);
-    const DemoBtn = useRef();
+    const BtnImg1 = useRef();
+    const BtnImg2 = useRef();
+    const BtnImg3 = useRef();
+    const btnDemo = useRef();
+    const timeline = gsap.timeline();
 
 
     const handleNextBtn = () => {
@@ -67,6 +75,20 @@ const DemoWrapperComponent = ({ callback, ...props }) => {
         }
     }, [props.openDemo, loaded]);
 
+    useEffect(() => {
+        if (mask.isAnimBtn) {
+            gsap.set(btnDemo.current, {display: "none"});
+            timeline
+                .to(BtnImg1.current, {opacity: 1, duration: 0.5, ease: "none"})
+                .to(BtnImg1.current, {opacity: 0, duration: 0.3, ease: "none"}, "+=0.5")
+                .to(BtnImg2.current, {opacity: 1, duration: 0.5, ease: "none"}, "-=0.3")
+                .to(BtnImg2.current, {opacity: 0, duration: 0.3, ease: "none"}, "+=0.5")
+                .to(BtnImg3.current, {opacity: 1, duration: 0.5, ease: "none"}, "-=0.3")
+                .to(BtnImg3.current, {opacity: 0, duration: 0.3, ease: "none"}, "+=0.5")
+                .to(btnDemo.current, {opacity: 1, display: "block", duration: 0.3, ease: "none"})
+        }
+    }, [props.openDemo, mask]);
+
     if (!props.openDemo) {
         return null;
     }
@@ -78,6 +100,10 @@ const DemoWrapperComponent = ({ callback, ...props }) => {
                     {!loaded && <SpinnerPreloader />}
 
                     <div className={styles.itemInner} style={{ "display": !loaded ? "none" : "block" }}>
+                        <img ref={BtnImg1} src={btn11} alt="" className={[styles.animBtn1, styles.animBtn].join(' ')} />
+                        <img ref={BtnImg2} src={btn11} alt="" className={[styles.animBtn2, styles.animBtn].join(' ')} />
+                        <img ref={BtnImg3} src={btn11} alt="" className={[styles.animBtn3, styles.animBtn].join(' ')} />
+
                         <button
                             onClick={handCloseBtn}
                             className={styles.closeBtn}
@@ -101,6 +127,7 @@ const DemoWrapperComponent = ({ callback, ...props }) => {
                         />
 
                         <div className={[styles.frame1Wrapper, frameOne ? styles.isActive : null].join(' ')}>
+                            {mask.isLastSlide && <Confetti />}
                             {
                                 demoData.map(({ key, file, ...restItems }) =>
                                     <div
@@ -134,6 +161,7 @@ const DemoWrapperComponent = ({ callback, ...props }) => {
                                 <button
                                     onClick={handleNextBtn}
                                     className={styles.btn}
+                                    ref={btnDemo}
                                 >
                                     {
                                         mask.btnText

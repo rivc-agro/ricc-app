@@ -7,14 +7,12 @@ import { Button } from '../../UI/Button/Button';
 import useScrollBlock from '../../../hooks/useScrollBlock';
 import { DemoWrapper } from './inner/DemoWrapper';
 import useImageLoaded from '../../../hooks/useImageLoaded';
-import SpinnerPreloader from '../../UI/Preloader/SpinnerPreloader';
 // import DemoBg from '../../../assets/img/DemoBg.png';
 
 const Demo = () => {
     const [modal, setModal] = useState(false);
     const [blockScroll, allowScroll] = useScrollBlock();
     const [endText, setEndText] = useState(false);
-    const [ref, loaded, onLoad, setLoaded] = useImageLoaded();
 
     const openModal = () => {
         setModal(true);
@@ -43,13 +41,10 @@ const Demo = () => {
                     </div>
                     <div className={styles.DemoContainer}>
                         <div className={styles.demoImageWrapper}>
-                            {!loaded && <SpinnerPreloader />}
                             <img
-                                ref={ref}
                                 src={Laptop}
                                 alt="Product demo"
-                                className={styles.DemoImage}
-                                style={{ "display": !loaded ? "none" : "block" }} />
+                                className={styles.DemoImage}/>
                         </div>
                         <div className={styles.DemoContentWrapper}>
                             {

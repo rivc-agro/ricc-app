@@ -49,6 +49,7 @@ StrapiAPI.getLogo()
         data.salesEmail = resp.data[0].attributes.salesEmail;
         data.salesPhone = resp.data[0].attributes.salesPhone;
         data.represnative = resp.data[0].attributes.legalRepresentative
+        data.represnativeServices = resp.data[0].attributes.represnativeServices
     });
 
 StrapiAPI.getIntro()

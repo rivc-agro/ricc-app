@@ -21,11 +21,6 @@ import mask19 from '../assets/img/demo/frame1-area18.svg';
 import mask20 from '../assets/img/demo/frame1-area19.svg';
 import mask21 from '../assets/img/demo/frame1-area20.svg';
 import mask22 from '../assets/img/demo/frame1-area21.svg';
-// import mask23 from '../assets/img/demo/frame1-area22.svg';
-// import mask24 from '../assets/img/demo/frame1-area23.svg';
-// import mask25 from '../assets/img/demo/frame1-area24.svg';
-// import mask26 from '../assets/img/demo/frame1-area25.svg';
-// import mask27 from '../assets/img/demo/frame1-area26.svg';
 
 import Calendar from '../shared/UI/Icons/Calendar';
 import Tool from '../shared/UI/Icons/Tool';
@@ -34,6 +29,7 @@ import Thumb from '../shared/UI/Icons/Thumb';
 
 import frame1 from '../assets/img/demo/frame1.jpg';
 import frame2 from '../assets/img/demo/frame2.jpg';
+import frame22 from '../assets/img/demo/frame22.jpg';
 import frame3 from '../assets/img/demo/frame3.jpg';
 import frame4 from '../assets/img/demo/frame4.jpg';
 import frame5 from '../assets/img/demo/frame5.jpg';
@@ -107,6 +103,7 @@ const demoData = [
         popupPosition: ['46%', '50%'],
         isArrowBottom: true,
         prevFrame: frame1,
+        isAnimBtn: true,
     },
     {
         key: 10,
@@ -134,12 +131,15 @@ const demoData = [
         text: "The graph shows the profit per cow for the selected period.",
         popupPosition: ['36%', '89%'],
         isArrowLeft: true,
+        prevFrame: frame2,
     },
     {
         key: 13,
         file: mask13,
         text: "Date filter.",
         popupPosition: ['22%', '19%'],
+        nextStep: 13,
+        nextImage: frame22,
     },
     {
         key: 14,
@@ -176,7 +176,7 @@ const demoData = [
         icon: <Search />,
         btnText: "Lets look",
         isCentered: true,
-        prevFrame: frame2,
+        prevFrame: frame22,
     },
     {
         key: 19,
@@ -194,6 +194,7 @@ const demoData = [
         text: "Now we see information only on Holstein cows. Let's compare the most productive cow №45234 and the least productive cow №51571.",
         popupPosition: ['20.1%', '54.7%'],
         isArrowLeft: true,
+        prevFrame: frame3,
     },
     {
         key: 21,

@@ -10,6 +10,8 @@ import SplitText from '../../../assets/js/gsap-bonus/SplitText';
 import Social from '../Social/Social';
 import MarkWeber from '../Icons/MarkWeber';
 import { AppContext } from '../../../context';
+import ArrowRight from '../../UI/Icons/ArrowRight';
+import representativeBtnCover from '../../../assets/img/representativeBtnCover.png';
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
@@ -60,17 +62,6 @@ const FooterComponent = () => {
                             <ul className={styles.infoList}>
                                 <li className={styles.infoItem}>
                                     <span className={styles.smallLegend}>
-                                        Legal representative of RICC in UAE
-                                    </span>
-                                    <span className={styles.smallSubLegend}>
-                                        DANIT LLC
-                                    </span>
-                                    <a href={"mailto:" + APIdata.represnative} className={styles.link}>
-                                        {APIdata.represnative}
-                                    </a>
-                                </li>
-                                <li className={styles.infoItem}>
-                                    <span className={styles.smallLegend}>
                                         Contact support
                                     </span>
                                     <a href={"mailto:" + APIdata.supportEmai} className={styles.link}>
@@ -95,6 +86,24 @@ const FooterComponent = () => {
                                     <Social />
                                 </li>
                             </ul>
+                            <div className={styles.representative}>
+                                <span className={[styles.smallLegend, styles.representativeLegend].join(' ')}>
+                                    Legal representative of RICC in UAE
+                                </span>
+                                <a href={"mailto:" + APIdata.represnative} className={styles.link}>
+                                    {APIdata.represnative}
+                                </a>
+                                <span className={styles.smallSubLegend}>
+                                    DANIT LLC
+                                </span>
+                                <a href={APIdata.represnativeServices} className={styles.representativeBtn}>
+                                    <img src={representativeBtnCover} alt="Cover" className={styles.representativeBtncover} />
+                                    <ArrowRight width="18" height="7" className={styles.representativeBtnArrow}/>
+                                    <span className={styles.representativeBtnText}>
+                                        Know more about DANIT’s services in agriculture
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                         <div className={styles.containerBlock}>
                             <video src={sphereVideo} className={styles.video} playsInline muted autoPlay loop></video>

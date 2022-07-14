@@ -193,3 +193,59 @@
         width: 67.4rem;
     }
 }
+
+.representative {
+    margin-top: 8rem;
+
+    .smallSubLegend {
+        padding-left: 2.4rem;
+    }
+}
+
+.representativeLegend {
+    display: block;
+    margin-bottom: 1.6rem;
+}
+
+.representativeBtn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem 1.6rem 2.6rem 2.8rem;
+    width: 34rem;
+    height: 13rem;
+    border-radius: 1.2rem;
+    background-color: #04102D;
+    margin-top: 2.4rem;
+    overflow: hidden;
+
+    @include mq(sm) {
+        width: 100%;
+    }
+
+    &:hover {
+        .representativeBtnArrow {
+            color: var(--color-white);
+        }
+    }
+}
+
+.representativeBtncover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+}
+
+.representativeBtnText {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.representativeBtnArrow {
+    color: #3B496D;
+    margin-bottom: 3rem;
+}
