@@ -15,6 +15,7 @@ const DemoWrapperComponent = ({ callback, ...props }) => {
     const [frameOne, setframeOne] = useState(false);
     const [image, setImage] = useState(frame1);
     const [mask, setMask] = useState(demoData[0]);
+    
     const BtnImg1 = useRef();
     const BtnImg2 = useRef();
     const BtnImg3 = useRef();
@@ -65,6 +66,7 @@ const DemoWrapperComponent = ({ callback, ...props }) => {
 
     useEffect(() => {
         if (props.openDemo && loaded) {
+            // setOpacity(1);
             const timer = setTimeout(() => {
                 setframeOne(true);
             }, 1200);
@@ -121,13 +123,12 @@ const DemoWrapperComponent = ({ callback, ...props }) => {
                             ref={ref}
                             onLoad={onLoad}
                             src={image}
-                            className={styles.frame}
+                            className={[styles.frame, !loaded ? null : styles.frameActive].join(' ')}
                             alt="First frame"
-                            style={{ "display": !loaded ? "none" : "block" }}
                         />
 
                         <div className={[styles.frame1Wrapper, frameOne ? styles.isActive : null].join(' ')}>
-                            {mask.isLastSlide && <Confetti />}
+                            {mask.isLastSlide && <Confetti className={styles.canvas} />}
                             {
                                 demoData.map(({ key, file, ...restItems }) =>
                                     <div

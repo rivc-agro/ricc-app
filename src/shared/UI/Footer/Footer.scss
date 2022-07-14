@@ -84,6 +84,10 @@
     font-weight: 300;
     text-transform: uppercase;
 
+    &:hover {
+        color: rgba(161,179,227,.6);
+    }
+
     @include mq(sm) {
         font: 300 2.2rem/1 var(--main-ff);
     }
