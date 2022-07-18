@@ -2,14 +2,81 @@
 
 .section {
     padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    @include mq(sm) {
+        padding-top: 4rem;
+    }
 
     h1 {
         font: var(--font-heading-h1);
         text-transform: uppercase;
+        margin: 3rem 0;
 
         @include mq(sm) {
             font: var(--font-heading-h3);
             font-weight: 300;
+        }
+    }
+
+    h2 {
+        margin: 2rem 0;
+        font: var(--font-heading-h3);
+        font-weight: 300;
+
+        @include mq(sm) {
+            font: var(--font-heading-h4);
+            font-weight: 300;
+        }
+    }
+
+    p {
+        margin: 1.5rem 0;
+        max-width: 80%;
+        font-weight: 300;
+
+        a {
+            color: var(--color-accent2);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @include mq(sm) {
+            max-width: 100%;
+        }
+    }
+
+    ul {
+        margin: 2.4rem 0;
+        max-width: 80%;
+
+        @include mq(sm) {
+            max-width: 100%;
+        }
+
+        li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0.4rem;
+                left: 0;
+                width: 0.4rem;
+                height: 0.4rem;
+                border-radius: 50%;
+                background-color: var(--color-white);
+                content: "";
+            }
         }
     }
 }
