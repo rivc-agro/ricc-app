@@ -75,7 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba($color: #D9D9D9, $alpha: 0.4);
+    background-color: var(--color-page-bg);
 }
 
 .itemInner {
