@@ -209,7 +209,7 @@ const Privacy = () => {
 
                             <p>
                                 When your Personal Information processing is based on your consent, you may withdraw any consent you previously provided to us at any moment. The withdrawal of consent shall not affect the lawfulness of processing based on consent before its withdrawal.
-                                To exercise these rights, please contact our Guest Services Team at <a href="mailto:info@damit.ae">info@damit.ae</a> daily from 10AM to 10PM (UAE Time).
+                                To exercise these rights, please contact our Guest Services Team at <a href="mailto:info@danit.ae">info@danit.ae</a> daily from 10AM to 10PM (UAE Time).
                             </p>
 
                             <h2>
