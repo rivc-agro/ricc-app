@@ -9,7 +9,8 @@ import StrapiAPI from '../API/StrapiAPI';
 import compression from 'compression';
 import helmet from 'helmet';
 import axios from 'axios';
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const app = express();
 app.use(compression());

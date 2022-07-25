@@ -709,6 +709,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 module.exports = require("body-parser");
 
+/***/ }),
+
+/***/ 142:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("dotenv");
+
 /***/ })
 
 /******/ 	});
@@ -1811,7 +1819,7 @@ var LinkendIn = function LinkendIn(_ref) {
 /* harmony default export */ const Icons_LinkendIn = (LinkendIn);
 ;// CONCATENATED MODULE: ./src/data/data.js
 var server = 'https://admin.ricc-it.com';
-var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU1OTkyNDIwLCJleHAiOjE2NTg1ODQ0MjB9.AQmvMEGMOTRksEgZ5k4Eo90eB9_f3Ddifz6P7SzY2_g';
+var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU4NzM4MjAwLCJleHAiOjE2NjEzMzAyMDB9.wt1Bew1gtTc39kAqZp2ZOqfbXZHAOHv6qXfi2osgonM';
 
 ;// CONCATENATED MODULE: ./src/API/StrapiAPI.js
 function StrapiAPI_typeof(obj) { "@babel/helpers - typeof"; return StrapiAPI_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, StrapiAPI_typeof(obj); }
@@ -9914,6 +9922,8 @@ var external_helmet_default = /*#__PURE__*/__webpack_require__.n(external_helmet
 
 
 var bodyParser = __webpack_require__(986);
+
+(__webpack_require__(142).config)();
 
 var app = external_express_default()();
 app.use(external_compression_default()());
