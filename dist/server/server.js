@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"server\": () => (/* binding */ server),\n/* harmony export */   \"token\": () => (/* binding */ token)\n/* harmony export */ });\nvar server = 'https://admin.ricc-it.com';\nvar token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY0NTQxNjIxLCJleHAiOjE2NjcxMzM2MjF9.JRslLB3CdMDI6Y0kxnnuN-teIIXEVQGLEUUxXwh_7BI';\n\n\n//# sourceURL=webpack://ricc-app/./src/data/data.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"server\": () => (/* binding */ server),\n/* harmony export */   \"token\": () => (/* binding */ token)\n/* harmony export */ });\nvar server = 'https://admin.ricc-it.com';\nvar token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY3NDY0MjA0LCJleHAiOjE2NzAwNTYyMDR9.rS8tNEqFK3eFqy6uG-S1YlQpcoA4L4ljX0Q3d-Iz4Ag';\n\n\n//# sourceURL=webpack://ricc-app/./src/data/data.js?");
 
 /***/ }),
 
