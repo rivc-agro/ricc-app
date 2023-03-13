@@ -49,25 +49,14 @@ const WhyUsComponent = () => {
   }, []);
 
   return (
-    <section className={styles.section} id='RICC'>
+    <section className={styles.section} id='DANIT'>
       <picture>
         <source srcSet={whyBgLayerWebp} type='image/webp' />
         <img className={styles.sectionBgImg} src={whyBgLayer} alt="" />
       </picture>
-      <h2 className='visually-hidden'>Why RICC</h2>
+      <h2 className='visually-hidden'>Why Danit</h2>
       <div ref={Container} className={styles.headingContainer}>
-        <div
-          className={styles.headingWhy}
-        ></div>
-        <img
-          ref={Logo}
-          src={logo}
-          alt='RICC Logo'
-          className={styles.headingLogo} />
-        <div
-          className={styles.headingRicc}
-          ref={RICCEl}
-        ></div>
+        WHY DANIT
       </div>
       <div className={styles.container}>
         <div className={styles.containerBlock}></div>
@@ -80,7 +69,7 @@ const WhyUsComponent = () => {
               Create business analysis for different goals
             </li>
             <li className={styles.item}>
-              More than 3 500 agro producers use our IT-solutions and are accompanied by us
+              More than 3 500 agro producers use our IT-solutions
             </li>
           </ul>
           <div className={styles.btns}>

@@ -25,8 +25,8 @@ const HeaderComponent = () => {
         link: "#Benefits"
     },
     {
-        name: "RICC",
-        link: "#RICC",
+        name: "DANIT",
+        link: "#DANIT",
     },
     {
         name: "Contact us",

@@ -122,7 +122,7 @@ const DashbordComponent = () => {
               how BI works
             </span>
             <span ref={videoPlayerSubHeading} className={styles.howItWorksSmallHeading}>
-              video about RICC
+              video about DANIT
             </span>
             <button onClick={openModal} className={styles.howItWorksVideoBtn}>
               <PlayBtn className={styles.howItWorksVideoBtnIcon} />

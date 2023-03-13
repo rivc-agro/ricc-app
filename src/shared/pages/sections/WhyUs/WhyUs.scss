@@ -21,9 +21,13 @@
     text-transform: uppercase;
     gap: 2.8rem;
     margin-bottom: 8.8rem;
+    background: linear-gradient(90deg, #2966FF -14.84%, #C824AB 60.23%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     @include mq(md) {
         flex-wrap: wrap;
+        font: 300 7rem/1 var(--main-ff);
 
         img {
             flex-shrink: 0;
