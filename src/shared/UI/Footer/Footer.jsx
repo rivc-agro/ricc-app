@@ -86,7 +86,7 @@ const FooterComponent = () => {
                                     <Social />
                                 </li>
                             </ul>
-                            <div className={styles.representative}>
+                            {/* <div className={styles.representative}>
                                 <span className={[styles.smallLegend, styles.representativeLegend].join(' ')}>
                                     Legal representative of RICC in UAE
                                 </span>
@@ -103,7 +103,7 @@ const FooterComponent = () => {
                                         Know more about DANIT’s services in agriculture
                                     </span>
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                         <div className={styles.containerBlock}>
                             <video src={sphereVideo} className={styles.video} playsInline muted autoPlay loop></video>
@@ -117,11 +117,6 @@ const FooterComponent = () => {
                         <Link to='/privacy' href="/" className={styles.copyrightItem}>
                             Privacy Policy
                         </Link>
-
-                        <a href="https://markweber.ru/" className={styles.copyrightItem} target="_blank">
-                            Made by
-                            <MarkWeber className={styles.copyrightImage} />
-                        </a>
                     </div>
                 </div>
             </div>

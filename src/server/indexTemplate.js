@@ -14,7 +14,7 @@ export const indextemplate = (content, data) => `
     <meta name="theme-color" content="#06112E">
 
     <meta name="description" content="Business analysis with BI help you to use data effectively to manage your farm with maximum benefit.">
-    <title>RICC Business Iintelligence in Agriculture</title>
+    <title>DANIT Business Iintelligence in Agriculture</title>
 
     <script>
         window.__INITIAL_DATA__ = ${data}

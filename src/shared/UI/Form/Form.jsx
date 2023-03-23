@@ -16,24 +16,31 @@ const FormComponent = () => {
     const PHONE = data.PHONE;
     const EMAIL = data.EMAIL;
 
+    // const formData = {
+    //   'fields': {
+    //     'TITLE': "Форма с Дубайского лендинга ricc-it.com",
+    //     'NAME': data.NAME,
+    //     'PHONE': {
+    //       'n0': {
+    //         'VALUE': PHONE,
+    //         'VALUE_TYPE': 'WORK',
+    //       }
+    //     },
+    //     'EMAIL': {
+    //       'n0': {
+    //         'VALUE': EMAIL,
+    //         'VALUE_TYPE': 'WORK',
+    //       }
+    //     },
+    //     'params': { 'REGISTER_SONET_EVENT': 'Y' }
+    //   }
+    // };
+
     const formData = {
-      'fields': {
-        'TITLE': "Форма с Дубайского лендинга ricc-it.com",
-        'NAME': data.NAME,
-        'PHONE': {
-          'n0': {
-            'VALUE': PHONE,
-            'VALUE_TYPE': 'WORK',
-          }
-        },
-        'EMAIL': {
-          'n0': {
-            'VALUE': EMAIL,
-            'VALUE_TYPE': 'WORK',
-          }
-        },
-        'params': { 'REGISTER_SONET_EVENT': 'Y' }
-      }
+      'name': data.NAME,
+      'phone': PHONE,
+      'email': EMAIL,
+      'company': data.COMPANY
     };
 
     axios.post('/send', formData)

@@ -12,6 +12,9 @@ import axios from 'axios';
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
+const chatId = '-719954746';
+const apiToken = '5784895850:AAGGZSro2uXroSYdSHyPTSiuqz309XTVzgs';
+
 const app = express();
 app.use(compression());
 app.use(helmet({
@@ -25,11 +28,19 @@ app.use('/send', bodyParser.urlencoded({
     extended: true,
 }));
 app.use(bodyParser.json());
-
 app.post('/send', (req, res, next) => {
     if (!req.body) return res.sendStatus(400)
+    const text = `
+        Заявка с ricc-it.com.ae
+        Имя: ${req.body.name}
+        Телефон: ${req.body.phone}
+        Почта: ${req.body.email}
+        Наименование компании: ${req.body.email}
+    `;
+    const encoded = encodeURI(text);
+    const urlString = `https://api.telegram.org/bot${apiToken}/sendMessage?chat_id=${chatId}&text=${encoded}`;
 
-    axios.post('https://ricc-it.bitrix24.ru/rest/1/kk9l491xxvs8d6t8/crm.lead.add.json',
+    axios.get(urlString,
         req.body
     )
         .then((e) => {
